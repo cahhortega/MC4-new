@@ -20,9 +20,7 @@ class TodayViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = true
-        
+        super.viewDidLoad()        
         
         //collectionView
         self.routineCollectionView.delegate = self

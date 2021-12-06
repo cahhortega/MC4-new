@@ -5,9 +5,11 @@
 //  Created by Carolina Ortega on 06/12/21.
 //
 
+//Célula usada no FORMULÁRIO
+
 import UIKit
 
-class ProductTableViewCell: UITableViewCell {
+class ShelfFormTableViewCell: UITableViewCell {
     @IBOutlet var nomeProduto: UILabel!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

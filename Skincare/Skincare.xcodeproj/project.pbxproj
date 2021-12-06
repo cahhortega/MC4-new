@@ -24,12 +24,15 @@
 		A02F0F6C275935EF00AFD1C1 /* NewRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F0F6B275935EF00AFD1C1 /* NewRoutineViewController.swift */; };
 		A02F0F6E275940F700AFD1C1 /* SkinRoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F0F6D275940F700AFD1C1 /* SkinRoutineTableViewCell.swift */; };
 		A02F0F7127595EED00AFD1C1 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F0F7027595EED00AFD1C1 /* TaskTableViewCell.swift */; };
-		A09A402D275E6AD500E6122F /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09A402C275E6AD500E6122F /* ProductTableViewCell.swift */; };
+		A09A402D275E6AD500E6122F /* ShelfFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09A402C275E6AD500E6122F /* ShelfFormTableViewCell.swift */; };
 		A0F388C92756DDC700153D13 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F388C82756DDC700153D13 /* NameViewController.swift */; };
 		A0F388CB2756DDE600153D13 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F388CA2756DDE600153D13 /* FormViewController.swift */; };
 		A0F388CD2756DE0600153D13 /* SkinTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F388CC2756DE0600153D13 /* SkinTypeViewController.swift */; };
 		A0F388CF2756F9C800153D13 /* YourDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F388CE2756F9C800153D13 /* YourDayViewController.swift */; };
-		DF46B8372757EB920076F349 /* ShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF46B8362757EB920076F349 /* ShelfViewController.swift */; };
+		A0FF1304275EB40200A86323 /* ShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF1303275EB40200A86323 /* ShelfViewController.swift */; };
+		A0FF1306275EB54900A86323 /* ShelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF1305275EB54900A86323 /* ShelfCell.swift */; };
+		A0FF1308275EBC6E00A86323 /* NewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF1307275EBC6E00A86323 /* NewProductViewController.swift */; };
+		DF46B8372757EB920076F349 /* ShelfFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF46B8362757EB920076F349 /* ShelfFormViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,12 +55,15 @@
 		A02F0F6B275935EF00AFD1C1 /* NewRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoutineViewController.swift; sourceTree = "<group>"; };
 		A02F0F6D275940F700AFD1C1 /* SkinRoutineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinRoutineTableViewCell.swift; sourceTree = "<group>"; };
 		A02F0F7027595EED00AFD1C1 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
-		A09A402C275E6AD500E6122F /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		A09A402C275E6AD500E6122F /* ShelfFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfFormTableViewCell.swift; sourceTree = "<group>"; };
 		A0F388C82756DDC700153D13 /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		A0F388CA2756DDE600153D13 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		A0F388CC2756DE0600153D13 /* SkinTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeViewController.swift; sourceTree = "<group>"; };
 		A0F388CE2756F9C800153D13 /* YourDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourDayViewController.swift; sourceTree = "<group>"; };
-		DF46B8362757EB920076F349 /* ShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfViewController.swift; sourceTree = "<group>"; };
+		A0FF1303275EB40200A86323 /* ShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfViewController.swift; sourceTree = "<group>"; };
+		A0FF1305275EB54900A86323 /* ShelfCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfCell.swift; sourceTree = "<group>"; };
+		A0FF1307275EBC6E00A86323 /* NewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductViewController.swift; sourceTree = "<group>"; };
+		DF46B8362757EB920076F349 /* ShelfFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfFormViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +123,7 @@
 		A02F0F6A2758247200AFD1C1 /* Today Cells */ = {
 			isa = PBXGroup;
 			children = (
-				A02F0F7027595EED00AFD1C1 /* TaskTableViewCell.swift */,
+				A02F0F662758242C00AFD1C1 /* RoutineCollectionViewCell.swift */,
 			);
 			path = "Today Cells";
 			sourceTree = "<group>";
@@ -133,7 +139,7 @@
 		A02F0F73275A935F00AFD1C1 /* NewRoutine Cells */ = {
 			isa = PBXGroup;
 			children = (
-				A02F0F662758242C00AFD1C1 /* RoutineCollectionViewCell.swift */,
+				A02F0F7027595EED00AFD1C1 /* TaskTableViewCell.swift */,
 			);
 			path = "NewRoutine Cells";
 			sourceTree = "<group>";
@@ -153,7 +159,8 @@
 		A09A402E275E6ADD00E6122F /* Shelf Cells */ = {
 			isa = PBXGroup;
 			children = (
-				A09A402C275E6AD500E6122F /* ProductTableViewCell.swift */,
+				A0FF1305275EB54900A86323 /* ShelfCell.swift */,
+				A09A402C275E6AD500E6122F /* ShelfFormTableViewCell.swift */,
 			);
 			path = "Shelf Cells";
 			sourceTree = "<group>";
@@ -166,10 +173,12 @@
 				A0F388CA2756DDE600153D13 /* FormViewController.swift */,
 				A0F388CC2756DE0600153D13 /* SkinTypeViewController.swift */,
 				A0F388CE2756F9C800153D13 /* YourDayViewController.swift */,
-				DF46B8362757EB920076F349 /* ShelfViewController.swift */,
+				DF46B8362757EB920076F349 /* ShelfFormViewController.swift */,
 				A02F0F682758246400AFD1C1 /* TodayViewController.swift */,
-				A02F0F5B275813D800AFD1C1 /* SettingsViewController.swift */,
+				A0FF1307275EBC6E00A86323 /* NewProductViewController.swift */,
 				A02F0F6B275935EF00AFD1C1 /* NewRoutineViewController.swift */,
+				A0FF1303275EB40200A86323 /* ShelfViewController.swift */,
+				A02F0F5B275813D800AFD1C1 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -250,19 +259,22 @@
 				99B1646B27516C6100DE8120 /* OnboardingViewController.swift in Sources */,
 				99B1647127516C6100DE8120 /* Skincare.xcdatamodeld in Sources */,
 				99B1646727516C6100DE8120 /* AppDelegate.swift in Sources */,
+				A0FF1304275EB40200A86323 /* ShelfViewController.swift in Sources */,
 				A02F0F692758246400AFD1C1 /* TodayViewController.swift in Sources */,
 				A02F0F65275814A400AFD1C1 /* SwitchDayTableViewCell.swift in Sources */,
 				A02F0F6C275935EF00AFD1C1 /* NewRoutineViewController.swift in Sources */,
 				99B1646927516C6100DE8120 /* SceneDelegate.swift in Sources */,
 				A02F0F5E2758140200AFD1C1 /* NameTableViewCell.swift in Sources */,
+				A0FF1308275EBC6E00A86323 /* NewProductViewController.swift in Sources */,
 				A02F0F602758141600AFD1C1 /* AvatarTableViewCell.swift in Sources */,
 				A02F0F7127595EED00AFD1C1 /* TaskTableViewCell.swift in Sources */,
-				DF46B8372757EB920076F349 /* ShelfViewController.swift in Sources */,
+				DF46B8372757EB920076F349 /* ShelfFormViewController.swift in Sources */,
+				A0FF1306275EB54900A86323 /* ShelfCell.swift in Sources */,
 				A02F0F5C275813D800AFD1C1 /* SettingsViewController.swift in Sources */,
 				A02F0F672758242C00AFD1C1 /* RoutineCollectionViewCell.swift in Sources */,
 				A02F0F622758142400AFD1C1 /* DayTableViewCell.swift in Sources */,
 				A0F388CD2756DE0600153D13 /* SkinTypeViewController.swift in Sources */,
-				A09A402D275E6AD500E6122F /* ProductTableViewCell.swift in Sources */,
+				A09A402D275E6AD500E6122F /* ShelfFormTableViewCell.swift in Sources */,
 				A0F388C92756DDC700153D13 /* NameViewController.swift in Sources */,
 				A0F388CF2756F9C800153D13 /* YourDayViewController.swift in Sources */,
 			);

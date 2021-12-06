@@ -10,6 +10,7 @@ import UIKit
 class SettingsViewController: UIViewController {
     @IBOutlet var settingsTableView: UITableView!
     
+    let cellAvatar = AvatarTableViewCell()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,7 +19,7 @@ class SettingsViewController: UIViewController {
         self.settingsTableView.dataSource = self
         
     }
-    
+ 
 }
 
 //Formatação da tableView
@@ -39,7 +40,7 @@ extension SettingsViewController: UITableViewDataSource{
         }
         
         else if indexPath.row == 1 {
-            let cell  = settingsTableView.dequeueReusableCell(withIdentifier: "avatar2", for: indexPath) as! AvatarTableViewCell
+            let cell  = settingsTableView.dequeueReusableCell(withIdentifier: "avatar", for: indexPath) as! AvatarTableViewCell
             return cell
         }
         else if indexPath.row == 2 {
