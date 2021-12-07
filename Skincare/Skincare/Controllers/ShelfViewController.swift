@@ -13,6 +13,7 @@ class ShelfViewController: UIViewController{
     @IBOutlet var productTableView: UITableView!
     var list = ["oi", "tudo", "bem", "com", "vc", "meu", "nome", "é", "carol"] //Colocar aqui a API
     var searchProduct: [String]!
+
     
     
     override func viewDidLoad() {

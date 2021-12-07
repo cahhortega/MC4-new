@@ -7,12 +7,13 @@
 
 import UIKit
 
+
+
 class NameViewController: UIViewController {
     @IBOutlet var name: UITextField!
+    public var jsonObjects: [Product] = []
     
-    @IBAction func nextView(_ sender: Any) {
-        performSegue(withIdentifier: "formsView", sender: self)
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         name.layer.borderWidth = 1
@@ -29,7 +30,27 @@ class NameViewController: UIViewController {
                target: self,
                action: #selector(onboardingBack)
            )
+        
+        let url = "https://restapi-skinfeel.herokuapp.com/produtos"
+        let instance = Request()
+        instance.getData(from: url) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let products):
+                    self.jsonObjects = products
+                    print(self.jsonObjects)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+            
+        }
+        
        }
+    
+
+    
+    
        @objc func onboardingBack(){
                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                let vc = storyBoard.instantiateViewController(identifier: "firstView") as! OnboardingViewController
