@@ -15,6 +15,8 @@ class NameTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         self.name.isUserInteractionEnabled = true
+        self.name.text = UserDefaults.standard.string(forKey: "name") ?? ""
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
