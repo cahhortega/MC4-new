@@ -75,13 +75,12 @@
                         <barButtonItem key="rightBarButtonItem" title="Próximo" id="jfa-GC-gDj">
                             <color key="tintColor" name="Rosa"/>
                             <connections>
-                                <segue destination="wJv-RP-ls9" kind="show" id="TF9-3y-4ps"/>
+                                <segue destination="wJv-RP-ls9" kind="show" destinationCreationSelector="nextButton:" id="TF9-3y-4ps"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="name" destination="u1p-4a-scJ" id="cXP-MP-VNO"/>
-                        <segue destination="wJv-RP-ls9" kind="show" identifier="formsView" id="BZv-XG-WMK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -585,7 +584,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYq-I7-S4L">
-                                <rect key="frame" x="340.5" y="114" width="53.5" height="64"/>
+                                <rect key="frame" x="344" y="114" width="50" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="z06-Lo-zOu"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="girl1-profile"/>
                                 <userDefinedRuntimeAttributes>
@@ -918,7 +920,6 @@
                             <constraint firstItem="CS7-LM-awc" firstAttribute="leading" secondItem="BxC-Fh-b8b" secondAttribute="leading" constant="20" id="jGG-Tq-PFD"/>
                             <constraint firstItem="4cz-rp-qQL" firstAttribute="top" secondItem="zAj-ee-WsH" secondAttribute="bottom" constant="23" id="mHj-Ri-Tl0"/>
                             <constraint firstItem="zAj-ee-WsH" firstAttribute="top" secondItem="CS7-LM-awc" secondAttribute="bottom" constant="20" id="pbl-Bk-4QB"/>
-                            <constraint firstItem="YYq-I7-S4L" firstAttribute="leading" secondItem="CS7-LM-awc" secondAttribute="trailing" constant="75" id="rjv-Lm-BC5"/>
                             <constraint firstItem="p1T-dy-vcg" firstAttribute="leading" secondItem="BxC-Fh-b8b" secondAttribute="leading" id="ssf-Ej-W2o"/>
                             <constraint firstItem="BxC-Fh-b8b" firstAttribute="trailing" secondItem="YYq-I7-S4L" secondAttribute="trailing" constant="20" id="yFc-5E-oh5"/>
                         </constraints>
@@ -934,11 +935,12 @@
                         <outlet property="day6" destination="ial-El-yMJ" id="blz-FC-Pi0"/>
                         <outlet property="day7" destination="erx-va-Jad" id="Emz-6J-b8s"/>
                         <outlet property="routineCollectionView" destination="p1T-dy-vcg" id="IvD-FN-XNn"/>
+                        <outlet property="titleLabel" destination="CS7-LM-awc" id="Jrf-DT-4FR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sL6-bZ-gka" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6761" y="-856"/>
+            <point key="canvasLocation" x="6760.8695652173919" y="-856.47321428571422"/>
         </scene>
         <!--New Routine View Controller-->
         <scene sceneID="as3-fL-cWi">
@@ -1006,9 +1008,6 @@
                                     <segment title="Tarde"/>
                                     <segment title="Noite"/>
                                 </segments>
-                                <connections>
-                                    <action selector="segmentedControlActionWithSender:" destination="5Kg-KO-euP" eventType="valueChanged" id="onT-oI-7HL"/>
-                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9gl-Dp-rAA">
                                 <rect key="frame" x="20" y="548" width="314" height="197"/>
@@ -1027,7 +1026,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Stt-d6-2HC">
                                                     <rect key="frame" x="16" y="0.0" width="282" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1174,21 +1173,21 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="04P-Ea-sq9">
-                                <rect key="frame" x="334" y="551" width="60" height="119"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="04P-Ea-sq9">
+                                <rect key="frame" x="334" y="600" width="60" height="117"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ru-q6-9ah">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MB7-gB-Ofy">
-                                        <rect key="frame" x="0.0" y="44" width="60" height="31"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBC-fi-yvc">
+                                        <rect key="frame" x="0.0" y="43" width="60" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBC-fi-yvc">
-                                        <rect key="frame" x="0.0" y="88" width="60" height="31"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2AD-qL-CyQ">
+                                        <rect key="frame" x="0.0" y="86" width="60" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
                                     </button>
@@ -1233,7 +1232,7 @@
                             <constraint firstItem="sWZ-NV-9Sh" firstAttribute="top" secondItem="qGI-0H-AZs" secondAttribute="bottom" constant="20" id="mwA-AG-MEJ"/>
                             <constraint firstItem="LB1-NA-Vr8" firstAttribute="leading" secondItem="xLg-mr-jqT" secondAttribute="trailing" constant="100" id="mwp-RH-bEb"/>
                             <constraint firstAttribute="trailing" secondItem="57K-gr-3Ey" secondAttribute="trailing" constant="92" id="nmn-d8-ysj"/>
-                            <constraint firstItem="04P-Ea-sq9" firstAttribute="top" secondItem="xgH-LR-Xqs" secondAttribute="bottom" constant="15" id="t94-VE-yRk"/>
+                            <constraint firstItem="04P-Ea-sq9" firstAttribute="top" secondItem="xgH-LR-Xqs" secondAttribute="bottom" constant="64" id="t94-VE-yRk"/>
                             <constraint firstItem="bhA-Wa-leI" firstAttribute="trailing" secondItem="LB1-NA-Vr8" secondAttribute="trailing" constant="106" id="wP7-96-zAl"/>
                             <constraint firstItem="qGI-0H-AZs" firstAttribute="top" secondItem="bhA-Wa-leI" secondAttribute="top" constant="40" id="wd8-i6-Rgi"/>
                             <constraint firstItem="qGI-0H-AZs" firstAttribute="leading" secondItem="7Ng-nu-s5V" secondAttribute="leading" constant="20" id="z2i-VM-dPK"/>
@@ -1245,9 +1244,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="button1" destination="4Ru-q6-9ah" id="kse-gS-1hL"/>
-                        <outlet property="button2" destination="MB7-gB-Ofy" id="N3c-oF-och"/>
-                        <outlet property="button3" destination="jBC-fi-yvc" id="S7U-J1-XIv"/>
                         <outlet property="dom" destination="ClS-xw-TgZ" id="n5T-3A-fcS"/>
                         <outlet property="qua" destination="xHw-WQ-7OD" id="3T4-p5-PS7"/>
                         <outlet property="qui" destination="710-TD-DbU" id="LST-Jv-aIh"/>
@@ -1792,9 +1788,6 @@
             <point key="canvasLocation" x="7741" y="210"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="BZv-XG-WMK"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" name="Rosa"/>
     <resources>
         <image name="2 montanhas" width="375" height="264"/>

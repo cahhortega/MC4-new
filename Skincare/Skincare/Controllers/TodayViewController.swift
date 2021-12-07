@@ -10,6 +10,13 @@ import UIKit
 class TodayViewController: UIViewController {
     @IBOutlet var routineCollectionView: UICollectionView!
     
+    @IBOutlet var titleLabel: UILabel!
+    let hour = Calendar.current.component(.hour, from: Date()) //Hora do dia
+    let currentWeekDay = Calendar.current.component(.weekday, from: Date()) //Dia da semana (terça = 3)
+    let currentDay = Calendar.current.component(.day, from: Date()) //Dia
+    let countDays = 0 //Contador de dias
+
+    
     @IBOutlet var day1: UIButton!
     @IBOutlet var day2: UIButton!
     @IBOutlet var day3: UIButton!
@@ -18,14 +25,24 @@ class TodayViewController: UIViewController {
     @IBOutlet var day6: UIButton!
     @IBOutlet var day7: UIButton!
     
-    
     override func viewDidLoad() {
-        super.viewDidLoad()        
-        
+        super.viewDidLoad()
         //collectionView
         self.routineCollectionView.delegate = self
         self.routineCollectionView.dataSource = self
-        //        var dias: [UIButton] = [dia1, dia2, dia3, dia4, dia5, dia6, dia7]
+        
+        //Dias
+        let days: [UIButton] = [day1, day2, day3, day4, day5, day6, day7]
+        days[currentWeekDay].setTitle("\(currentDay)", for: .normal)
+        days[currentWeekDay-1].setTitle("\(currentDay-1)", for: .normal)
+        
+        days[currentWeekDay].backgroundColor = UIColor(named: "Rosa")
+
+        days[currentWeekDay].titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
+
+      
+        //Formatação do título
+        titleText()
         
         //Botões dos dias da semana
         day1.translatesAutoresizingMaskIntoConstraints = false
@@ -48,7 +65,6 @@ class TodayViewController: UIViewController {
         
         day7.translatesAutoresizingMaskIntoConstraints = false
         day7.addTarget(self, action: #selector(clicarDia7), for: .touchUpInside)
-        
         
         
     }
@@ -83,6 +99,16 @@ class TodayViewController: UIViewController {
         }
         
         
+    }
+    
+    func titleText(){
+        if hour <= 12 {
+            titleLabel.text = "Bom dia, \(UserDefaults.standard.string(forKey: "name") ?? "")!"
+        } else if hour > 12 && hour <= 18 {
+            titleLabel.text = "Boa tarde, \(UserDefaults.standard.string(forKey: "name") ?? "")!"
+        } else {
+            titleLabel.text = "Boa noite, \(UserDefaults.standard.string(forKey: "name") ?? "")!"
+        }
     }
     
     //Ações dos botões
