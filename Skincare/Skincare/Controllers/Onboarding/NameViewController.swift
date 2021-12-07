@@ -18,6 +18,7 @@ class NameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(false, animated: false)
         name.layer.borderWidth = 1
         name.layer.cornerRadius = 6
         name.layer.borderColor = UIColor(named: "Rosa")?.cgColor

@@ -1,15 +1,14 @@
 //
-//  NewProductViewController.swift
+//  ShelfViewController.swift
 //  Skincare
 //
 //  Created by Carolina Ortega on 06/12/21.
 //
 
-import Foundation
 import UIKit
 
-class NewProductViewController: UIViewController{
-
+class ShelfViewController: UIViewController {
+    
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var productTableView: UITableView!
     var list = ["oi", "tudo", "bem", "com", "vc", "meu", "nome", "é", "carol"] //Colocar aqui a API
@@ -18,30 +17,45 @@ class NewProductViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(true, animated: false)
+
         //tableView
         self.productTableView.delegate = self
         self.productTableView.dataSource = self
         
-        //multi seleção
-        self.productTableView.allowsMultipleSelection = true
-        self.productTableView.allowsMultipleSelectionDuringEditing = true
         
         //searchBar
         searchBar.delegate = self
         searchProduct = list
         
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
 }
 
-extension NewProductViewController: UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
+extension ShelfViewController: UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchProduct.count
     }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+//    Delete the row from the data source
+//    productTableView.deleteRows(at: [indexPath], with: .fade)
+    }
+//        else if editingStyle == .insert {
+//    Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//    }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "produto", for: indexPath) as! ShelfFormTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "estante", for: indexPath) as! ShelfTableViewCell
         cell.textLabel?.text = searchProduct[indexPath.row]
         return cell
     }
@@ -52,4 +66,3 @@ extension NewProductViewController: UISearchBarDelegate, UITableViewDataSource, 
         productTableView.reloadData()
     }
 }
-

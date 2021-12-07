@@ -2,13 +2,13 @@
 //  ShelfViewController.swift
 //  Skincare
 //
-//  Created by Carolina Ortega on 06/12/21.
+//  Created by Thais da Silva Bras on 01/12/21.
 //
 
 import UIKit
 
-class ShelfViewController: UIViewController {
-    
+class ShelfFormViewController: UIViewController{
+
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var productTableView: UITableView!
     var list = ["oi", "tudo", "bem", "com", "vc", "meu", "nome", "é", "carol"] //Colocar aqui a API
@@ -17,39 +17,31 @@ class ShelfViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(false, animated: false)
         //tableView
         self.productTableView.delegate = self
         self.productTableView.dataSource = self
         
+        //multi seleção
+        self.productTableView.allowsMultipleSelection = true
+        self.productTableView.allowsMultipleSelectionDuringEditing = true
         
         //searchBar
         searchBar.delegate = self
         searchProduct = list
         
     }
-    
+
 }
 
-extension ShelfViewController: UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
+extension ShelfFormViewController: UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchProduct.count
     }
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-    if editingStyle == .delete {
-//    Delete the row from the data source
-//    productTableView.deleteRows(at: [indexPath], with: .fade)
-    }
-//        else if editingStyle == .insert {
-//    Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-//    }
-    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "estante", for: indexPath) as! ShelfTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "produto", for: indexPath) as! ShelfFormTableViewCell
         cell.textLabel?.text = searchProduct[indexPath.row]
         return cell
     }
@@ -60,3 +52,4 @@ extension ShelfViewController: UISearchBarDelegate, UITableViewDataSource, UITab
         productTableView.reloadData()
     }
 }
+

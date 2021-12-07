@@ -14,7 +14,8 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.setHidesBackButton(true, animated: false)
-        
+        navigationController?.setNavigationBarHidden(false, animated: false)
+
     }
     
     //    @IBAction func botao(_ sender: Any) {

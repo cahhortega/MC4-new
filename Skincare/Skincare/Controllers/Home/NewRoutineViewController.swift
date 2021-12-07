@@ -33,7 +33,8 @@ class NewRoutineViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.setNavigationBarHidden(false, animated: false)
+
         //picker
         UIDatePicker.appearance().tintColor = UIColor(named: "Rosa")
         //        var week: [UIButton] = [dom, seg, ter, qua, qui, sex, sab]

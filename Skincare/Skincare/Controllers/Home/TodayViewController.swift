@@ -12,10 +12,15 @@ class TodayViewController: UIViewController {
     
     @IBOutlet var titleLabel: UILabel!
     let hour = Calendar.current.component(.hour, from: Date()) //Hora do dia
-    let currentWeekDay = Calendar.current.component(.weekday, from: Date()) //Dia da semana (terça = 3)
+    let currentWeekDay = Calendar.current.component(.weekday, from: Date())-1 //Dia da semana (terça = 2)
+    //-1 é para igualar as posições do dia com as posições dos botões no vetor
+    
     let currentDay = Calendar.current.component(.day, from: Date()) //Dia
     let countDays = 0 //Contador de dias
-
+    let currentMonth = Calendar.current.component(.month, from: Date()) //Mês
+    let currentYear = Calendar.current.component(.year, from: Date()) //Ano
+    
+    var isLeap = false
     
     @IBOutlet var day1: UIButton!
     @IBOutlet var day2: UIButton!
@@ -25,24 +30,14 @@ class TodayViewController: UIViewController {
     @IBOutlet var day6: UIButton!
     @IBOutlet var day7: UIButton!
     
+    lazy var days: [UIButton] = [day1, day2, day3, day4, day5, day6, day7]
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(true, animated: false)
         //collectionView
         self.routineCollectionView.delegate = self
         self.routineCollectionView.dataSource = self
-        
-        //Dias
-        let days: [UIButton] = [day1, day2, day3, day4, day5, day6, day7]
-        days[currentWeekDay].setTitle("\(currentDay)", for: .normal)
-        days[currentWeekDay-1].setTitle("\(currentDay-1)", for: .normal)
-        
-        days[currentWeekDay].backgroundColor = UIColor(named: "Rosa")
-
-        days[currentWeekDay].titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
-
-      
-        //Formatação do título
-        titleText()
         
         //Botões dos dias da semana
         day1.translatesAutoresizingMaskIntoConstraints = false
@@ -67,7 +62,39 @@ class TodayViewController: UIViewController {
         day7.addTarget(self, action: #selector(clicarDia7), for: .touchUpInside)
         
         
+        //Dia atual
+        days[currentWeekDay].backgroundColor = UIColor(named: "Rosa")
+        days[currentWeekDay].titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
+        titleText() //Formatação do título
+        calendario()
+        
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    func calendario(){
+        var diaDepois = currentDay
+        var diaAntes = currentDay
+        
+        for i in currentWeekDay ... 6 {
+            days[i].setTitle("\(diaDepois)", for: .normal)
+            if diaDepois == 30{
+                diaDepois = 1
+            } else {
+                diaDepois += 1
+            }
+        }
+        
+        for j in (0 ... currentWeekDay-1).reversed() {
+            diaAntes -= 1
+            days[j].setTitle("\(diaAntes)", for: .normal)
+        }
+    }
+        
+    
+    
     //Função que muda o background do botão
     @objc func clickDays(selected: UIButton,
                          day2: UIButton,

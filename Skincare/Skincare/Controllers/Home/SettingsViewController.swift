@@ -13,7 +13,8 @@ class SettingsViewController: UIViewController {
     let cellAvatar = AvatarTableViewCell()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.setNavigationBarHidden(false, animated: false)
+
         //tableView
         self.settingsTableView.delegate = self
         self.settingsTableView.dataSource = self

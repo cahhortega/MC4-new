@@ -168,19 +168,35 @@
 		A0F388D02756F9F100153D13 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A0FF1309275FDF9000A86323 /* Onboarding */,
+				A0FF130A275FDF9F00A86323 /* Home */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A0FF1309275FDF9000A86323 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
 				99B1646A27516C6100DE8120 /* OnboardingViewController.swift */,
 				A0F388C82756DDC700153D13 /* NameViewController.swift */,
 				A0F388CA2756DDE600153D13 /* FormViewController.swift */,
 				A0F388CC2756DE0600153D13 /* SkinTypeViewController.swift */,
 				A0F388CE2756F9C800153D13 /* YourDayViewController.swift */,
 				DF46B8362757EB920076F349 /* ShelfFormViewController.swift */,
-				A02F0F682758246400AFD1C1 /* TodayViewController.swift */,
-				A0FF1307275EBC6E00A86323 /* NewProductViewController.swift */,
-				A02F0F6B275935EF00AFD1C1 /* NewRoutineViewController.swift */,
-				A0FF1303275EB40200A86323 /* ShelfViewController.swift */,
-				A02F0F5B275813D800AFD1C1 /* SettingsViewController.swift */,
 			);
-			path = Controllers;
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		A0FF130A275FDF9F00A86323 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A02F0F682758246400AFD1C1 /* TodayViewController.swift */,
+				A02F0F6B275935EF00AFD1C1 /* NewRoutineViewController.swift */,
+				A02F0F5B275813D800AFD1C1 /* SettingsViewController.swift */,
+				A0FF1303275EB40200A86323 /* ShelfViewController.swift */,
+				A0FF1307275EBC6E00A86323 /* NewProductViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

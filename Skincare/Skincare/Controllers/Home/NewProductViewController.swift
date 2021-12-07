@@ -1,13 +1,14 @@
 //
-//  ShelfViewController.swift
+//  NewProductViewController.swift
 //  Skincare
 //
-//  Created by Thais da Silva Bras on 01/12/21.
+//  Created by Carolina Ortega on 06/12/21.
 //
 
+import Foundation
 import UIKit
 
-class ShelfFormViewController: UIViewController{
+class NewProductViewController: UIViewController{
 
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var productTableView: UITableView!
@@ -17,6 +18,8 @@ class ShelfFormViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(false, animated: false)
+
         //tableView
         self.productTableView.delegate = self
         self.productTableView.dataSource = self
@@ -33,7 +36,7 @@ class ShelfFormViewController: UIViewController{
 
 }
 
-extension ShelfFormViewController: UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
+extension NewProductViewController: UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchProduct.count
