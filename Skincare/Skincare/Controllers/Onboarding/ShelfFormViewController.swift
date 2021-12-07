@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ShelfViewController: UIViewController{
+class ShelfFormViewController: UIViewController{
 
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var productTableView: UITableView!
@@ -17,6 +17,7 @@ class ShelfViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(false, animated: false)
         //tableView
         self.productTableView.delegate = self
         self.productTableView.dataSource = self
@@ -33,14 +34,14 @@ class ShelfViewController: UIViewController{
 
 }
 
-extension ShelfViewController: UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
+extension ShelfFormViewController: UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchProduct.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "produto", for: indexPath) as! ProductTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "produto", for: indexPath) as! ShelfFormTableViewCell
         cell.textLabel?.text = searchProduct[indexPath.row]
         return cell
     }

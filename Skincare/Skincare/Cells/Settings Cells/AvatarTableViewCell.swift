@@ -8,15 +8,59 @@
 import UIKit
 
 class AvatarTableViewCell: UITableViewCell {
-    @IBOutlet var girl1: UIImageView!
-    @IBOutlet var girl2: UIImageView!
-    @IBOutlet var girl3: UIImageView!
-    @IBOutlet var girl4: UIImageView!
+    @IBOutlet var girl1: UIButton!
+    @IBOutlet var girl2: UIButton!
+    @IBOutlet var girl3: UIButton!
+    @IBOutlet var girl4: UIButton!
     @IBOutlet var girls: UIStackView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        girl1.translatesAutoresizingMaskIntoConstraints = false
+        girl1.addTarget(self, action: #selector(clickGirl1), for: .touchUpInside)
+        
+        girl2.translatesAutoresizingMaskIntoConstraints = false
+        girl2.addTarget(self, action: #selector(clickGirl2), for: .touchUpInside)
+
+        girl3.translatesAutoresizingMaskIntoConstraints = false
+        girl3.addTarget(self, action: #selector(clickGirl3), for: .touchUpInside)
+
+        girl4.translatesAutoresizingMaskIntoConstraints = false
+        girl4.addTarget(self, action: #selector(clickGirl4), for: .touchUpInside)
+
+       
+        
+    }
+    @objc func clickAvatar(girlSelected: UIButton, girl2: UIButton, girl3: UIButton, girl4: UIButton) {
+        if !girlSelected.isSelected {
+            girlSelected.layer.borderWidth = 3
+            girlSelected.layer.borderColor = UIColor(named: "Rosa")?.cgColor
+            girlSelected.layer.cornerRadius = 35
+            girl2.alpha = 0.5
+            girl3.alpha = 0.5
+            girl4.alpha = 0.5
+        } else {
+            girlSelected.layer.borderWidth = 0
+            girlSelected.layer.borderColor = UIColor(named: "Bg")?.cgColor
+            girl2.alpha = 1
+            girl3.alpha = 1
+            girl4.alpha = 1
+        }
+        girlSelected.isSelected = !girlSelected.isSelected
+    }
+    
+    @objc func clickGirl1(){
+        clickAvatar(girlSelected: girl1, girl2: girl2, girl3: girl3, girl4: girl4)
+    }
+    @objc func clickGirl2(){
+        clickAvatar(girlSelected: girl2, girl2: girl1, girl3: girl3, girl4: girl4)
+    }
+    @objc func clickGirl3(){
+        clickAvatar(girlSelected: girl3, girl2: girl2, girl3: girl1, girl4: girl4)
+    }
+    @objc func clickGirl4(){
+        clickAvatar(girlSelected: girl4, girl2: girl2, girl3: girl3, girl4: girl1)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

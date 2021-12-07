@@ -69,6 +69,7 @@ class FormViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(false, animated: false)
         newQuestion()
         mixedButton.addTarget(self, action: #selector(clickButton1), for: .touchUpInside)
         normalButton.addTarget(self, action: #selector(clickButton2), for: .touchUpInside)

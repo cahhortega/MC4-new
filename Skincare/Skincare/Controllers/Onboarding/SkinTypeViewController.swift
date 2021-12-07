@@ -23,7 +23,8 @@ class SkinTypeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.setNavigationBarHidden(false, animated: false)
+
         //tableView
         self.routineTableView.delegate = self
         self.routineTableView.dataSource = self

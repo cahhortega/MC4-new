@@ -9,8 +9,18 @@ import UIKit
 
 class NewRoutineViewController: UIViewController {
     @IBOutlet var tasksTableView: UITableView!
-    
     @IBOutlet var routineName: UITextField!
+    @IBOutlet var segmentedControl: UISegmentedControl!
+    
+    @IBOutlet var button1: UIButton!
+    @IBOutlet var button2: UIButton!
+    @IBOutlet var button3: UIButton!
+    
+    var dataFilter = 0
+    var morningTasks: [String] = ["Limpeza", "Hidratação", "Proteção"]
+    // Data for home tasks
+    var nightTasks: [String] = ["Limpeza", "Esfoliação", "Hidratação"]
+    var afternoonTasks: [String] = ["Proteção"]
     
     @IBOutlet var dom: UIButton!
     @IBOutlet var seg: UIButton!
@@ -23,7 +33,8 @@ class NewRoutineViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.setNavigationBarHidden(false, animated: false)
+
         //picker
         UIDatePicker.appearance().tintColor = UIColor(named: "Rosa")
         //        var week: [UIButton] = [dom, seg, ter, qua, qui, sex, sab]
@@ -34,8 +45,8 @@ class NewRoutineViewController: UIViewController {
         routineName.layer.borderColor = UIColor(named: "Rosa")?.cgColor
         
         //tableView
-        tasksTableView.delegate = self
-        tasksTableView.dataSource = self
+        self.tasksTableView.delegate = self
+        self.tasksTableView.dataSource = self
         
         //botões de repetição
         dom.translatesAutoresizingMaskIntoConstraints = false
@@ -71,6 +82,26 @@ class NewRoutineViewController: UIViewController {
         
         
     }
+    //segmentedControl
+    @IBAction func segmentedControlAction(sender: AnyObject) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            dataFilter = 0
+        case 1:
+            dataFilter = 1
+        case 2:
+            dataFilter = 2
+        default:
+            dataFilter = 0
+        }
+        reload()
+        
+    }
+    //reload da tableView
+    func reload() {
+        self.tasksTableView.reloadData()
+    }
+    
 }
 
 //tableView
@@ -80,12 +111,54 @@ extension NewRoutineViewController: UITableViewDelegate{
 
 extension NewRoutineViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        switch dataFilter {
+        case 0:
+            button1.isHidden = false
+            button2.isHidden = false
+            button3.isHidden = false
+            button2.tintColor = UIColor(named: "Rosa")
+            button3.tintColor = UIColor(named: "Rosa")
+            return morningTasks.count
+        case 1:
+            button2.tintColor = UIColor(named: "Bg")
+            button3.tintColor = UIColor(named: "Bg")
+            return afternoonTasks.count
+        case 2:
+            button1.isHidden = false
+            button2.isHidden = false
+            button3.isHidden = false
+            button2.tintColor = UIColor(named: "Rosa")
+            button3.tintColor = UIColor(named: "Rosa")
+            return nightTasks.count
+        default:
+            button1.isHidden = false
+            button2.isHidden = false
+            button3.isHidden = false
+            button2.tintColor = UIColor(named: "Rosa")
+            button3.tintColor = UIColor(named: "Rosa")
+            return morningTasks.count
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell  = tasksTableView.dequeueReusableCell(withIdentifier: "task", for: indexPath) as! TaskTableViewCell
+        var title: String?
+        switch dataFilter {
+        case 0:
+            title = morningTasks[indexPath.row]
+        case 1:
+            title = afternoonTasks[indexPath.row]
+        case 2:
+            title = nightTasks[indexPath.row]
+        default:
+            title = morningTasks[indexPath.row]
+
+        }
+        cell.textLabel?.text = title
+        
         return cell
+        
     }
     
     

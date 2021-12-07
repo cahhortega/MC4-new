@@ -10,16 +10,19 @@ import UIKit
 class NameViewController: UIViewController {
     @IBOutlet var name: UITextField!
     
-    @IBAction func nextView(_ sender: Any) {
-        performSegue(withIdentifier: "formsView", sender: self)
+    @IBSegueAction func nextButton(_ coder: NSCoder) -> FormViewController? {
+        UserDefaults.standard.setValue(name.text, forKey: "name")
+        return FormViewController(coder: coder)
     }
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(false, animated: false)
         name.layer.borderWidth = 1
         name.layer.cornerRadius = 6
         name.layer.borderColor = UIColor(named: "Rosa")?.cgColor
-        
-        
+     
         // Do any additional setup after loading the view.
     
 
