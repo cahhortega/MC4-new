@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		212B04B5275FD82500D9DBED /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B04B4275FD82500D9DBED /* model.swift */; };
+		212B04B7275FD84900D9DBED /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B04B6275FD84900D9DBED /* Request.swift */; };
 		99B1646727516C6100DE8120 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B1646627516C6100DE8120 /* AppDelegate.swift */; };
 		99B1646927516C6100DE8120 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B1646827516C6100DE8120 /* SceneDelegate.swift */; };
 		99B1646B27516C6100DE8120 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B1646A27516C6100DE8120 /* OnboardingViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		212B04B4275FD82500D9DBED /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
+		212B04B6275FD84900D9DBED /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		99B1646327516C6100DE8120 /* Skincare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skincare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B1646627516C6100DE8120 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99B1646827516C6100DE8120 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 			children = (
 				99B1646627516C6100DE8120 /* AppDelegate.swift */,
 				99B1646827516C6100DE8120 /* SceneDelegate.swift */,
+				212B04B6275FD84900D9DBED /* Request.swift */,
+				212B04B4275FD82500D9DBED /* model.swift */,
 				A0F388D02756F9F100153D13 /* Controllers */,
 				A02F0F74275A938200AFD1C1 /* Cells */,
 				99B1646C27516C6100DE8120 /* Main.storyboard */,
@@ -288,10 +294,12 @@
 				A0FF1306275EB54900A86323 /* ShelfCell.swift in Sources */,
 				A02F0F5C275813D800AFD1C1 /* SettingsViewController.swift in Sources */,
 				A02F0F672758242C00AFD1C1 /* RoutineCollectionViewCell.swift in Sources */,
+				212B04B7275FD84900D9DBED /* Request.swift in Sources */,
 				A02F0F622758142400AFD1C1 /* DayTableViewCell.swift in Sources */,
 				A0F388CD2756DE0600153D13 /* SkinTypeViewController.swift in Sources */,
 				A09A402D275E6AD500E6122F /* ShelfFormTableViewCell.swift in Sources */,
 				A0F388C92756DDC700153D13 /* NameViewController.swift in Sources */,
+				212B04B5275FD82500D9DBED /* model.swift in Sources */,
 				A0F388CF2756F9C800153D13 /* YourDayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
