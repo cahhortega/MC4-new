@@ -560,10 +560,15 @@
                         <barButtonItem key="rightBarButtonItem" title="Concluir" id="J67-M2-AKZ">
                             <color key="tintColor" name="Rosa"/>
                             <connections>
-                                <segue destination="9rV-R4-KIP" kind="show" id="Xqk-OJ-nch"/>
+                                <segue destination="9rV-R4-KIP" kind="show" destinationCreationSelector="finishButton:" id="Xqk-OJ-nch"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="pickerAfternoon" destination="kes-Nk-86j" id="lwN-5l-rTa"/>
+                        <outlet property="pickerMorning" destination="0jt-Mg-TP7" id="BBV-JW-Qjg"/>
+                        <outlet property="pickerNight" destination="G3Y-Y3-PHH" id="kun-B2-mm7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRj-A8-SLU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,7 +14,6 @@ class SkinTypeViewController: UIViewController {
     
     var dataFilter = 0
     var morningTasks: [String] = ["Limpeza", "Hidratação", "Proteção"]
-    // Data for home tasks
     var nightTasks: [String] = ["Limpeza", "Esfoliação", "Hidratação"]
     var afternoonTasks: [String] = ["Proteção"]
     //    var types = ["oleosa", "seca", "normal", "mista"]
