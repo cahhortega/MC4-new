@@ -181,8 +181,8 @@
 				A0F388C82756DDC700153D13 /* NameViewController.swift */,
 				A0F388CA2756DDE600153D13 /* FormViewController.swift */,
 				A0F388CC2756DE0600153D13 /* SkinTypeViewController.swift */,
-				A0F388CE2756F9C800153D13 /* YourDayViewController.swift */,
 				DF46B8362757EB920076F349 /* ShelfFormViewController.swift */,
+				A0F388CE2756F9C800153D13 /* YourDayViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";

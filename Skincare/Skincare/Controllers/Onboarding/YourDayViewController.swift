@@ -11,6 +11,7 @@ class YourDayViewController: UIViewController {
     @IBOutlet var pickerMorning: UIDatePicker!
     @IBOutlet var pickerAfternoon: UIDatePicker!
     @IBOutlet var pickerNight: UIDatePicker!
+    @IBOutlet weak var progressView: UIProgressView!
     
     // Create Date Formatter
     let dateFormatter = DateFormatter()
@@ -27,14 +28,30 @@ class YourDayViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        progressView.progress = 1
         dateFormatter.dateFormat = "HH"
+        navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "Rosa")
+
+        //navigationBar
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: "Anterior",
+            style: .plain,
+            target: self,
+            action: #selector(back)
+        )
+        navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "Rosa")
 
 
-        navigationController?.setNavigationBarHidden(false, animated: false)
-        
-        
-        // Do any additional setup after loading the view.
     }
+    
+    //Ação do backButton
+    @objc func back(){
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "shelf") as! ShelfFormViewController
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+
+    
     
     
 }

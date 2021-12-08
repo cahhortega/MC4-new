@@ -75,12 +75,13 @@
                         <barButtonItem key="rightBarButtonItem" title="Próximo" id="jfa-GC-gDj">
                             <color key="tintColor" name="Rosa"/>
                             <connections>
-                                <segue destination="wJv-RP-ls9" kind="show" destinationCreationSelector="nextButton:" id="TF9-3y-4ps"/>
+                                <segue destination="wJv-RP-ls9" kind="show" destinationCreationSelector="nextButton:" animates="NO" id="TF9-3y-4ps"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="name" destination="u1p-4a-scJ" id="cXP-MP-VNO"/>
+                        <outlet property="progressView" destination="mwT-8J-Xe6" id="sDY-FK-CMd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -224,9 +225,11 @@
                         <outlet property="dryButton" destination="FM4-8g-m1H" id="rmI-fs-S6h"/>
                         <outlet property="lbl" destination="Zpd-N7-r6G" id="Yu4-t6-TGp"/>
                         <outlet property="mixedButton" destination="gQz-1m-2NX" id="I9V-tA-Fq6"/>
+                        <outlet property="nextButton" destination="boK-oO-lex" id="Suw-9j-SdF"/>
                         <outlet property="normalButton" destination="IT1-fR-7vd" id="Ep1-ql-emO"/>
                         <outlet property="oilyButton" destination="o7a-au-ERr" id="h35-SQ-hpH"/>
-                        <segue destination="49a-Dp-n1M" kind="show" identifier="choiceView" id="Jk1-ZQ-oHw"/>
+                        <outlet property="progressView" destination="5Tr-bb-fd5" id="Cf1-q2-37C"/>
+                        <segue destination="49a-Dp-n1M" kind="show" identifier="choiceView" animates="NO" id="Jk1-ZQ-oHw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OU1-NC-9r4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -285,7 +288,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Próximo" id="ViL-mL-aGn">
                             <color key="tintColor" name="Rosa"/>
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="oL9-HX-C7P"/>
+                                <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="oL9-HX-C7P"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -422,11 +425,12 @@
                         <barButtonItem key="rightBarButtonItem" title="Próximo" id="tWW-Ek-trr">
                             <color key="tintColor" name="Rosa"/>
                             <connections>
-                                <segue destination="AUe-1s-Auk" kind="show" id="DfP-Py-sfz"/>
+                                <segue destination="AUe-1s-Auk" kind="show" animates="NO" id="DfP-Py-sfz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="progressView" destination="ZHJ-aT-T02" id="Gdm-10-qbm"/>
                         <outlet property="routineTableView" destination="7VE-EU-Hru" id="rKE-tO-7nb"/>
                         <outlet property="skinTypeLabel" destination="KVe-NZ-AQa" id="sWk-bS-DOr"/>
                         <outlet property="tasksSegmentedControl" destination="E7q-lF-TJd" id="mfL-Dy-4GD"/>
@@ -560,7 +564,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Concluir" id="J67-M2-AKZ">
                             <color key="tintColor" name="Rosa"/>
                             <connections>
-                                <segue destination="9rV-R4-KIP" kind="show" destinationCreationSelector="finishButton:" id="Xqk-OJ-nch"/>
+                                <segue destination="9rV-R4-KIP" kind="show" destinationCreationSelector="finishButton:" animates="NO" id="Xqk-OJ-nch"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -568,6 +572,7 @@
                         <outlet property="pickerAfternoon" destination="kes-Nk-86j" id="lwN-5l-rTa"/>
                         <outlet property="pickerMorning" destination="0jt-Mg-TP7" id="BBV-JW-Qjg"/>
                         <outlet property="pickerNight" destination="G3Y-Y3-PHH" id="kun-B2-mm7"/>
+                        <outlet property="progressView" destination="7hh-TC-gNP" id="b7L-mf-wuW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRj-A8-SLU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1581,13 +1586,14 @@
                         <barButtonItem key="rightBarButtonItem" title="Próximo" id="Vlt-Ag-VeS">
                             <color key="tintColor" name="Rosa"/>
                             <connections>
-                                <segue destination="luA-1x-Qjd" kind="show" id="X6Q-gH-T0y"/>
+                                <segue destination="luA-1x-Qjd" kind="show" animates="NO" id="X6Q-gH-T0y"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="productTableView" destination="whE-K2-ZTN" id="3mw-UV-8QF"/>
+                        <outlet property="progressView" destination="yEc-AN-GzF" id="env-OD-jj6"/>
                         <outlet property="searchBar" destination="YmT-jk-iAb" id="UkE-Lv-stp"/>
                     </connections>
                 </viewController>
