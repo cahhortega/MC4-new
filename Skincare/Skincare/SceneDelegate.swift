@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import UserNotifications
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
@@ -17,6 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        registroLocalNotifications()
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -52,14 +54,75 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
-        // Called as the scene transitions from the foreground to the background.
-        // Use this method to save data, release shared resources, and store enough scene-specific state information
-        // to restore the scene back to its current state.
-
-        // Save changes in the application's managed object context when the application transitions to the background.
+        localNotification(title: "Bom dia, \(UserDefaults.standard.string(forKey: "name") ?? "")!", body: "Que tal começar o seu dia iniciando sua rotina de skincare?", hour: UserDefaults.standard.integer(forKey: "pickerMorningHour"), min: UserDefaults.standard.integer(forKey: "pickerMorningMin"), identifier: "manha")
+        localNotification(title: "Boa tarde, \(UserDefaults.standard.string(forKey: "name") ?? "")!", body: "qualquer coisa", hour: UserDefaults.standard.integer(forKey: "pickerAfternoonHour"), min: UserDefaults.standard.integer(forKey: "pickerAfternoonMin"), identifier: "tarde")
+        localNotification(title: "Boa noite, \(UserDefaults.standard.string(forKey: "name") ?? "")!", body: "qualquer coisa", hour: UserDefaults.standard.integer(forKey: "pickerNightHour"), min: UserDefaults.standard.integer(forKey: "pickerNightMin"), identifier: "noite")
+        
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
 
+    @objc func registroLocalNotifications() {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            if granted {
+                print("Yay!")
+            } else {
+                print("D'oh")
+            }
+        }
+    }
+    @objc func localNotification(title: String, body: String, hour: Int, min: Int, identifier: String) {
+        registerCategories()
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
+        
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.categoryIdentifier = "alarm"
+        content.userInfo = ["customData": "fizzbuzz"]
+        content.sound = .default
+        
+        var dateComponents = DateComponents()
+        dateComponents.hour = hour
+        dateComponents.minute = min
+
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
+        center.add(request)
+    }
+    func registerCategories() {
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        
+        let show = UNNotificationAction(identifier: "show", title: "Vamos lá!", options: .foreground)
+        let category = UNNotificationCategory(identifier: "alarm", actions: [show], intentIdentifiers: [])
+        
+        center.setNotificationCategories([category])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        // pull out the buried userInfo dictionary
+        let userInfo = response.notification.request.content.userInfo
+        
+        if let customData = userInfo["customData"] as? String {
+            print("Custom data received: \(customData)")
+            
+            switch response.actionIdentifier {
+            case UNNotificationDefaultActionIdentifier:
+                // the user swiped to unlock
+                print("Default identifier")
+                
+            case "show":
+                // the user tapped our "show more info…" button
+                print("Show more information…")
+                
+            default:
+                break
+            }
+        }
+        completionHandler()
+    }
 
 }
-

@@ -14,22 +14,38 @@ class YourDayViewController: UIViewController {
     @IBOutlet weak var progressView: UIProgressView!
     
     // Create Date Formatter
-    let dateFormatter = DateFormatter()
-
+    let dateFormatterHour = DateFormatter()
+    let dateFormatterMin = DateFormatter()
+    
     override func viewDidDisappear(_ animated: Bool) {
-        let morning = dateFormatter.string(from: pickerMorning.date)
-        let afternoon = dateFormatter.string(from: pickerAfternoon.date)
-        let night = dateFormatter.string(from: pickerNight.date)
-        UserDefaults.standard.setValue(Int(morning)!, forKey: "pickerMorning")
-        UserDefaults.standard.setValue(Int(afternoon)!, forKey: "pickerAfternoon")
-        UserDefaults.standard.setValue(Int(night)!, forKey: "pickerNight")
+        //Pegando os valores dos pickers
+        let morningHour = dateFormatterHour.string(from: pickerMorning.date)
+        let morningMin = dateFormatterMin.string(from: pickerMorning.date)
+        let afternoonHour = dateFormatterHour.string(from: pickerAfternoon.date)
+        let afternoonMin = dateFormatterMin.string(from: pickerAfternoon.date)
+        let nightHour = dateFormatterHour.string(from: pickerNight.date)
+        let nightMin = dateFormatterMin.string(from: pickerNight.date)
         
-        print("manha:",Int(morning)!, "tarde:", Int(afternoon)!, "noite:", Int(night)!)
+        //Cadastrando os horários em UserDefaults
+        UserDefaults.standard.setValue(Int(morningMin)!, forKey: "pickerMorningMin")
+        UserDefaults.standard.setValue(Int(morningHour)!, forKey: "pickerMorningHour")
+
+        UserDefaults.standard.setValue(Int(afternoonHour)!, forKey: "pickerAfternoonHour")
+        UserDefaults.standard.setValue(Int(afternoonMin)!, forKey: "pickerAfternoonMin")
+
+        UserDefaults.standard.setValue(Int(nightHour)!, forKey: "pickerNightHour")
+        UserDefaults.standard.setValue(Int(nightMin)!, forKey: "pickerNightMin")
+
+        
+        print("manha:",UserDefaults.standard.string(forKey: "pickerMorningHour")!,UserDefaults.standard.string(forKey: "pickerMorningMin")!,"tarde:",UserDefaults.standard.string(forKey: "pickerAfternoonHour")!,UserDefaults.standard.string(forKey: "pickerAfternoonMin")!,"noite:",UserDefaults.standard.string(forKey: "pickerNightHour")!,UserDefaults.standard.string(forKey: "pickerNightMin")!)
+        
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         progressView.progress = 1
-        dateFormatter.dateFormat = "HH"
+        dateFormatterHour.dateFormat = "HH"
+        dateFormatterMin.dateFormat = "mm"
         navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "Rosa")
 
         //navigationBar
