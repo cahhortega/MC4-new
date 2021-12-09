@@ -40,7 +40,17 @@ class YourDayViewController: UIViewController {
         print("manha:",defaults.string(forKey: "pickerMorningHour")!,defaults.string(forKey: "pickerMorningMin")!,
               "tarde:",defaults.string(forKey: "pickerAfternoonHour")!,defaults.string(forKey: "pickerAfternoonMin")!,
               "noite:",defaults.string(forKey: "pickerNightHour")!,defaults.string(forKey: "pickerNightMin")!)
+       
+        //Configurando as notificações iniciais
+        defaults.set(true, forKey: NotificationIdentifier.Morning.rawValue)
+        defaults.set(true, forKey: NotificationIdentifier.Afternoon.rawValue)
+        defaults.set(true, forKey: NotificationIdentifier.Night.rawValue)
         
+        
+        NotificationManager.shared.changeNotificationStatus(notificationId: .Morning, isEnabled: true)
+        NotificationManager.shared.changeNotificationStatus(notificationId: .Afternoon, isEnabled: true)
+        NotificationManager.shared.changeNotificationStatus(notificationId: .Night, isEnabled: true)
+
 
     }
     override func viewDidLoad() {

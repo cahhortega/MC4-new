@@ -40,7 +40,6 @@ extension SettingsViewController: UITableViewDataSource{
             let cell  = settingsTableView.dequeueReusableCell(withIdentifier: "name", for: indexPath) as! NameTableViewCell
             return cell
         }
-        
         else if indexPath.row == 1 {
             let cell  = settingsTableView.dequeueReusableCell(withIdentifier: "avatar", for: indexPath) as! AvatarTableViewCell
             return cell
@@ -51,17 +50,17 @@ extension SettingsViewController: UITableViewDataSource{
         }
         else if indexPath.row == 3 {
             let cell  = settingsTableView.dequeueReusableCell(withIdentifier: "switch", for: indexPath) as! SwitchDayTableViewCell
-            cell.labelDay.text = "Manhã"
+            cell.setup(notificationId: .Morning)
             return cell
         }
         else if indexPath.row == 4 {
             let cell  = settingsTableView.dequeueReusableCell(withIdentifier: "switch", for: indexPath) as! SwitchDayTableViewCell
-            cell.labelDay.text = "Tarde"
+            cell.setup(notificationId: .Afternoon)
             return cell
         }
         else {
             let cell  = settingsTableView.dequeueReusableCell(withIdentifier: "switch", for: indexPath) as! SwitchDayTableViewCell
-            cell.labelDay.text = "Noite"
+            cell.setup(notificationId: .Night)
             return cell
             
         }
