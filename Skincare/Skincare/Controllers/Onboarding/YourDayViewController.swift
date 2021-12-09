@@ -12,7 +12,7 @@ class YourDayViewController: UIViewController {
     @IBOutlet var pickerAfternoon: UIDatePicker!
     @IBOutlet var pickerNight: UIDatePicker!
     @IBOutlet weak var progressView: UIProgressView!
-    
+    var defaults = UserDefaults.standard
     // Create Date Formatter
     let dateFormatterHour = DateFormatter()
     let dateFormatterMin = DateFormatter()
@@ -27,17 +27,19 @@ class YourDayViewController: UIViewController {
         let nightMin = dateFormatterMin.string(from: pickerNight.date)
         
         //Cadastrando os horários em UserDefaults
-        UserDefaults.standard.setValue(Int(morningMin)!, forKey: "pickerMorningMin")
-        UserDefaults.standard.setValue(Int(morningHour)!, forKey: "pickerMorningHour")
+        defaults.setValue(Int(morningMin)!, forKey: "pickerMorningMin")
+        defaults.setValue(Int(morningHour)!, forKey: "pickerMorningHour")
 
-        UserDefaults.standard.setValue(Int(afternoonHour)!, forKey: "pickerAfternoonHour")
-        UserDefaults.standard.setValue(Int(afternoonMin)!, forKey: "pickerAfternoonMin")
+        defaults.setValue(Int(afternoonHour)!, forKey: "pickerAfternoonHour")
+        defaults.setValue(Int(afternoonMin)!, forKey: "pickerAfternoonMin")
 
-        UserDefaults.standard.setValue(Int(nightHour)!, forKey: "pickerNightHour")
-        UserDefaults.standard.setValue(Int(nightMin)!, forKey: "pickerNightMin")
+        defaults.setValue(Int(nightHour)!, forKey: "pickerNightHour")
+        defaults.setValue(Int(nightMin)!, forKey: "pickerNightMin")
 
         
-        print("manha:",UserDefaults.standard.string(forKey: "pickerMorningHour")!,UserDefaults.standard.string(forKey: "pickerMorningMin")!,"tarde:",UserDefaults.standard.string(forKey: "pickerAfternoonHour")!,UserDefaults.standard.string(forKey: "pickerAfternoonMin")!,"noite:",UserDefaults.standard.string(forKey: "pickerNightHour")!,UserDefaults.standard.string(forKey: "pickerNightMin")!)
+        print("manha:",defaults.string(forKey: "pickerMorningHour")!,defaults.string(forKey: "pickerMorningMin")!,
+              "tarde:",defaults.string(forKey: "pickerAfternoonHour")!,defaults.string(forKey: "pickerAfternoonMin")!,
+              "noite:",defaults.string(forKey: "pickerNightHour")!,defaults.string(forKey: "pickerNightMin")!)
         
 
     }

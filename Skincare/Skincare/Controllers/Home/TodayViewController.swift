@@ -9,7 +9,7 @@ import UIKit
 
 class TodayViewController: UIViewController {
     @IBOutlet var routineCollectionView: UICollectionView!
-    
+    var defaults = UserDefaults.standard
     @IBOutlet var titleLabel: UILabel!
     let hour = Calendar.current.component(.hour, from: Date()) //Hora do dia
     let currentWeekDay = Calendar.current.component(.weekday, from: Date())-1 //Dia da semana (terça = 2)
@@ -138,11 +138,11 @@ class TodayViewController: UIViewController {
     
     func titleText(){
         if hour <= 12 {
-            titleLabel.text = "Bom dia, \(UserDefaults.standard.string(forKey: "name") ?? "")!"
+            titleLabel.text = "Bom dia, \(defaults.string(forKey: "name") ?? "")!"
         } else if hour > 12 && hour <= 18 {
-            titleLabel.text = "Boa tarde, \(UserDefaults.standard.string(forKey: "name") ?? "")!"
+            titleLabel.text = "Boa tarde, \(defaults.string(forKey: "name") ?? "")!"
         } else {
-            titleLabel.text = "Boa noite, \(UserDefaults.standard.string(forKey: "name") ?? "")!"
+            titleLabel.text = "Boa noite, \(defaults.string(forKey: "name") ?? "")!"
         }
     }
     

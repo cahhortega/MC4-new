@@ -8,11 +8,11 @@
 import UIKit
 
 class NameViewController: UIViewController {
-    
+    var defaults = UserDefaults.standard
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet var name: UITextField!
     @IBSegueAction func nextButton(_ coder: NSCoder) -> FormViewController? {
-        UserDefaults.standard.setValue(name.text, forKey: "name")
+        defaults.setValue(name.text, forKey: "name")
         return FormViewController(coder: coder)
     }
     

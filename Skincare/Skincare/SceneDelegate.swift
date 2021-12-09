@@ -10,6 +10,7 @@ import UserNotifications
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate, UNUserNotificationCenterDelegate {
 
+    var defaults = UserDefaults.standard
     var window: UIWindow?
 
 
@@ -54,9 +55,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UNUserNotificationCente
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
-        localNotification(title: "Bom dia, \(UserDefaults.standard.string(forKey: "name") ?? "")!", body: "Que tal começar o seu dia iniciando sua rotina de skincare?", hour: UserDefaults.standard.integer(forKey: "pickerMorningHour"), min: UserDefaults.standard.integer(forKey: "pickerMorningMin"), identifier: "manha")
-        localNotification(title: "Boa tarde, \(UserDefaults.standard.string(forKey: "name") ?? "")!", body: "qualquer coisa", hour: UserDefaults.standard.integer(forKey: "pickerAfternoonHour"), min: UserDefaults.standard.integer(forKey: "pickerAfternoonMin"), identifier: "tarde")
-        localNotification(title: "Boa noite, \(UserDefaults.standard.string(forKey: "name") ?? "")!", body: "qualquer coisa", hour: UserDefaults.standard.integer(forKey: "pickerNightHour"), min: UserDefaults.standard.integer(forKey: "pickerNightMin"), identifier: "noite")
+        localNotification(title: "Bom dia, \(defaults.string(forKey: "name") ?? "")!",
+                          body: "Que tal começar o seu dia iniciando sua rotina de skincare?",
+                          hour: defaults.integer(forKey: "pickerMorningHour"),
+                          min: defaults.integer(forKey: "pickerMorningMin"),
+                          identifier: "manha")
+//        localNotification(title: "Boa tarde, \(defaults.string(forKey: "name") ?? "")!",
+//                          body: "qualquer coisa",
+//                          hour: defaults.integer(forKey: "pickerAfternoonHour"),
+//                          min: defaults.integer(forKey: "pickerAfternoonMin"),
+//                          identifier: "tarde")
+//        localNotification(title: "Boa noite, \(defaults.string(forKey: "name") ?? "")!",
+//                          body: "qualquer coisa",
+//                          hour: defaults.integer(forKey: "pickerNightHour"),
+//                          min: defaults.integer(forKey: "pickerNightMin"),
+//                          identifier: "noite")
         
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
@@ -92,6 +105,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UNUserNotificationCente
         
         center.add(request)
     }
+    
     func registerCategories() {
         let center = UNUserNotificationCenter.current()
         center.delegate = self
@@ -126,3 +140,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UNUserNotificationCente
     }
 
 }
+////Create the request
+//let request = UNNotificationRequest(
+//    identifier: "my.notification",
+//    content: content,
+//    trigger: trigger
+//)
+////Schedule the request
+//UNUserNotificationCenter.current().add(
+//    request, withCompletionHandler: nil)
