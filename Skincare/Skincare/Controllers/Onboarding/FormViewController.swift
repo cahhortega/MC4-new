@@ -40,15 +40,12 @@ class FormViewController: UIViewController {
             currentQuestion += 1
             if currentQuestion > 4{
                 performSegue(withIdentifier: "choiceView", sender: self)
-                
             }else{
                 newQuestion()
-                progressView.progress += 0.1
                 mixedButton.backgroundColor = UIColor(named: "gelo botao")
                 normalButton.backgroundColor = UIColor(named: "gelo botao")
                 oilyButton.backgroundColor = UIColor(named: "gelo botao")
                 dryButton.backgroundColor = UIColor(named: "gelo botao")
-               
             }
         }
         
@@ -56,6 +53,7 @@ class FormViewController: UIViewController {
     //Function that displays new question
     func newQuestion(){
         lbl.text = questions[currentQuestion]
+        progressView.progress = 0.2
         var x = 0
         for i in 1...4{
             button = view.viewWithTag(i)as! UIButton
@@ -74,7 +72,6 @@ class FormViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        progressView.progress = 0.2
         navigationController?.setNavigationBarHidden(false, animated: false)
         newQuestion()
         mixedButton.addTarget(self, action: #selector(clickButton1), for: .touchUpInside)
@@ -114,7 +111,6 @@ class FormViewController: UIViewController {
             button2.backgroundColor = UIColor(named: "gelo botao")
             button3.backgroundColor = UIColor(named: "gelo botao")
             button4.backgroundColor = UIColor(named: "gelo botao")
-            
         }
         else {
             selected.backgroundColor = UIColor(named: "gelo botao")
