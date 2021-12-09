@@ -425,7 +425,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Próximo" id="tWW-Ek-trr">
                             <color key="tintColor" name="Rosa"/>
                             <connections>
-                                <segue destination="AUe-1s-Auk" kind="show" animates="NO" id="DfP-Py-sfz"/>
+                                <segue destination="AUe-1s-Auk" kind="show" identifier="shelfForm" id="DfP-Py-sfz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1595,7 +1595,7 @@
         <!--Shelf Form View Controller-->
         <scene sceneID="s33-FL-6Rt">
             <objects>
-                <viewController id="AUe-1s-Auk" customClass="ShelfFormViewController" customModule="Skincare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="shelfForm" id="AUe-1s-Auk" customClass="ShelfFormViewController" customModule="Skincare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uUp-f0-6HP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

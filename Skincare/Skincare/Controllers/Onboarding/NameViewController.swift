@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class NameViewController: UIViewController {
     var defaults = UserDefaults.standard
     @IBOutlet weak var progressView: UIProgressView!
@@ -16,7 +18,7 @@ class NameViewController: UIViewController {
         return FormViewController(coder: coder)
     }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         progressView.progress = 0.1
@@ -24,8 +26,19 @@ class NameViewController: UIViewController {
         name.layer.borderWidth = 1
         name.layer.cornerRadius = 6
         name.layer.borderColor = UIColor(named: "Rosa")?.cgColor
-     
+        
         // Do any additional setup after loading the view.
+        
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: "Anterior",
+            style: .plain,
+            target: self,
+            action: #selector(onboardingBack)
+        )
+        
+        
+    }
     
 
            navigationItem.leftBarButtonItem = UIBarButtonItem(

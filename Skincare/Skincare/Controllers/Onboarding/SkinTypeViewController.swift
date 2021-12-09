@@ -12,6 +12,12 @@ class SkinTypeViewController: UIViewController {
     @IBOutlet var tasksSegmentedControl: UISegmentedControl!
     @IBOutlet var skinTypeLabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
+    var jsonObjects: [Product] = []
+    var data: [String] = []
+    //    var abacate: [Product] = []
+    public let group = DispatchGroup()
+    
+    
     var dataFilter = 0
     var morningTasks: [String] = ["Limpeza", "Hidratação", "Proteção"]
     var nightTasks: [String] = ["Limpeza", "Esfoliação", "Hidratação"]
@@ -24,7 +30,7 @@ class SkinTypeViewController: UIViewController {
         super.viewDidLoad()
         progressView.progress = 0.75
         navigationController?.setNavigationBarHidden(false, animated: false)
-
+        
         //tableView
         self.routineTableView.delegate = self
         self.routineTableView.dataSource = self
@@ -45,6 +51,36 @@ class SkinTypeViewController: UIViewController {
         )
         navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "Rosa")
 
+        
+        setupData(products: jsonObjects)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let url = "https://restapi-skinfeel.herokuapp.com/produtos"
+        let instance = Request()
+        group.enter()
+        instance.getData(from: url) { result in
+            defer{self.group.leave()}
+            switch result {
+            case .success(let products):
+                //                   self.jsonObjects = products
+                
+                for product in products{
+                    self.jsonObjects.append(product)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+        group.notify(queue: .main){
+            print(self.jsonObjects)
+            self.setupData(products: self.jsonObjects)
+        }
+        
+        
         
     }
     //Ação do backButton
@@ -73,6 +109,12 @@ class SkinTypeViewController: UIViewController {
     //reload da tableView
     func reload() {
         self.routineTableView.reloadData()
+    }
+    
+    func setupData(products: [Product]) {
+        for jsonObject in jsonObjects {
+            data.append(jsonObject.nome)
+        }
     }
 }
 
@@ -105,7 +147,7 @@ extension SkinTypeViewController: UITableViewDataSource {
             title = nightTasks[indexPath.row]
         default:
             title = morningTasks[indexPath.row]
-
+            
         }
         cell.textLabel?.text = title
         
@@ -113,5 +155,11 @@ extension SkinTypeViewController: UITableViewDataSource {
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "shelfForm" {
+            let objects = segue.destination as? ShelfFormViewController
+            objects?.searchProduct=data
+        }
+    }
     
 }
