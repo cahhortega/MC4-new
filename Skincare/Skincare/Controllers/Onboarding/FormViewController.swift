@@ -48,7 +48,6 @@ class FormViewController: UIViewController {
                 normalButton.backgroundColor = UIColor(named: "gelo botao")
                 oilyButton.backgroundColor = UIColor(named: "gelo botao")
                 dryButton.backgroundColor = UIColor(named: "gelo botao")
-               
             }
         }
         
@@ -56,6 +55,7 @@ class FormViewController: UIViewController {
     //Function that displays new question
     func newQuestion(){
         lbl.text = questions[currentQuestion]
+        progressView.progress = 0.2
         var x = 0
         for i in 1...4{
             button = view.viewWithTag(i)as! UIButton
@@ -114,7 +114,6 @@ class FormViewController: UIViewController {
             button2.backgroundColor = UIColor(named: "gelo botao")
             button3.backgroundColor = UIColor(named: "gelo botao")
             button4.backgroundColor = UIColor(named: "gelo botao")
-            
         }
         else {
             selected.backgroundColor = UIColor(named: "gelo botao")

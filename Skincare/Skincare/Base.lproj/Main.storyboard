@@ -318,7 +318,7 @@
         <!--Skin Type View Controller-->
         <scene sceneID="MKF-f1-Ycs">
             <objects>
-                <viewController id="49a-Dp-n1M" customClass="SkinTypeViewController" customModule="Skincare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="type" id="49a-Dp-n1M" customClass="SkinTypeViewController" customModule="Skincare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fpr-gb-Tt1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1595,7 +1595,7 @@
         <!--Shelf Form View Controller-->
         <scene sceneID="s33-FL-6Rt">
             <objects>
-                <viewController storyboardIdentifier="shelfForm" id="AUe-1s-Auk" customClass="ShelfFormViewController" customModule="Skincare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="shelf" id="AUe-1s-Auk" customClass="ShelfFormViewController" customModule="Skincare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uUp-f0-6HP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
