@@ -9,18 +9,13 @@ import UIKit
 
 class TodayViewController: UIViewController {
     @IBOutlet var routineCollectionView: UICollectionView!
-    
+    var defaults = UserDefaults.standard
     @IBOutlet var titleLabel: UILabel!
     let hour = Calendar.current.component(.hour, from: Date()) //Hora do dia
     let currentWeekDay = Calendar.current.component(.weekday, from: Date())-1 //Dia da semana (terça = 2)
     //-1 é para igualar as posições do dia com as posições dos botões no vetor
-    
     let currentDay = Calendar.current.component(.day, from: Date()) //Dia
-    let countDays = 0 //Contador de dias
-    let currentMonth = Calendar.current.component(.month, from: Date()) //Mês
-    let currentYear = Calendar.current.component(.year, from: Date()) //Ano
-    
-    var isLeap = false
+    var currentMonth = Calendar.current.component(.month, from: Date()) //Mês
     
     @IBOutlet var day1: UIButton!
     @IBOutlet var day2: UIButton!
@@ -31,7 +26,7 @@ class TodayViewController: UIViewController {
     @IBOutlet var day7: UIButton!
     
     lazy var days: [UIButton] = [day1, day2, day3, day4, day5, day6, day7]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
@@ -73,26 +68,39 @@ class TodayViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
-
+    
     func calendario(){
         var diaDepois = currentDay
         var diaAntes = currentDay
-        
+        currentMonth = 2
         for i in currentWeekDay ... 6 {
             days[i].setTitle("\(diaDepois)", for: .normal)
-            if diaDepois == 30{
-                diaDepois = 1
-            } else {
-                diaDepois += 1
+            if currentMonth == 2 {
+                if diaDepois == 28 { //FEV
+                    diaDepois = 1
+                } else {
+                    diaDepois += 1
+                }
+            } else if currentMonth == 1 || currentMonth == 3 || currentMonth == 5 || currentMonth == 7 || currentMonth == 8 || currentMonth == 10 || currentMonth == 12 { //Meses com 31 dias
+                if diaDepois == 31{
+                    diaDepois = 1
+                } else {
+                    diaDepois += 1
+                }
+            } else { //Meses com 30 dias
+                if diaDepois == 30{
+                    diaDepois = 1
+                } else {
+                    diaDepois += 1
+                }
             }
         }
-        
         for j in (0 ... currentWeekDay-1).reversed() {
             diaAntes -= 1
             days[j].setTitle("\(diaAntes)", for: .normal)
         }
     }
-        
+    
     
     
     //Função que muda o background do botão
@@ -130,11 +138,11 @@ class TodayViewController: UIViewController {
     
     func titleText(){
         if hour <= 12 {
-            titleLabel.text = "Bom dia, \(UserDefaults.standard.string(forKey: "name") ?? "")!"
+            titleLabel.text = "Bom dia, \(defaults.string(forKey: "name") ?? "")!"
         } else if hour > 12 && hour <= 18 {
-            titleLabel.text = "Boa tarde, \(UserDefaults.standard.string(forKey: "name") ?? "")!"
+            titleLabel.text = "Boa tarde, \(defaults.string(forKey: "name") ?? "")!"
         } else {
-            titleLabel.text = "Boa noite, \(UserDefaults.standard.string(forKey: "name") ?? "")!"
+            titleLabel.text = "Boa noite, \(defaults.string(forKey: "name") ?? "")!"
         }
     }
     

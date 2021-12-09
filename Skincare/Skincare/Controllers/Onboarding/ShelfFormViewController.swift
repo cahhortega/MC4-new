@@ -9,6 +9,7 @@ import UIKit
 
 class ShelfFormViewController: UIViewController{
 
+    @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var productTableView: UITableView!
     var list = ["oi", "tudo", "bem", "com", "vc", "meu", "nome", "é", "carol"] //Colocar aqui a API
@@ -19,6 +20,7 @@ class ShelfFormViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        progressView.progress = 0.85
         navigationController?.setNavigationBarHidden(false, animated: false)
         print(searchProduct)
         //tableView
@@ -32,6 +34,22 @@ class ShelfFormViewController: UIViewController{
         //searchBar
         searchBar.delegate = self
         
+        //navigationBar
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: "Anterior",
+            style: .plain,
+            target: self,
+            action: #selector(back)
+        )
+        navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "Rosa")
+
+
+    }
+    //Ação do backButton
+    @objc func back(){
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "type") as! SkinTypeViewController
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
