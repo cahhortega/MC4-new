@@ -97,18 +97,18 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         switch (identifier) {
         case .Morning: createLocalNotification(title: "Bom dia, \(defaults.string(forKey: "name") ?? "")!",
                                                body: "Que tal começar o seu dia iniciando sua rotina de skincare?",
-                                               hour: defaults.integer(forKey: "pickerMorningHour"),
-                                               min: defaults.integer(forKey: "pickerMorningMin"),
+                                               hour: defaults.integer(forKey: NotificationPicker.MorningHour.rawValue),
+                                               min: defaults.integer(forKey:NotificationPicker.MorningMin.rawValue),
                                                identifier: NotificationIdentifier.Morning.rawValue)
         case .Afternoon: createLocalNotification(title: "Boa tarde, \(defaults.string(forKey: "name") ?? "")!",
                                                  body: "qualquer coisa",
-                                                 hour: defaults.integer(forKey: "pickerAfternoonHour"),
-                                                 min: defaults.integer(forKey: "pickerAfternoonMin"),
+                                                 hour: defaults.integer(forKey: NotificationPicker.AfternoonHour.rawValue),
+                                                 min: defaults.integer(forKey: NotificationPicker.AfternoonMin.rawValue),
                                                  identifier: NotificationIdentifier.Afternoon.rawValue)
         case .Night: createLocalNotification(title: "Boa noite, \(defaults.string(forKey: "name") ?? "")!",
-                                             body: "qualquer coisa",
-                                             hour: defaults.integer(forKey: "pickerNightHour"),
-                                             min: defaults.integer(forKey: "pickerNightMin"),
+                                             body: "Vamos finalizar o dia cuidando da sua pele?",
+                                             hour: defaults.integer(forKey: NotificationPicker.NightHour.rawValue),
+                                             min: defaults.integer(forKey: NotificationPicker.NightMin.rawValue),
                                              identifier: NotificationIdentifier.Night.rawValue)
         }
     }

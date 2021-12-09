@@ -21,8 +21,8 @@
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mwT-8J-Xe6">
                                 <rect key="frame" x="20" y="108" width="374" height="4"/>
-                                <color key="backgroundColor" red="0.98431372549019602" green="0.84705882352941175" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.83529411764705885" green="0.49411764705882355" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="Rosa"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vamos nos apresentar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGF-gx-3P1">
                                 <rect key="frame" x="20" y="192" width="374" height="41"/>
@@ -101,8 +101,8 @@
                             </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Tr-bb-fd5">
                                 <rect key="frame" x="20" y="108" width="374" height="4"/>
-                                <color key="backgroundColor" red="0.98431372549999996" green="0.84705882349999995" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.83529411760000005" green="0.4941176471" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="Rosa"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vamos descobrir o seu tipo de pele" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdT-TV-fSr">
                                 <rect key="frame" x="20" y="192" width="374" height="81.5"/>
@@ -295,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Iy-uo-nwA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1034.7826086956522" y="134.59821428571428"/>
+            <point key="canvasLocation" x="959" y="135"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QZ5-Lu-pEJ">
@@ -325,8 +325,8 @@
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZHJ-aT-T02">
                                 <rect key="frame" x="20" y="108" width="374" height="4"/>
-                                <color key="backgroundColor" red="0.98431372549999996" green="0.84705882349999995" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.83529411760000005" green="0.4941176471" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="Rosa"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sua pele é oleosa" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVe-NZ-AQa">
                                 <rect key="frame" x="20" y="192" width="374" height="41"/>
@@ -444,15 +444,15 @@
         <!--Your Day View Controller-->
         <scene sceneID="bFU-lg-0KR">
             <objects>
-                <viewController id="luA-1x-Qjd" customClass="YourDayViewController" customModule="Skincare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="day" id="luA-1x-Qjd" customClass="YourDayViewController" customModule="Skincare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7og-F3-I81">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7hh-TC-gNP">
                                 <rect key="frame" x="20" y="108" width="374" height="4"/>
-                                <color key="backgroundColor" red="0.98431372549999996" green="0.84705882349999995" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.83529411760000005" green="0.4941176471" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="Rosa"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seu dia" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HyV-Jv-5MZ">
                                 <rect key="frame" x="20" y="192" width="374" height="41"/>
@@ -460,7 +460,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecione os horários que você quer iniciar suas rotinas " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngb-iI-RcU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecione os horários que você quer iniciar suas rotinas." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngb-iI-RcU">
                                 <rect key="frame" x="20" y="273" width="374" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1282,7 +1282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iut-Be-cJo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7741" y="-1174"/>
+            <point key="canvasLocation" x="7741" y="-1148"/>
         </scene>
         <!--Your Routine View Controller-->
         <scene sceneID="2LX-Li-gg1">
@@ -1312,9 +1312,9 @@
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RQx-Pw-Ul8">
                                 <rect key="frame" x="20" y="228" width="374" height="628"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="Bg"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="yourRoutine" textLabel="b2T-sL-oEY" style="IBUITableViewCellStyleDefault" id="Rpb-EC-cse" customClass="YourRoutineTableViewCell" customModule="Skincare" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="yourRoutine" textLabel="b2T-sL-oEY" style="IBUITableViewCellStyleDefault" id="Rpb-EC-cse" customClass="YourRoutineTableViewCell" customModule="Skincare" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rpb-EC-cse" id="FAZ-sx-djh">
@@ -1330,12 +1330,13 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Bg"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YUG-po-5eS"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Bg"/>
                         <constraints>
                             <constraint firstItem="RQx-Pw-Ul8" firstAttribute="top" secondItem="kvx-jC-x3r" secondAttribute="bottom" constant="8" id="0OA-bY-PaC"/>
                             <constraint firstItem="YUG-po-5eS" firstAttribute="trailing" secondItem="RQx-Pw-Ul8" secondAttribute="trailing" constant="20" id="8pU-R6-Dul"/>
@@ -1358,14 +1359,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="firstTableView" destination="RQx-Pw-Ul8" id="rYK-G8-rRv"/>
                         <outlet property="routineName" destination="ao4-7N-JA1" id="8gU-RL-HhV"/>
                         <outlet property="segmentedControl" destination="kvx-jC-x3r" id="cnr-oo-Ops"/>
+                        <outlet property="tableView" destination="RQx-Pw-Ul8" id="rYK-G8-rRv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwM-4E-kMK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7740.579710144928" y="-485.49107142857139"/>
+            <point key="canvasLocation" x="7741" y="-392"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="sCW-A3-1eT">
@@ -1381,14 +1382,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aqui você consegue alterar seu perfil e ativar as notificações que te lembram da sua rotina" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPy-cO-03o">
-                                <rect key="frame" x="20" y="189" width="374" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aqui você consegue alterar seu perfil e ativar ou desativar as notificações que te lembram da sua rotina" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPy-cO-03o">
+                                <rect key="frame" x="20" y="189" width="374" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="89S-7S-7dZ">
-                                <rect key="frame" x="20" y="270" width="374" height="443"/>
+                                <rect key="frame" x="20" y="290" width="374" height="423"/>
                                 <color key="backgroundColor" name="Bg"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="name" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="name" textLabel="F6G-P8-SJx" detailTextLabel="iaC-JB-gjL" style="IBUITableViewCellStyleValue1" id="PWY-Sk-b1f" customClass="NameTableViewCell" customModule="Skincare" customModuleProvider="target">
@@ -1437,10 +1438,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="64s-il-8b2">
-                                                    <rect key="frame" x="20" y="38" width="344" height="77"/>
+                                                    <rect key="frame" x="20" y="43" width="344" height="74"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQF-Ov-naU">
-                                                            <rect key="frame" x="0.0" y="0.0" width="75" height="77"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="75" height="74"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="HEn-Sx-gip"/>
                                                                 <constraint firstAttribute="height" constant="70" id="sWs-zw-aia"/>
@@ -1450,7 +1451,7 @@
                                                             <state key="normal" image="girl1"/>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9m-Ou-2Fd">
-                                                            <rect key="frame" x="90" y="0.0" width="74.5" height="77"/>
+                                                            <rect key="frame" x="90" y="0.0" width="74.5" height="74"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="70" id="ceN-ZD-CmU"/>
                                                                 <constraint firstAttribute="width" constant="70" id="nud-lY-fhu"/>
@@ -1460,7 +1461,7 @@
                                                             <state key="normal" image="girl2"/>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coZ-pb-ZUs">
-                                                            <rect key="frame" x="179.5" y="0.0" width="75" height="77"/>
+                                                            <rect key="frame" x="179.5" y="0.0" width="75" height="74"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="Svv-uW-Y5L"/>
                                                                 <constraint firstAttribute="height" constant="70" id="gn4-16-ArO"/>
@@ -1470,7 +1471,7 @@
                                                             <state key="normal" image="girl3"/>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wL6-3W-l05">
-                                                            <rect key="frame" x="269.5" y="0.0" width="74.5" height="77"/>
+                                                            <rect key="frame" x="269.5" y="0.0" width="74.5" height="74"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="0N9-Y0-Xxc"/>
                                                                 <constraint firstAttribute="height" constant="70" id="xWr-Bi-QoI"/>
@@ -1485,9 +1486,9 @@
                                             <constraints>
                                                 <constraint firstItem="64s-il-8b2" firstAttribute="leading" secondItem="2Eu-MX-BVa" secondAttribute="leading" constant="20" id="Zld-Ll-9g5"/>
                                                 <constraint firstItem="F7e-cJ-Cut" firstAttribute="top" secondItem="2Eu-MX-BVa" secondAttribute="topMargin" id="akk-Jl-Ik7"/>
-                                                <constraint firstAttribute="bottom" secondItem="64s-il-8b2" secondAttribute="bottom" constant="25" id="b9E-AR-ECI"/>
+                                                <constraint firstAttribute="bottom" secondItem="64s-il-8b2" secondAttribute="bottom" constant="23" id="b9E-AR-ECI"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="F7e-cJ-Cut" secondAttribute="trailing" constant="20" symbolic="YES" id="ca6-eF-7Vf"/>
-                                                <constraint firstItem="64s-il-8b2" firstAttribute="top" secondItem="F7e-cJ-Cut" secondAttribute="bottom" constant="10" id="gme-LZ-X8Z"/>
+                                                <constraint firstItem="64s-il-8b2" firstAttribute="top" secondItem="F7e-cJ-Cut" secondAttribute="bottom" constant="15" id="gme-LZ-X8Z"/>
                                                 <constraint firstItem="F7e-cJ-Cut" firstAttribute="leading" secondItem="64s-il-8b2" secondAttribute="leading" id="soT-e3-s8a"/>
                                                 <constraint firstAttribute="trailing" secondItem="64s-il-8b2" secondAttribute="trailing" constant="10" id="zVR-9a-bNP"/>
                                             </constraints>
@@ -1608,8 +1609,8 @@
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yEc-AN-GzF">
                                 <rect key="frame" x="20" y="108" width="374" height="4"/>
-                                <color key="backgroundColor" red="0.98431372549999996" green="0.84705882349999995" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.83529411760000005" green="0.4941176471" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="Rosa"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecione o que você vai usar na sua rotina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8MR-JN-9Wj">
                                 <rect key="frame" x="20" y="273" width="374" height="21"/>
@@ -1824,7 +1825,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UrU-l6-kxA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6761" y="210"/>
+            <point key="canvasLocation" x="6761" y="684"/>
         </scene>
         <!--New Product View Controller-->
         <scene sceneID="wQJ-s1-h2G">
@@ -1904,7 +1905,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4C-lI-G7M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7741" y="210"/>
+            <point key="canvasLocation" x="7741" y="684"/>
         </scene>
     </scenes>
     <color key="tintColor" name="Rosa"/>
@@ -1942,9 +1943,6 @@
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
