@@ -11,6 +11,7 @@ class SkinTypeViewController: UIViewController {
     @IBOutlet var routineTableView: UITableView!
     @IBOutlet var tasksSegmentedControl: UISegmentedControl!
     @IBOutlet var skinTypeLabel: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
     var jsonObjects: [Product] = []
     var data: [String] = []
     //    var abacate: [Product] = []
@@ -19,7 +20,6 @@ class SkinTypeViewController: UIViewController {
     
     var dataFilter = 0
     var morningTasks: [String] = ["Limpeza", "Hidratação", "Proteção"]
-    // Data for home tasks
     var nightTasks: [String] = ["Limpeza", "Esfoliação", "Hidratação"]
     var afternoonTasks: [String] = ["Proteção"]
     //    var types = ["oleosa", "seca", "normal", "mista"]
@@ -28,6 +28,7 @@ class SkinTypeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        progressView.progress = 0.75
         navigationController?.setNavigationBarHidden(false, animated: false)
         
         //tableView
@@ -41,14 +42,15 @@ class SkinTypeViewController: UIViewController {
         skinTypeLabel.attributedText = mutableAttributedString
         
         
-        
-        //navigationBar
+//        //navigationBar
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             title: "Anterior",
             style: .plain,
             target: self,
             action: #selector(back)
         )
+        navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "Rosa")
+
         
         setupData(products: jsonObjects)
         
