@@ -8,6 +8,8 @@
 import UIKit
 
 class FormViewController: UIViewController {
+    
+    @IBOutlet weak var progressView: UIProgressView!
     let questions = ["Quantas vezes por dia você sente necessidade de lavar o rosto?","Como você descreveria sua pele?", "Poros são buraquinhos na pele. Ao se olhar no espelho, você consegue observá-los?","Você costuma ter espinhas ou cravos?","Depois de praticar uma atividade física, seu rosto fica como?"]
     let answers = [["Em dias úmidos ou no verão sinto mais necessidade", "Só uma vez, geralmente para tirar a maquiagem", "Várias vezes,sinto minha pele com aspecto sujo", "Não sinto necessidade, somente no banho"],
                    ["Em alguns locais parece oleosa e em outros não", "Não possuo oleosidade aparente, estando sempre com aspecto hidratado", "Muita oleosidade por todo o rosto, podendo aparecer espinhas","Minha pele é opaca e sem brilho, às vezes avermelhada ou recssecada"],
@@ -23,6 +25,7 @@ class FormViewController: UIViewController {
     var button: UIButton = UIButton()
     
     //label
+    @IBOutlet weak var nextButton: UIBarButtonItem!
     @IBOutlet weak var lbl: UILabel!
     //button
     @IBOutlet weak var dryButton: UIButton!
@@ -34,12 +37,13 @@ class FormViewController: UIViewController {
     @IBAction func nextButton(_ sender: Any) {
         
         if currentQuestion != questions.count {
-            
             currentQuestion += 1
             if currentQuestion > 4{
                 performSegue(withIdentifier: "choiceView", sender: self)
+                
             }else{
                 newQuestion()
+                progressView.progress += 0.1
                 mixedButton.backgroundColor = UIColor(named: "gelo botao")
                 normalButton.backgroundColor = UIColor(named: "gelo botao")
                 oilyButton.backgroundColor = UIColor(named: "gelo botao")
@@ -48,7 +52,7 @@ class FormViewController: UIViewController {
         }
         
     }
-    //Function that dispays new question
+    //Function that displays new question
     func newQuestion(){
         lbl.text = questions[currentQuestion]
         progressView.progress = 0.2
@@ -60,6 +64,7 @@ class FormViewController: UIViewController {
             x += 1
         }
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         newQuestion()
         mixedButton.addTarget(self, action: #selector(clickButton1), for: .touchUpInside)
@@ -69,6 +74,7 @@ class FormViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        progressView.progress = 0.2
         navigationController?.setNavigationBarHidden(false, animated: false)
         newQuestion()
         mixedButton.addTarget(self, action: #selector(clickButton1), for: .touchUpInside)
@@ -82,11 +88,14 @@ class FormViewController: UIViewController {
             target: self,
             action: #selector(backForms)
         )
+        navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "Rosa")
+
     }
     
     @objc func backForms(){
         if currentQuestion <= 4 && currentQuestion != 0{
             currentQuestion -= 1
+            progressView.progress -= 0.1 //MELHORAR!!!
             return newQuestion()
             
         }else if currentQuestion == 0{
@@ -95,7 +104,6 @@ class FormViewController: UIViewController {
             self.navigationController?.pushViewController(vc, animated: false)
         }
     }
-    
     //ação dos botões
     @objc func clickButtons(selected: UIButton,
                            button2: UIButton,
