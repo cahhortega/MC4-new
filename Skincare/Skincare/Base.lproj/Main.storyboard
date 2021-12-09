@@ -75,13 +75,12 @@
                         <barButtonItem key="rightBarButtonItem" title="Próximo" id="jfa-GC-gDj">
                             <color key="tintColor" name="Rosa"/>
                             <connections>
-                                <segue destination="wJv-RP-ls9" kind="show" destinationCreationSelector="nextButton:" animates="NO" id="TF9-3y-4ps"/>
+                                <segue destination="wJv-RP-ls9" kind="show" destinationCreationSelector="nextButton:" id="TF9-3y-4ps"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="name" destination="u1p-4a-scJ" id="cXP-MP-VNO"/>
-                        <outlet property="progressView" destination="mwT-8J-Xe6" id="sDY-FK-CMd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -225,11 +224,9 @@
                         <outlet property="dryButton" destination="FM4-8g-m1H" id="rmI-fs-S6h"/>
                         <outlet property="lbl" destination="Zpd-N7-r6G" id="Yu4-t6-TGp"/>
                         <outlet property="mixedButton" destination="gQz-1m-2NX" id="I9V-tA-Fq6"/>
-                        <outlet property="nextButton" destination="boK-oO-lex" id="Suw-9j-SdF"/>
                         <outlet property="normalButton" destination="IT1-fR-7vd" id="Ep1-ql-emO"/>
                         <outlet property="oilyButton" destination="o7a-au-ERr" id="h35-SQ-hpH"/>
-                        <outlet property="progressView" destination="5Tr-bb-fd5" id="Cf1-q2-37C"/>
-                        <segue destination="49a-Dp-n1M" kind="show" identifier="choiceView" animates="NO" id="Jk1-ZQ-oHw"/>
+                        <segue destination="49a-Dp-n1M" kind="show" identifier="choiceView" id="Jk1-ZQ-oHw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OU1-NC-9r4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -288,7 +285,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Próximo" id="ViL-mL-aGn">
                             <color key="tintColor" name="Rosa"/>
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="oL9-HX-C7P"/>
+                                <segue destination="BYZ-38-t0r" kind="show" id="oL9-HX-C7P"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -430,7 +427,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="progressView" destination="ZHJ-aT-T02" id="Gdm-10-qbm"/>
                         <outlet property="routineTableView" destination="7VE-EU-Hru" id="rKE-tO-7nb"/>
                         <outlet property="skinTypeLabel" destination="KVe-NZ-AQa" id="sWk-bS-DOr"/>
                         <outlet property="tasksSegmentedControl" destination="E7q-lF-TJd" id="mfL-Dy-4GD"/>
@@ -564,16 +560,10 @@
                         <barButtonItem key="rightBarButtonItem" title="Concluir" id="J67-M2-AKZ">
                             <color key="tintColor" name="Rosa"/>
                             <connections>
-                                <segue destination="9rV-R4-KIP" kind="show" destinationCreationSelector="finishButton:" animates="NO" id="Xqk-OJ-nch"/>
+                                <segue destination="9rV-R4-KIP" kind="show" id="Xqk-OJ-nch"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="pickerAfternoon" destination="kes-Nk-86j" id="lwN-5l-rTa"/>
-                        <outlet property="pickerMorning" destination="0jt-Mg-TP7" id="BBV-JW-Qjg"/>
-                        <outlet property="pickerNight" destination="G3Y-Y3-PHH" id="kun-B2-mm7"/>
-                        <outlet property="progressView" destination="7hh-TC-gNP" id="b7L-mf-wuW"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRj-A8-SLU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -899,7 +889,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="nameRoutine" destination="yfQ-fu-pr0" id="8bv-QO-HkQ"/>
-                                            <segue destination="5FF-tN-0kE" kind="show" id="2gu-np-Uej"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -936,11 +925,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Hoje" image="calendar" catalog="system" id="9ue-FL-Sm9"/>
-                    <navigationItem key="navigationItem" id="vpI-Ne-hpS">
-                        <barButtonItem key="backBarButtonItem" title="Voltar" id="U9c-lz-PFy">
-                            <color key="tintColor" name="Rosa"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="vpI-Ne-hpS"/>
                     <connections>
                         <outlet property="day1" destination="nLk-L0-veb" id="04b-C8-iuS"/>
                         <outlet property="day2" destination="BWL-WN-Ss5" id="zAI-Jl-uiu"/>
@@ -955,7 +940,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sL6-bZ-gka" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6761" y="-1111"/>
+            <point key="canvasLocation" x="6760.8695652173919" y="-856.47321428571422"/>
         </scene>
         <!--New Routine View Controller-->
         <scene sceneID="as3-fL-cWi">
@@ -1257,9 +1242,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5M6-GX-TOz">
-                        <barButtonItem key="backBarButtonItem" title="Voltar" id="seL-OI-rsu">
-                            <color key="tintColor" name="Rosa"/>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="GNu-6A-t0r">
                             <color key="tintColor" name="Rosa"/>
                         </barButtonItem>
@@ -1282,90 +1264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iut-Be-cJo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7741" y="-1174"/>
-        </scene>
-        <!--Your Routine View Controller-->
-        <scene sceneID="2LX-Li-gg1">
-            <objects>
-                <viewController id="5FF-tN-0kE" customClass="YourRoutineViewController" customModule="Skincare" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ahx-o0-2bI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome da rotina" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ao4-7N-JA1">
-                                <rect key="frame" x="20" y="128" width="374" height="41"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kvx-jC-x3r">
-                                <rect key="frame" x="20" y="189" width="374" height="32"/>
-                                <segments>
-                                    <segment title="Manhã"/>
-                                    <segment title="Tarde"/>
-                                    <segment title="Noite"/>
-                                </segments>
-                                <connections>
-                                    <action selector="segmentedControlActionWithSender:" destination="5FF-tN-0kE" eventType="valueChanged" id="H8E-T0-Ogq"/>
-                                    <action selector="segmentedControlActionWithSender:" destination="49a-Dp-n1M" eventType="valueChanged" id="VTM-Ts-gxF"/>
-                                </connections>
-                            </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RQx-Pw-Ul8">
-                                <rect key="frame" x="20" y="228" width="374" height="628"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="yourRoutine" textLabel="b2T-sL-oEY" style="IBUITableViewCellStyleDefault" id="Rpb-EC-cse" customClass="YourRoutineTableViewCell" customModule="Skincare" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="374" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rpb-EC-cse" id="FAZ-sx-djh">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b2T-sL-oEY">
-                                                    <rect key="frame" x="20" y="0.0" width="334" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="YUG-po-5eS"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="RQx-Pw-Ul8" firstAttribute="top" secondItem="kvx-jC-x3r" secondAttribute="bottom" constant="8" id="0OA-bY-PaC"/>
-                            <constraint firstItem="YUG-po-5eS" firstAttribute="trailing" secondItem="RQx-Pw-Ul8" secondAttribute="trailing" constant="20" id="8pU-R6-Dul"/>
-                            <constraint firstItem="YUG-po-5eS" firstAttribute="trailing" secondItem="ao4-7N-JA1" secondAttribute="trailing" constant="20" id="BFM-K3-djR"/>
-                            <constraint firstItem="kvx-jC-x3r" firstAttribute="leading" secondItem="YUG-po-5eS" secondAttribute="leading" constant="20" id="FHd-qr-E4X"/>
-                            <constraint firstItem="YUG-po-5eS" firstAttribute="trailing" secondItem="kvx-jC-x3r" secondAttribute="trailing" constant="20" id="Ovq-FM-7Ns"/>
-                            <constraint firstItem="ao4-7N-JA1" firstAttribute="leading" secondItem="ahx-o0-2bI" secondAttribute="leading" constant="20" id="QpP-Ss-f4J"/>
-                            <constraint firstItem="kvx-jC-x3r" firstAttribute="top" secondItem="ao4-7N-JA1" secondAttribute="bottom" constant="20" id="apM-4k-WUQ"/>
-                            <constraint firstAttribute="bottom" secondItem="RQx-Pw-Ul8" secondAttribute="bottom" constant="40" id="emc-7f-nqo"/>
-                            <constraint firstItem="ao4-7N-JA1" firstAttribute="top" secondItem="YUG-po-5eS" secondAttribute="top" constant="40" id="xo4-0O-AWi"/>
-                            <constraint firstItem="RQx-Pw-Ul8" firstAttribute="leading" secondItem="YUG-po-5eS" secondAttribute="leading" constant="20" id="xxq-Tt-bLO"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="7VE-JS-zVz">
-                        <barButtonItem key="backBarButtonItem" title="Voltar" id="HYk-a9-i2Y">
-                            <color key="tintColor" name="Rosa"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="1XS-gW-oRt">
-                            <color key="tintColor" name="Rosa"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="firstTableView" destination="RQx-Pw-Ul8" id="rYK-G8-rRv"/>
-                        <outlet property="routineName" destination="ao4-7N-JA1" id="8gU-RL-HhV"/>
-                        <outlet property="segmentedControl" destination="kvx-jC-x3r" id="cnr-oo-Ops"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gwM-4E-kMK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7740.579710144928" y="-485.49107142857139"/>
+            <point key="canvasLocation" x="7740.579710144928" y="-540.40178571428567"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="sCW-A3-1eT">
@@ -1579,18 +1478,14 @@
                             <constraint firstItem="89S-7S-7dZ" firstAttribute="leading" secondItem="VI0-qy-0U4" secondAttribute="leading" constant="20" id="xHn-n9-gYb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="HWP-KZ-JP3">
-                        <barButtonItem key="backBarButtonItem" title="Voltar" id="xKi-g4-Y5V">
-                            <color key="tintColor" name="Rosa"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="HWP-KZ-JP3"/>
                     <connections>
                         <outlet property="settingsTableView" destination="89S-7S-7dZ" id="CYx-GJ-yAn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9T-uh-C1W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7741" y="-1886"/>
+            <point key="canvasLocation" x="7742" y="-1221"/>
         </scene>
         <!--Shelf Form View Controller-->
         <scene sceneID="s33-FL-6Rt">
@@ -1681,14 +1576,13 @@
                         <barButtonItem key="rightBarButtonItem" title="Próximo" id="Vlt-Ag-VeS">
                             <color key="tintColor" name="Rosa"/>
                             <connections>
-                                <segue destination="luA-1x-Qjd" kind="show" animates="NO" id="X6Q-gH-T0y"/>
+                                <segue destination="luA-1x-Qjd" kind="show" id="X6Q-gH-T0y"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="productTableView" destination="whE-K2-ZTN" id="3mw-UV-8QF"/>
-                        <outlet property="progressView" destination="yEc-AN-GzF" id="env-OD-jj6"/>
                         <outlet property="searchBar" destination="YmT-jk-iAb" id="UkE-Lv-stp"/>
                     </connections>
                 </viewController>
@@ -1701,11 +1595,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="homeView" automaticallyAdjustsScrollViewInsets="NO" id="9rV-R4-KIP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="2yL-W5-9gw">
-                        <barButtonItem key="backBarButtonItem" title="Voltar" id="B9M-Uj-cNB">
-                            <color key="tintColor" name="Rosa"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="2yL-W5-9gw"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qx0-PZ-GKT">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1889,9 +1779,6 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Lqo-L9-doA">
-                        <barButtonItem key="backBarButtonItem" title="Voltar" id="DfS-LW-opJ">
-                            <color key="tintColor" name="Rosa"/>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="J4q-Wg-oz2">
                             <color key="tintColor" name="Rosa"/>
                         </barButtonItem>
@@ -1942,9 +1829,6 @@
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
