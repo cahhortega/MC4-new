@@ -65,8 +65,6 @@ class SkinTypeViewController: UIViewController {
             defer{self.group.leave()}
             switch result {
             case .success(let products):
-                //                   self.jsonObjects = products
-                
                 for product in products{
                     self.jsonObjects.append(product)
                 }

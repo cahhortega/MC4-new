@@ -12,8 +12,9 @@ class ShelfFormViewController: UIViewController{
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var productTableView: UITableView!
-    var list = ["oi", "tudo", "bem", "com", "vc", "meu", "nome", "é", "carol"] //Colocar aqui a API
-    var searchProduct: [String]?
+    var searchProduct: [String] = []
+    var filteredData: [String]!
+    
     
 
     
@@ -23,6 +24,7 @@ class ShelfFormViewController: UIViewController{
         progressView.progress = 0.85
         navigationController?.setNavigationBarHidden(false, animated: false)
         print(searchProduct)
+        filteredData = searchProduct
         //tableView
         self.productTableView.delegate = self
         self.productTableView.dataSource = self
@@ -63,26 +65,27 @@ class ShelfFormViewController: UIViewController{
 extension ShelfFormViewController: UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let products = searchProduct else{
-            return 0
-        }
-        return products.count
+        return filteredData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "produto", for: indexPath) as! ShelfFormTableViewCell
-        if let products = searchProduct {
-            cell.textLabel?.text = products[indexPath.row]
-            
-        }
-        
+        cell.textLabel?.text = filteredData[indexPath.row]
         return cell
     }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchProduct = searchText.isEmpty ? searchProduct : searchProduct!.filter({(dataString: String) -> Bool in
-            return dataString.range(of: searchText, options: .caseInsensitive) != nil
-        })
-        productTableView.reloadData()
+        filteredData = []
+        if searchText == ""{
+            filteredData = searchProduct
+        }else {
+            for product in searchProduct{
+                if product.lowercased().contains(searchText.lowercased()){
+                    filteredData.append(product)
+                }
+            }
+        }
+        self.productTableView.reloadData()
     }
 }
 
