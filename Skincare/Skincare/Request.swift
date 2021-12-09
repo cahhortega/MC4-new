@@ -12,7 +12,6 @@ class Request {
 
     public func getData(from url: String, _ completion: @escaping (Result<[Product], Error>) -> Void){
         URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: {data, response, error in
-            
             guard let data = data, error == nil else{
                 print("Algo de errado não esta certo.")
                 return
