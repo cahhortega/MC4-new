@@ -34,23 +34,13 @@ class NameViewController: UIViewController {
             title: "Anterior",
             style: .plain,
             target: self,
-            action: #selector(onboardingBack)
-        )
+            action: #selector(onboardingBack))
+            navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "Rosa")
+
         
         
     }
-    
 
-           navigationItem.leftBarButtonItem = UIBarButtonItem(
-               title: "Anterior",
-               style: .plain,
-               target: self,
-               action: #selector(onboardingBack)
-           )
-        navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "Rosa")
-
-       
-       }
        @objc func onboardingBack(){
                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                let vc = storyBoard.instantiateViewController(identifier: "firstView") as! OnboardingViewController
