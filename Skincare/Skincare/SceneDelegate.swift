@@ -24,8 +24,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navigationController = UINavigationController(rootViewController: vc)
         window?.makeKeyAndVisible()
         window?.rootViewController = navigationController
-        navigationController.navigationItem.backBarButtonItem?.tintColor = UIColor(named: "Rosa")
-
         
     }
 
