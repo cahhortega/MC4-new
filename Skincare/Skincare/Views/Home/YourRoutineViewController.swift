@@ -11,21 +11,25 @@ import UIKit
 class YourRoutineViewController: UIViewController {
     
     @IBOutlet weak var routineName: UILabel!
-    @IBOutlet weak var firstTableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     var dataFilter = 0
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.firstTableView.delegate = self
-        self.firstTableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         
         navigationController?.setNavigationBarHidden(false, animated: false)
+        
+        //multi seleção
+        self.tableView.allowsMultipleSelection = true
+        self.tableView.allowsMultipleSelectionDuringEditing = true
         
     }
     //reload da tableView
     func reload() {
-        self.firstTableView.reloadData()
+        self.tableView.reloadData()
     }
     
     //segmentedControl
@@ -128,7 +132,7 @@ extension YourRoutineViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell  = firstTableView.dequeueReusableCell(withIdentifier: "yourRoutine", for: indexPath) as! YourRoutineTableViewCell
+        let cell  = tableView.dequeueReusableCell(withIdentifier: "yourRoutine", for: indexPath) as! YourRoutineTableViewCell
         cell.textLabel?.text = "oi" 
         return cell
         
