@@ -11,10 +11,7 @@ class NewRoutineViewController: UIViewController {
     @IBOutlet var tasksTableView: UITableView!
     @IBOutlet var routineName: UITextField!
     @IBOutlet var segmentedControl: UISegmentedControl!
-    
-    @IBOutlet var button1: UIButton!
-    @IBOutlet var button2: UIButton!
-    @IBOutlet var button3: UIButton!
+
     
     var dataFilter = 0
     var morningTasks: [String] = ["Limpeza", "Hidratação", "Proteção"]
@@ -111,51 +108,114 @@ extension NewRoutineViewController: UITableViewDelegate{
 
 extension NewRoutineViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+//        switch dataFilter {
+//        case 0:
+//            return 1
+//        case 1:
+//            return 1
+//        case 2:
+//            return 1
+//        default:
+//            return 1
+//        }
+//
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
         switch dataFilter {
         case 0:
-            button1.isHidden = false
-            button2.isHidden = false
-            button3.isHidden = false
-            button2.tintColor = UIColor(named: "Rosa")
-            button3.tintColor = UIColor(named: "Rosa")
-            return morningTasks.count
+            return 3
         case 1:
-            button2.tintColor = UIColor(named: "Bg")
-            button3.tintColor = UIColor(named: "Bg")
-            return afternoonTasks.count
+            return 1
         case 2:
-            button1.isHidden = false
-            button2.isHidden = false
-            button3.isHidden = false
-            button2.tintColor = UIColor(named: "Rosa")
-            button3.tintColor = UIColor(named: "Rosa")
-            return nightTasks.count
+            return 3
         default:
-            button1.isHidden = false
-            button2.isHidden = false
-            button3.isHidden = false
-            button2.tintColor = UIColor(named: "Rosa")
-            button3.tintColor = UIColor(named: "Rosa")
-            return morningTasks.count
+            return 3
         }
         
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell  = tasksTableView.dequeueReusableCell(withIdentifier: "task", for: indexPath) as! TaskTableViewCell
-        var title: String?
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch dataFilter {
         case 0:
-            title = morningTasks[indexPath.row]
+            switch section {
+            case 0:
+                return "Limpeza"
+            case 1:
+                return "Hidratação"
+            case 2:
+                return "Proteção"
+            default:
+                return "Limpeza"
+                
+            }
         case 1:
-            title = afternoonTasks[indexPath.row]
+            switch section {
+            case 0:
+                return "Proteção"
+            default:
+                return "Proteção"
+                
+            }
         case 2:
-            title = nightTasks[indexPath.row]
+            switch section {
+            case 0:
+                return "Limpeza"
+            case 1:
+                return "Esfoliação"
+            case 2:
+                return "Proteção"
+            default:
+                return "Limpeza"
+                
+            }
         default:
-            title = morningTasks[indexPath.row]
-
+            switch section {
+            case 0:
+                return "Limpeza"
+            case 1:
+                return "Hidratação"
+            case 2:
+                return "Proteção"
+            default:
+                return "Limpeza"
+                
+            }
+            
         }
-        cell.textLabel?.text = title
+        
+    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+        if editingStyle == .insert {
+//            numberOfCell -= 1
+//            allCellsText.remove(at: indexPath.row)
+            tasksTableView.beginUpdates()
+//            tasksTableView.deleteRows(at: [indexPath], with: .automatic)
+            tasksTableView.endUpdates()
+        }
+    }
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        allCellsText.append(textField.text!)
+//        print(allCellsText)
+//    }
+//
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tasksTableView.dequeueReusableCell(withIdentifier: "add", for: indexPath) as! AddProductTableViewCell
+//        switch dataFilter {
+//        case 0:
+//            cell.titleTask.text = morningTasks[indexPath.row]
+//        case 1:
+//            cell.titleTask.text = afternoonTasks[indexPath.row]
+//        case 2:
+//            cell.titleTask.text = nightTasks[indexPath.row]
+//        default:
+//            cell.titleTask.text = morningTasks[indexPath.row]
+//
+//        }
         
         return cell
         

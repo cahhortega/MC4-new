@@ -18,7 +18,9 @@ class NewProductViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationController?.setNavigationBarHidden(false, animated: false)
+//        navigationItem.setHidesBackButton(true, animated: false)
 
         //tableView
         self.productTableView.delegate = self
