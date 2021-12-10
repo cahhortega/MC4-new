@@ -39,6 +39,7 @@
 		A0FF1306275EB54900A86323 /* ShelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF1305275EB54900A86323 /* ShelfCell.swift */; };
 		A0FF1308275EBC6E00A86323 /* NewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF1307275EBC6E00A86323 /* NewProductViewController.swift */; };
 		DF46B8372757EB920076F349 /* ShelfFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF46B8362757EB920076F349 /* ShelfFormViewController.swift */; };
+		DFA15A08276295B800DFA649 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA15A07276295B800DFA649 /* CircularProgressBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		A0FF1305275EB54900A86323 /* ShelfCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfCell.swift; sourceTree = "<group>"; };
 		A0FF1307275EBC6E00A86323 /* NewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductViewController.swift; sourceTree = "<group>"; };
 		DF46B8362757EB920076F349 /* ShelfFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfFormViewController.swift; sourceTree = "<group>"; };
+		DFA15A07276295B800DFA649 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				A02F0F662758242C00AFD1C1 /* RoutineCollectionViewCell.swift */,
+				DFA15A07276295B800DFA649 /* CircularProgressBar.swift */,
 			);
 			path = "Today Cells";
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				212B04B5275FD82500D9DBED /* Model.swift in Sources */,
 				A08316D027627BDA006F21B4 /* NotificationManager.swift in Sources */,
 				A0F388CF2756F9C800153D13 /* YourDayViewController.swift in Sources */,
+				DFA15A08276295B800DFA649 /* CircularProgressBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
