@@ -40,7 +40,6 @@ class FormViewController: UIViewController {
             currentQuestion += 1
             if currentQuestion > 4{
                 performSegue(withIdentifier: "choiceView", sender: self)
-                
             }else{
                 newQuestion()
                 progressView.progress += 0.1
@@ -50,7 +49,6 @@ class FormViewController: UIViewController {
                 dryButton.backgroundColor = UIColor(named: "gelo botao")
             }
         }
-        
     }
     //Function that displays new question
     func newQuestion(){
@@ -73,7 +71,12 @@ class FormViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        progressView.progress = 0.2
+        if progressView.progress == 0.0{
+            progressView.progress = 0.2
+            if currentQuestion == 4 {
+                progressView.progress = 0.6
+            }
+        }
         navigationController?.setNavigationBarHidden(false, animated: false)
         newQuestion()
         mixedButton.addTarget(self, action: #selector(clickButton1), for: .touchUpInside)

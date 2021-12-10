@@ -77,18 +77,15 @@ class SkinTypeViewController: UIViewController {
             print(self.jsonObjects)
             self.setupData(products: self.jsonObjects)
         }
-        
-        
-        
     }
     //Ação do backButton
     @objc func back(){
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(identifier: "forms") as! FormViewController
+        progressView.progress = 0.6
         vc.currentQuestion = vc.currentQuestion <= vc.questions.count ? 4 : 1
         self.navigationController?.pushViewController(vc, animated: false)
     }
-    
     //segmentedControl
     @IBAction func segmentedControlAction(sender: AnyObject) {
         switch tasksSegmentedControl.selectedSegmentIndex {
