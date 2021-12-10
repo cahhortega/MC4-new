@@ -22,15 +22,46 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         NotificationManager.shared.registroLocalNotifications()
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: UserDefaults.standard.string(forKey: "name") == nil ? "firstView" : "homeView")
-        let navigationController = UINavigationController(rootViewController: vc)
         window?.makeKeyAndVisible()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+        let vc = storyboard.instantiateViewController(withIdentifier: UserDefaults.standard.string(forKey: NotificationPicker.MorningHour.rawValue) == nil ? "firstView" : "homeView")
+        let navigationController = UINavigationController(rootViewController: vc)
         window?.rootViewController = navigationController
         navigationController.navigationItem.backBarButtonItem?.tintColor = UIColor(named: "Rosa")
-
+        /*
+         identifiers
+         tela forms = forms
+         tela pele = type
+         tela estante = shelf
+         tela dia = day
+         
+         
+         */
         
+//        //Qual tela o app deve iniciar?
+//        if defaults.string(forKey: "name") == nil {
+//            print("tela nome")
+//            setupScreens(identifier: "firstView")
+//        } else if defaults.string(forKey: NotificationPicker.MorningHour.rawValue) == nil {
+//            setupScreens(identifier: "day")
+//            print ("tela pickers")
+//
+//        } else {
+//            print("tela home")
+//            setupScreens(identifier: "homeView")
+//
+//        }
+//
     }
+    
+//    func setupScreens(identifier: String){
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: identifier)
+//        let navigationController = UINavigationController(rootViewController: vc)
+//        window?.rootViewController = navigationController
+//        navigationController.navigationItem.backBarButtonItem?.tintColor = UIColor(named: "Rosa")
+//    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
@@ -55,15 +86,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
-        
 //        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
-
-
-
-    
-    
-
 
 }
 

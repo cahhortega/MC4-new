@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		212B04B5275FD82500D9DBED /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B04B4275FD82500D9DBED /* model.swift */; };
+		212B04B5275FD82500D9DBED /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B04B4275FD82500D9DBED /* Model.swift */; };
 		212B04B7275FD84900D9DBED /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B04B6275FD84900D9DBED /* Request.swift */; };
 		99B1646727516C6100DE8120 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B1646627516C6100DE8120 /* AppDelegate.swift */; };
 		99B1646927516C6100DE8120 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B1646827516C6100DE8120 /* SceneDelegate.swift */; };
@@ -26,7 +26,7 @@
 		A02F0F6C275935EF00AFD1C1 /* NewRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F0F6B275935EF00AFD1C1 /* NewRoutineViewController.swift */; };
 		A02F0F6E275940F700AFD1C1 /* SkinRoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F0F6D275940F700AFD1C1 /* SkinRoutineTableViewCell.swift */; };
 		A02F0F7127595EED00AFD1C1 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F0F7027595EED00AFD1C1 /* TaskTableViewCell.swift */; };
-		A08316CE27626F50006F21B4 /* NotificationIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08316CD27626F50006F21B4 /* NotificationIdentifier.swift */; };
+		A08316CE27626F50006F21B4 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08316CD27626F50006F21B4 /* Identifiers.swift */; };
 		A08316D027627BDA006F21B4 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08316CF27627BDA006F21B4 /* NotificationManager.swift */; };
 		A09A402D275E6AD500E6122F /* ShelfFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09A402C275E6AD500E6122F /* ShelfFormTableViewCell.swift */; };
 		A0F388C92756DDC700153D13 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F388C82756DDC700153D13 /* NameViewController.swift */; };
@@ -43,7 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		212B04B4275FD82500D9DBED /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
+		212B04B4275FD82500D9DBED /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		212B04B6275FD84900D9DBED /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		99B1646327516C6100DE8120 /* Skincare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skincare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B1646627516C6100DE8120 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 		A02F0F6B275935EF00AFD1C1 /* NewRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoutineViewController.swift; sourceTree = "<group>"; };
 		A02F0F6D275940F700AFD1C1 /* SkinRoutineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinRoutineTableViewCell.swift; sourceTree = "<group>"; };
 		A02F0F7027595EED00AFD1C1 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
-		A08316CD27626F50006F21B4 /* NotificationIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationIdentifier.swift; sourceTree = "<group>"; };
+		A08316CD27626F50006F21B4 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		A08316CF27627BDA006F21B4 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		A09A402C275E6AD500E6122F /* ShelfFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfFormTableViewCell.swift; sourceTree = "<group>"; };
 		A0F388C82756DDC700153D13 /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
@@ -110,20 +110,36 @@
 		99B1646527516C6100DE8120 /* Skincare */ = {
 			isa = PBXGroup;
 			children = (
-				A08316CC27626F34006F21B4 /* Notifications */,
 				99B1646627516C6100DE8120 /* AppDelegate.swift */,
 				99B1646827516C6100DE8120 /* SceneDelegate.swift */,
-				212B04B6275FD84900D9DBED /* Request.swift */,
-				212B04B4275FD82500D9DBED /* model.swift */,
-				A0F388D02756F9F100153D13 /* Controllers */,
+				A08316CC27626F34006F21B4 /* Notifications */,
+				A012EDBC2762984A00FD6030 /* Model */,
+				A0F388D02756F9F100153D13 /* Views */,
+				A012EDBD2762987000FD6030 /* Controller */,
 				A02F0F74275A938200AFD1C1 /* Cells */,
 				99B1646C27516C6100DE8120 /* Main.storyboard */,
-				99B1647227516C6300DE8120 /* Assets.xcassets */,
 				99B1647427516C6300DE8120 /* LaunchScreen.storyboard */,
+				99B1647227516C6300DE8120 /* Assets.xcassets */,
 				99B1647727516C6300DE8120 /* Info.plist */,
 				99B1646F27516C6100DE8120 /* Skincare.xcdatamodeld */,
 			);
 			path = Skincare;
+			sourceTree = "<group>";
+		};
+		A012EDBC2762984A00FD6030 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				212B04B4275FD82500D9DBED /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A012EDBD2762987000FD6030 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				212B04B6275FD84900D9DBED /* Request.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		A02F0F632758142A00AFD1C1 /* Settings Cells */ = {
@@ -178,7 +194,7 @@
 		A08316CC27626F34006F21B4 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				A08316CD27626F50006F21B4 /* NotificationIdentifier.swift */,
+				A08316CD27626F50006F21B4 /* Identifiers.swift */,
 				A08316CF27627BDA006F21B4 /* NotificationManager.swift */,
 			);
 			path = Notifications;
@@ -193,13 +209,13 @@
 			path = "Shelf Cells";
 			sourceTree = "<group>";
 		};
-		A0F388D02756F9F100153D13 /* Controllers */ = {
+		A0F388D02756F9F100153D13 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				A0FF1309275FDF9000A86323 /* Onboarding */,
 				A0FF130A275FDF9F00A86323 /* Home */,
 			);
-			path = Controllers;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A0FDB2BB27624E1F00F3B35D /* YourRoutine Cells */ = {
@@ -328,12 +344,12 @@
 				A02F0F5C275813D800AFD1C1 /* SettingsViewController.swift in Sources */,
 				A02F0F672758242C00AFD1C1 /* RoutineCollectionViewCell.swift in Sources */,
 				212B04B7275FD84900D9DBED /* Request.swift in Sources */,
-				A08316CE27626F50006F21B4 /* NotificationIdentifier.swift in Sources */,
+				A08316CE27626F50006F21B4 /* Identifiers.swift in Sources */,
 				A02F0F622758142400AFD1C1 /* DayTableViewCell.swift in Sources */,
 				A0F388CD2756DE0600153D13 /* SkinTypeViewController.swift in Sources */,
 				A09A402D275E6AD500E6122F /* ShelfFormTableViewCell.swift in Sources */,
 				A0F388C92756DDC700153D13 /* NameViewController.swift in Sources */,
-				212B04B5275FD82500D9DBED /* model.swift in Sources */,
+				212B04B5275FD82500D9DBED /* Model.swift in Sources */,
 				A08316D027627BDA006F21B4 /* NotificationManager.swift in Sources */,
 				A0F388CF2756F9C800153D13 /* YourDayViewController.swift in Sources */,
 				DFA15A08276295B800DFA649 /* CircularProgressBar.swift in Sources */,

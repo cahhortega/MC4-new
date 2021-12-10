@@ -55,7 +55,6 @@ class FormViewController: UIViewController {
     //Function that displays new question
     func newQuestion(){
         lbl.text = questions[currentQuestion]
-        progressView.progress = 0.2
         var x = 0
         for i in 1...4{
             button = view.viewWithTag(i)as! UIButton
