@@ -17,6 +17,7 @@ class TodayViewController: UIViewController {
     let currentDay = Calendar.current.component(.day, from: Date()) //Dia
     var currentMonth = Calendar.current.component(.month, from: Date()) //Mês
     
+    
     @IBOutlet var day1: UIButton!
     @IBOutlet var day2: UIButton!
     @IBOutlet var day3: UIButton!
@@ -34,6 +35,8 @@ class TodayViewController: UIViewController {
         self.routineCollectionView.delegate = self
         self.routineCollectionView.dataSource = self
         
+        
+
         //Botões dos dias da semana
         day1.translatesAutoresizingMaskIntoConstraints = false
         day1.addTarget(self, action: #selector(clicarDia1), for: .touchUpInside)
@@ -64,6 +67,10 @@ class TodayViewController: UIViewController {
         calendario()
         
     }
+    
+
+
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
