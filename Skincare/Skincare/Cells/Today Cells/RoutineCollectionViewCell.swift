@@ -9,6 +9,7 @@ import UIKit
 
 class RoutineCollectionViewCell: UICollectionViewCell {
     @IBOutlet var nameRoutine: UILabel!
+    var circularView: UIView = CircularProgressBarView()
     
     override func awakeFromNib() {
         super.awakeFromNib()
