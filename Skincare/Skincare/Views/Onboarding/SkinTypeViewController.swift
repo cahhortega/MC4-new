@@ -13,8 +13,7 @@ class SkinTypeViewController: UIViewController {
     @IBOutlet var skinTypeLabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
     var jsonObjects: [Product] = []
-    var data: [String] = []
-    //    var abacate: [Product] = []
+    public var data: [String] = []
     public let group = DispatchGroup()
     
     

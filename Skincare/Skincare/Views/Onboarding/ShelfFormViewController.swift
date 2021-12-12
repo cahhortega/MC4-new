@@ -54,9 +54,6 @@ class ShelfFormViewController: UIViewController{
         self.navigationController?.pushViewController(vc, animated: false)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
     
     
 
