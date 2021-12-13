@@ -17,6 +17,7 @@ class TodayViewController: UIViewController {
     let currentDay = Calendar.current.component(.day, from: Date()) //Dia
     var currentMonth = Calendar.current.component(.month, from: Date()) //Mês
     
+    @IBOutlet weak var profileAvatar: UIButton!
     
     @IBOutlet var day1: UIButton!
     @IBOutlet var day2: UIButton!
@@ -34,6 +35,10 @@ class TodayViewController: UIViewController {
         //collectionView
         self.routineCollectionView.delegate = self
         self.routineCollectionView.dataSource = self
+        defaults.set("girl1-profile", forKey: "profileImage")
+        
+        var buttonImage = UIImage(named: defaults.string(forKey: "profileImage")!)
+        profileAvatar.setImage(buttonImage, for: .normal)
         
         
 
