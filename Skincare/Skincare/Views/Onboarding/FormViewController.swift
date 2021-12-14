@@ -46,17 +46,8 @@ class FormViewController: UIViewController {
     
     var button: UIButton = UIButton() //Botão questão
     
-    var colorCounter: [String] = ["nada","nada","nada","nada", "nada"]{ //Contador para colocar as cores
-        didSet{
-            finishButton()
-        }
-    }
-    
-    var formCounter: [Int] = [0,0,0,0,0] {
-        didSet {
-            finishButton()
-        }
-    }
+    var formCounter = UserDefaults.standard.array(forKey: "contador") as? [Int] ?? [0,0,0,0,0] //Pega defaults
+    var colorCounter = UserDefaults.standard.array(forKey: "corContador") as? [String] ?? ["a","a","a","a","a"] //Pega defaults
     //label
     @IBOutlet weak var nextButton: UIBarButtonItem!
     @IBOutlet weak var lbl: UILabel!
@@ -69,7 +60,6 @@ class FormViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationController?.setNavigationBarHidden(false, animated: false)
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             title: "Anterior",
@@ -226,7 +216,10 @@ class FormViewController: UIViewController {
         if currentQuestion != questions.count {
             currentQuestion += 1
             if currentQuestion > 4 {
+                defaults.setValue(formCounter, forKey: "contador")
+                defaults.setValue(colorCounter, forKey: "corContador")
                 performSegue(withIdentifier: "choiceView", sender: self)
+
             } else {
                 newQuestion()
                 progressView.progress += 0.1
@@ -235,13 +228,7 @@ class FormViewController: UIViewController {
         }
     }
     
-    func finishButton() {
-        if formCounter[0] != 0 && formCounter[1] != 0 && formCounter[2] != 0 && formCounter[3] != 0 && formCounter[4] != 0 {
-            defaults.setValue(formCounter, forKey: "contador")
-            defaults.setValue(colorCounter, forKey: "corContador")
-            
-        }
-    }
+
     
     
     //ação dos botões

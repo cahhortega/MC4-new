@@ -24,36 +24,39 @@ class SkinTypeViewController: UIViewController {
     @IBOutlet weak var meetLabel: UILabel!
     var colorSkin: String = ""
     
-    var currentCounter = UserDefaults.standard.array(forKey: "contador") as? [Int] ?? [0,0,0,0,0]
-    var currentColorCounter = UserDefaults.standard.array(forKey: "corContador") as? [String] ?? ["","","","",""]
+    var currentCounter = UserDefaults.standard.array(forKey: "contador") as? [Int] ?? [0,0,0,0,0] //Pega novo defaults
+    var currentColorCounter = UserDefaults.standard.array(forKey: "corContador") as? [String] ?? ["","","","",""] //Pega novo defaults
     
     var dataFilter = 0
     var morningTasks: [String] = ["Limpeza", "Hidratação", "Proteção"]
     var nightTasks: [String] = ["Limpeza", "Esfoliação", "Hidratação"]
     var afternoonTasks: [String] = ["Proteção"]
     var skinType = ""
-    var counts: [Int: Int] = [:] //Criando o dicionário
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Contador depois:", currentCounter)
+        print("Contador cor depois:", currentColorCounter)
         
-        for i in currentCounter {
-            counts[i] = (counts[i] ?? 0) + 1
-        }
-        print("Respostas e suas repetições:", counts)
-        getMax()
-        setupColor()
         
-        let resposta = get_max(dicionario: currentCounter)
+        let resposta = getAnswers(dicionario: currentCounter)
         print("Resposta:",resposta)
-        var repetidos: [Int:Int] = resposta[0]
-        var desempate: [Int:Int] = resposta[1]
-        // if desempate.count > repetidos.count {
-//        UM UNICO VALOR
-    //}
         
-        // [{2: 2, 1: 2}, {3: 1}]
+        let repetidos: [Int:Int] = resposta[0]
+        let desempate: [Int:Int] = resposta[1]
+        print("Repetidos:", repetidos)
+        print("Desempate:", desempate)
+
+        
+        
+        //Caso existem chaves que estão se repetindo, ele pega a maior
+        getMax(dicionario: repetidos)
+        setupColor()
+
+        // if desempate.count > repetidos.count {
+        //        UM UNICO VALOR
+        //}
         
         let mainString = "Sua pele é \(skinType)"
         progressView.progress = 0.75
@@ -125,12 +128,11 @@ class SkinTypeViewController: UIViewController {
         }
     }
     
-    //COM DESEMPATE!!!
-    func get_max(dicionario: [Int]) -> [[Int:Int]]{ //retorno do dicionario de repetidos, e o dicionario de desempate
+    //COM DESEMPATE
+    func getAnswers(dicionario: [Int]) -> [[Int:Int]]{ //retorno do dicionario de repetidos, e o dicionario de desempate
         var aux: [Int:Int] = [:] //dicionario auxiliar
         var repetidos: [Int:Int] = [:] //dicionário de números que foram repetidos
         var desempate: [Int:Int] = [:] //dicionário com o número de desempate
-//        dicionario.keys.
         
         for v in dicionario { //passando por todas as chaves do dicionario
             if aux.keys.contains(v) {
@@ -139,7 +141,6 @@ class SkinTypeViewController: UIViewController {
                 aux[v] = 1
             }
         }
-        print("carolinda", aux)
         for k in aux.keys {
             if aux[k]! > 1 { //Se o dicionário tiver mais que uma chave, é porque ele entra no dicionário repetidos
                 repetidos[k] = aux[k]
@@ -151,30 +152,28 @@ class SkinTypeViewController: UIViewController {
         return lista
     }
     
-    //SEM DESEMPATE!
-    func getMax() {
-        //Pegando o maior valor no vetor da resposta
-        let maxValueOfSomeDictionary = counts.max {
-            a, b in a.value < b.value
+    //SEM DESEMPATE
+    func getMax(dicionario: [Int:Int]) {
+            //Pegando o maior valor no vetor da resposta
+            let maxValueOfSomeDictionary = dicionario.max {
+                a, b in a.value < b.value
+            }
+            print("Maior chave: \(maxValueOfSomeDictionary!.key):",maxValueOfSomeDictionary!.value) //Pega o maior value de uma key do dicionário
+
+            switch maxValueOfSomeDictionary!.key { //Verifica qual é a key
+            case 1:
+                skinType = "mista"
+            case 2:
+                skinType = "normal"
+            case 3:
+                skinType = "oleosa"
+            case 4:
+                skinType = "seca"
+            default:
+                skinType = "erro"
+            }
+    
         }
-        print("Maior chave: \(maxValueOfSomeDictionary!.key):",maxValueOfSomeDictionary!.value) //Pega o maior value de uma key do dicionário
-        
-        //Definindo o skinType
-        
-        switch maxValueOfSomeDictionary!.key { //Verifica qual é a key
-        case 1:
-            skinType = "mista"
-        case 2:
-            skinType = "normal"
-        case 3:
-            skinType = "oleosa"
-        case 4:
-            skinType = "seca"
-        default:
-            print("oi")
-        }
-        
-    }
     
     func setupPage(girl: String, skin: String, name: String){ //Configurando a página
         defaults.set("\(girl)-profile", forKey: "profileImage")
@@ -195,13 +194,14 @@ class SkinTypeViewController: UIViewController {
         case "mista":
             colorSkin = "Roxo"
         default:
-            print("oi")
+            colorSkin = "gelo botao"
         }
     }
     
     
     //Ação do backButton
     @objc func back(){
+        
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(identifier: "forms") as! FormViewController
         progressView.progress = 0.6
