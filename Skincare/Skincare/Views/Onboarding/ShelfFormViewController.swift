@@ -72,12 +72,12 @@ extension ShelfFormViewController: UISearchBarDelegate, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "produto", for: indexPath) as! ShelfFormTableViewCell
         cell.textLabel?.text = filteredData[indexPath.row]
-        let items = filteredData[indexPath.row]
-        if myProducts.contains(items){
-            cell.accessoryType = .checkmark
-        }else {
-            cell.accessoryType = .none
-        }
+//        let items = filteredData[indexPath.row]
+//        if myProducts.contains(items){
+//            cell.accessoryType = .checkmark
+//        }else {
+//            cell.accessoryType = .none
+//        }
         return cell
     }
     
@@ -104,13 +104,13 @@ extension ShelfFormViewController: UISearchBarDelegate, UITableViewDataSource, U
             myProducts.append(text)
             print(myProducts)
         }
-        for myProduct in myProducts {
-            if text == myProduct{
-                cell.accessoryType = .checkmark
-            } else{
-                cell.accessoryType = .none
-            }
-        }
+//        for myProduct in myProducts {
+//            if text == myProduct{
+//                cell.accessoryType = .checkmark
+//            } else{
+//                cell.accessoryType = .none
+//            }
+//        }
         defaults.set(myProducts, forKey: "myKey")
     }
     
@@ -124,13 +124,13 @@ extension ShelfFormViewController: UISearchBarDelegate, UITableViewDataSource, U
             filtered = myProducts.filter{$0 != text}
         }
         print(filtered)
-        for myProduct in myProducts {
-            if text == myProduct{
-                cell.accessoryType = .checkmark
-            } else{
-                cell.accessoryType = .none
-            }
-        }
+//        for myProduct in myProducts {
+//            if text == myProduct{
+//                cell.accessoryType = .checkmark
+//            } else{
+//                cell.accessoryType = .none
+//            }
+//        }
         defaults.set(filtered, forKey: "myKey")
     }
 
