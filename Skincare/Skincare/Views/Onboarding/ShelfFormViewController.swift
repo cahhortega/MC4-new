@@ -14,6 +14,9 @@ class ShelfFormViewController: UIViewController{
     @IBOutlet var productTableView: UITableView!
     var searchProduct: [String] = []
     var filteredData: [String]!
+    var myProducts: [String] = []
+    let defaults = UserDefaults.standard
+    var filtered: [String] = []
     
     
 
@@ -23,8 +26,13 @@ class ShelfFormViewController: UIViewController{
         super.viewDidLoad()
         progressView.progress = 0.85
         navigationController?.setNavigationBarHidden(false, animated: false)
+        
+        defaults.set("girl1-profile", forKey: "profileImage")
+        searchProduct = defaults.stringArray(forKey: "completeTable") ?? []
         print(searchProduct)
+        
         filteredData = searchProduct
+        
         //tableView
         self.productTableView.delegate = self
         self.productTableView.dataSource = self
@@ -53,9 +61,7 @@ class ShelfFormViewController: UIViewController{
         let vc = storyBoard.instantiateViewController(identifier: "type") as! SkinTypeViewController
         self.navigationController?.pushViewController(vc, animated: false)
     }
-    
-    
-    
+
 
 }
 
@@ -84,5 +90,31 @@ extension ShelfFormViewController: UISearchBarDelegate, UITableViewDataSource, U
         }
         self.productTableView.reloadData()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = self.tableView(productTableView, cellForRowAt: indexPath)
+        cell.accessoryType = .checkmark
+        let text = cell.textLabel!.text
+        if let text = text {
+            NSLog("did select and the text is \(text)")
+            myProducts.append(text)
+            print(myProducts)
+        }
+        defaults.set(myProducts, forKey: "myKey")
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = self.tableView(productTableView, cellForRowAt: indexPath)
+        cell.accessoryType = .none
+        let text = cell.textLabel!.text
+        if let text = text {
+            NSLog("did select and the text is \(text)")
+            filtered = myProducts.filter{$0 != text}
+        }
+        print(filtered)
+        defaults.set(filtered, forKey: "myKey")
+    }
+
 }
 

@@ -15,6 +15,7 @@ class SkinTypeViewController: UIViewController {
     var jsonObjects: [Product] = []
     public var data: [String] = []
     public let group = DispatchGroup()
+    let defaults = UserDefaults.standard
     
     
     var dataFilter = 0
@@ -75,7 +76,10 @@ class SkinTypeViewController: UIViewController {
         group.notify(queue: .main){
             print(self.jsonObjects)
             self.setupData(products: self.jsonObjects)
+            print(self.data)
+            self.defaults.set(self.data, forKey: "completeTable")
         }
+        
         
         
         
@@ -152,11 +156,11 @@ extension SkinTypeViewController: UITableViewDataSource {
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "shelfForm" {
-            let objects = segue.destination as? ShelfFormViewController
-            objects?.searchProduct=data
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "shelfForm" {
+//            let objects = segue.destination as? ShelfFormViewController
+//            objects?.searchProduct=data
+//        }
+//    }
     
 }
