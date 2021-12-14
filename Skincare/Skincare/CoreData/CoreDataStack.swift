@@ -4,49 +4,49 @@
 //
 //  Created by Carolina Ortega on 14/12/21.
 //
-
-import CoreData
-
-class CoreDataStack {
-    
-    static var shared = CoreDataStack()
-    private let model: String
-    
-    private lazy var container: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: self.model)
-        let defaultURL = NSPersistentContainer.defaultDirectoryURL()
-        let sqliteURL = defaultURL.appendingPathComponent("\(self.model).sqlite")
-        
-        container.loadPersistentStores { (_, error) in
-            if let error = error {
-                fatalError("Failed to load persistent store: \(error.localizedDescription)")
-            }
-        }
-        
-        return container
-    }()
-    
-    var mainContext: NSManagedObjectContext {
-        return container.viewContext
-    }
-    
-    private init(model: String = "Skincare") {
-        self.model = model
-    }
-    
-    func save() throws {
-        if mainContext.hasChanges {
-            do {
-                try mainContext.save()
-            } catch(let error) {
-                print(error)
-                throw CoreDataStackError.failedToSave
-            }
-        } else {
-            throw CoreDataStackError.contextHasNoChanges
-        }
-    }
-    
+//
+//import CoreData
+//
+//class CoreDataStack {
+//
+//    static var shared = CoreDataStack()
+//    private let model: String
+//
+//    private lazy var container: NSPersistentContainer = {
+//        let container = NSPersistentContainer(name: self.model)
+//        let defaultURL = NSPersistentContainer.defaultDirectoryURL()
+//        let sqliteURL = defaultURL.appendingPathComponent("\(self.model).sqlite")
+//
+//        container.loadPersistentStores { (_, error) in
+//            if let error = error {
+//                fatalError("Failed to load persistent store: \(error.localizedDescription)")
+//            }
+//        }
+//
+//        return container
+//    }()
+//
+//    var mainContext: NSManagedObjectContext {
+//        return container.viewContext
+//    }
+//
+//    private init(model: String = "Skincare") {
+//        self.model = model
+//    }
+//
+//    func save() throws {
+//        if mainContext.hasChanges {
+//            do {
+//                try mainContext.save()
+//            } catch(let error) {
+//                print(error)
+//                throw CoreDataStackError.failedToSave
+//            }
+//        } else {
+//            throw CoreDataStackError.contextHasNoChanges
+//        }
+//    }
+//
 //    func createRoutine(name: String, start: String, finish: String) throws -> Routine{
 //        let routine = Routine(context: mainContext)
 //        routine.name = name
@@ -55,7 +55,7 @@ class CoreDataStack {
 //        try save()
 //        return routine
 //    }
-    
+
 
 //
 //
@@ -115,9 +115,9 @@ class CoreDataStack {
 //        return data
 //    }
 
-}
-
-enum CoreDataStackError: Error {
-    case failedToSave
-    case contextHasNoChanges
-}
+//}
+//
+//enum CoreDataStackError: Error {
+//    case failedToSave
+//    case contextHasNoChanges
+//}

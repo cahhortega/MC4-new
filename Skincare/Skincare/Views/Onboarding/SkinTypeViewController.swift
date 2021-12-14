@@ -41,13 +41,17 @@ class SkinTypeViewController: UIViewController {
         for i in currentCounter {
             counts[i] = (counts[i] ?? 0) + 1
         }
-        print("Respostas e suas repetições: ",counts)
+        print("Respostas e suas repetições:", counts)
         getMax()
         setupColor()
         
-        //        let resposta = get_max(dicionario: counts)
-        //        print("Resposta:",resposta)
-        
+        let resposta = get_max(dicionario: currentCounter)
+        print("Resposta:",resposta)
+        var repetidos: [Int:Int] = resposta[0]
+        var desempate: [Int:Int] = resposta[1]
+        // if desempate.count > repetidos.count {
+//        UM UNICO VALOR
+    //}
         
         // [{2: 2, 1: 2}, {3: 1}]
         
@@ -122,29 +126,30 @@ class SkinTypeViewController: UIViewController {
     }
     
     //COM DESEMPATE!!!
-    //    func get_max(dicionario: [Int:Int]) -> ([Int:Int], [Int:Int]){ //retorno do dicionario de repetidos, e o dicionario de desempate
-    //        var aux: [Int:Int] = [:] //dicionario auxiliar
-    //        var repetidos: [Int:Int] = [:] //dicionário de números que foram repetidos
-    //        var desempate: [Int:Int] = [:] //dicionário com o número de desempate
-    //
-    //        for k in dicionario.keys { //passando por todas as chaves do dicionario
-    //            let valor = dicionario[k]
-    //            if let chave = aux[valor!] {
-    //                aux[chave]! += 1
-    //            } else {
-    //                aux[valor!] = 1
-    //            }
-    //        }
-    //
-    //        for k in aux.keys {
-    //            if aux.count > 1 { //Se o dicionário tiver mais que uma chave, é porque ele entra no dicionário repetidos
-    //                repetidos[k] = aux[k]
-    //            } else { //Se o dicionário tiver menos que uma chave, é porque ele entra no dicionário de desempate
-    //                desempate[k] = aux[k]
-    //            }
-    //        }
-    //        return (repetidos, desempate)
-    //    }
+    func get_max(dicionario: [Int]) -> [[Int:Int]]{ //retorno do dicionario de repetidos, e o dicionario de desempate
+        var aux: [Int:Int] = [:] //dicionario auxiliar
+        var repetidos: [Int:Int] = [:] //dicionário de números que foram repetidos
+        var desempate: [Int:Int] = [:] //dicionário com o número de desempate
+//        dicionario.keys.
+        
+        for v in dicionario { //passando por todas as chaves do dicionario
+            if aux.keys.contains(v) {
+                aux[v]! += 1
+            } else {
+                aux[v] = 1
+            }
+        }
+        print("carolinda", aux)
+        for k in aux.keys {
+            if aux[k]! > 1 { //Se o dicionário tiver mais que uma chave, é porque ele entra no dicionário repetidos
+                repetidos[k] = aux[k]
+            } else { //Se o dicionário tiver menos que uma chave, é porque ele entra no dicionário de desempate
+                desempate[k] = aux[k]
+            }
+        }
+        let lista: [[Int:Int]] = [repetidos, desempate]
+        return lista
+    }
     
     //SEM DESEMPATE!
     func getMax() {
@@ -203,6 +208,7 @@ class SkinTypeViewController: UIViewController {
         vc.currentQuestion = vc.currentQuestion <= vc.questions.count ? 4 : 1
         self.navigationController?.pushViewController(vc, animated: false)
     }
+    
     //segmentedControl
     @IBAction func segmentedControlAction(sender: AnyObject) {
         switch tasksSegmentedControl.selectedSegmentIndex {
