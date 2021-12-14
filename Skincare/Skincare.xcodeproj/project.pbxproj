@@ -10,12 +10,6 @@
 		212B04B5275FD82500D9DBED /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B04B4275FD82500D9DBED /* Model.swift */; };
 		212B04B7275FD84900D9DBED /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B04B6275FD84900D9DBED /* Request.swift */; };
 		218E4F3327652529001D3A94 /* DataSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218E4F3227652529001D3A94 /* DataSingleton.swift */; };
-		4CB72B0127690F7800E710E1 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB72B0027690F7800E710E1 /* WidgetKit.framework */; };
-		4CB72B0327690F7800E710E1 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB72B0227690F7800E710E1 /* SwiftUI.framework */; };
-		4CB72B0627690F7800E710E1 /* SkinfeelWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB72B0527690F7800E710E1 /* SkinfeelWidget.swift */; };
-		4CB72B0827690F7900E710E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CB72B0727690F7900E710E1 /* Assets.xcassets */; };
-		4CB72B0C27690F7900E710E1 /* SkinfeelWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4CB72AFE27690F7800E710E1 /* SkinfeelWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		4CB72B12276922D000E710E1 /* SkinfeelWidgetMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB72B11276922D000E710E1 /* SkinfeelWidgetMedium.swift */; };
 		99B1646727516C6100DE8120 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B1646627516C6100DE8120 /* AppDelegate.swift */; };
 		99B1646927516C6100DE8120 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B1646827516C6100DE8120 /* SceneDelegate.swift */; };
 		99B1646B27516C6100DE8120 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B1646A27516C6100DE8120 /* OnboardingViewController.swift */; };
@@ -59,12 +53,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4CB72B0A27690F7900E710E1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 99B1645B27516C6100DE8120 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4CB72AFD27690F7800E710E1;
-			remoteInfo = SkinfeelWidgetExtension;
 		DFA15A342768041000DFA649 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 99B1645B27516C6100DE8120 /* Project object */;
@@ -75,15 +63,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		4CB72B0D27690F7900E710E1 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				4CB72B0C27690F7900E710E1 /* SkinfeelWidgetExtension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
 		DFA15A1D2767BE8B00DFA649 /* Embed App Clips */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -101,13 +80,6 @@
 		212B04B4275FD82500D9DBED /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		212B04B6275FD84900D9DBED /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		218E4F3227652529001D3A94 /* DataSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSingleton.swift; sourceTree = "<group>"; };
-		4CB72AFE27690F7800E710E1 /* SkinfeelWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SkinfeelWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CB72B0027690F7800E710E1 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
-		4CB72B0227690F7800E710E1 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		4CB72B0527690F7800E710E1 /* SkinfeelWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinfeelWidget.swift; sourceTree = "<group>"; };
-		4CB72B0727690F7900E710E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4CB72B0927690F7900E710E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4CB72B11276922D000E710E1 /* SkinfeelWidgetMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinfeelWidgetMedium.swift; sourceTree = "<group>"; };
 		99B1646327516C6100DE8120 /* Skincare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skincare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B1646627516C6100DE8120 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99B1646827516C6100DE8120 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,15 +128,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4CB72AFB27690F7800E710E1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CB72B0327690F7800E710E1 /* SwiftUI.framework in Frameworks */,
-				4CB72B0127690F7800E710E1 /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		99B1646027516C6100DE8120 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -182,33 +145,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4CB72AFF27690F7800E710E1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4CB72B0027690F7800E710E1 /* WidgetKit.framework */,
-				4CB72B0227690F7800E710E1 /* SwiftUI.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4CB72B0427690F7800E710E1 /* SkinfeelWidget */ = {
-			isa = PBXGroup;
-			children = (
-				4CB72B0527690F7800E710E1 /* SkinfeelWidget.swift */,
-				4CB72B0727690F7900E710E1 /* Assets.xcassets */,
-				4CB72B0927690F7900E710E1 /* Info.plist */,
-				4CB72B11276922D000E710E1 /* SkinfeelWidgetMedium.swift */,
-			);
-			path = SkinfeelWidget;
-			sourceTree = "<group>";
-		};
 		99B1645A27516C6100DE8120 = {
 			isa = PBXGroup;
 			children = (
 				DFA15A3A2768041B00DFA649 /* Shared */,
 				99B1646527516C6100DE8120 /* Skincare */,
-				4CB72B0427690F7800E710E1 /* SkinfeelWidget */,
-				4CB72AFF27690F7800E710E1 /* Frameworks */,
 				DFA15A282768040E00DFA649 /* Questionario */,
 				99B1646427516C6100DE8120 /* Products */,
 			);
@@ -218,7 +159,6 @@
 			isa = PBXGroup;
 			children = (
 				99B1646327516C6100DE8120 /* Skincare.app */,
-				4CB72AFE27690F7800E710E1 /* SkinfeelWidgetExtension.appex */,
 				DFA15A272768040E00DFA649 /* Questionario.app */,
 			);
 			name = Products;
@@ -422,23 +362,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4CB72AFD27690F7800E710E1 /* SkinfeelWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4CB72B1027690F7900E710E1 /* Build configuration list for PBXNativeTarget "SkinfeelWidgetExtension" */;
-			buildPhases = (
-				4CB72AFA27690F7800E710E1 /* Sources */,
-				4CB72AFB27690F7800E710E1 /* Frameworks */,
-				4CB72AFC27690F7800E710E1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SkinfeelWidgetExtension;
-			productName = SkinfeelWidgetExtension;
-			productReference = 4CB72AFE27690F7800E710E1 /* SkinfeelWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		99B1646227516C6100DE8120 /* Skincare */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99B1647A27516C6300DE8120 /* Build configuration list for PBXNativeTarget "Skincare" */;
@@ -446,13 +369,11 @@
 				99B1645F27516C6100DE8120 /* Sources */,
 				99B1646027516C6100DE8120 /* Frameworks */,
 				99B1646127516C6100DE8120 /* Resources */,
-				4CB72B0D27690F7900E710E1 /* Embed App Extensions */,
 				DFA15A1D2767BE8B00DFA649 /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4CB72B0B27690F7900E710E1 /* PBXTargetDependency */,
 				DFA15A352768041000DFA649 /* PBXTargetDependency */,
 			);
 			name = Skincare;
@@ -487,9 +408,6 @@
 				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
-					4CB72AFD27690F7800E710E1 = {
-						CreatedOnToolsVersion = 13.1;
-					};
 					99B1646227516C6100DE8120 = {
 						CreatedOnToolsVersion = 13.1;
 					};
@@ -512,21 +430,12 @@
 			projectRoot = "";
 			targets = (
 				99B1646227516C6100DE8120 /* Skincare */,
-				4CB72AFD27690F7800E710E1 /* SkinfeelWidgetExtension */,
 				DFA15A262768040E00DFA649 /* Questionario */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4CB72AFC27690F7800E710E1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CB72B0827690F7900E710E1 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		99B1646127516C6100DE8120 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -549,15 +458,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4CB72AFA27690F7800E710E1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CB72B0627690F7800E710E1 /* SkinfeelWidget.swift in Sources */,
-				4CB72B12276922D000E710E1 /* SkinfeelWidgetMedium.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		99B1645F27516C6100DE8120 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -612,10 +512,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4CB72B0B27690F7900E710E1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4CB72AFD27690F7800E710E1 /* SkinfeelWidgetExtension */;
-			targetProxy = 4CB72B0A27690F7900E710E1 /* PBXContainerItemProxy */;
 		DFA15A352768041000DFA649 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DFA15A262768040E00DFA649 /* Questionario */;
@@ -643,60 +539,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		4CB72B0E27690F7900E710E1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 76RG2M4UVB;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SkinfeelWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = SkinfeelWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "by-dev.GabiNamie.Skincare.SkinfeelWidget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		4CB72B0F27690F7900E710E1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 76RG2M4UVB;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SkinfeelWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = SkinfeelWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "by-dev.GabiNamie.Skincare.SkinfeelWidget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		99B1647827516C6300DE8120 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -821,7 +663,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 76RG2M4UVB;
+				DEVELOPMENT_TEAM = 5LFGK7Q7S9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Skincare/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Skinfeel;
@@ -851,7 +693,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 76RG2M4UVB;
+				DEVELOPMENT_TEAM = 2A2JAGWQ62;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Skincare/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Skinfeel;
@@ -942,15 +784,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4CB72B1027690F7900E710E1 /* Build configuration list for PBXNativeTarget "SkinfeelWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4CB72B0E27690F7900E710E1 /* Debug */,
-				4CB72B0F27690F7900E710E1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		99B1645E27516C6100DE8120 /* Build configuration list for PBXProject "Skincare" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
