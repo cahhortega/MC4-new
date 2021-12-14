@@ -17,6 +17,7 @@ class ShelfFormViewController: UIViewController{
     var myProducts: [String] = []
     let defaults = UserDefaults.standard
     var filtered: [String] = []
+    var checkedItems = Set<String>()
     
     
 
@@ -71,6 +72,12 @@ extension ShelfFormViewController: UISearchBarDelegate, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "produto", for: indexPath) as! ShelfFormTableViewCell
         cell.textLabel?.text = filteredData[indexPath.row]
+        let items = filteredData[indexPath.row]
+        if myProducts.contains(items){
+            cell.accessoryType = .checkmark
+        }else {
+            cell.accessoryType = .none
+        }
         return cell
     }
     
