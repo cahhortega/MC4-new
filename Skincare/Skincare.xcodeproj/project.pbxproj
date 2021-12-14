@@ -59,22 +59,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+<<<<<<< HEAD
 		4CB72B0A27690F7900E710E1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 99B1645B27516C6100DE8120 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4CB72AFD27690F7800E710E1;
 			remoteInfo = SkinfeelWidgetExtension;
+=======
 		DFA15A342768041000DFA649 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 99B1645B27516C6100DE8120 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DFA15A262768040E00DFA649;
 			remoteInfo = Questionario;
+>>>>>>> dev
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+<<<<<<< HEAD
 		4CB72B0D27690F7900E710E1 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -84,6 +88,7 @@
 				4CB72B0C27690F7900E710E1 /* SkinfeelWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+=======
 		DFA15A1D2767BE8B00DFA649 /* Embed App Clips */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -93,6 +98,7 @@
 				DFA15A362768041000DFA649 /* Questionario.app in Embed App Clips */,
 			);
 			name = "Embed App Clips";
+>>>>>>> dev
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -207,9 +213,12 @@
 			children = (
 				DFA15A3A2768041B00DFA649 /* Shared */,
 				99B1646527516C6100DE8120 /* Skincare */,
+<<<<<<< HEAD
 				4CB72B0427690F7800E710E1 /* SkinfeelWidget */,
 				4CB72AFF27690F7800E710E1 /* Frameworks */,
+=======
 				DFA15A282768040E00DFA649 /* Questionario */,
+>>>>>>> dev
 				99B1646427516C6100DE8120 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -218,8 +227,11 @@
 			isa = PBXGroup;
 			children = (
 				99B1646327516C6100DE8120 /* Skincare.app */,
+<<<<<<< HEAD
 				4CB72AFE27690F7800E710E1 /* SkinfeelWidgetExtension.appex */,
+=======
 				DFA15A272768040E00DFA649 /* Questionario.app */,
+>>>>>>> dev
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -446,14 +458,20 @@
 				99B1645F27516C6100DE8120 /* Sources */,
 				99B1646027516C6100DE8120 /* Frameworks */,
 				99B1646127516C6100DE8120 /* Resources */,
+<<<<<<< HEAD
 				4CB72B0D27690F7900E710E1 /* Embed App Extensions */,
+=======
 				DFA15A1D2767BE8B00DFA649 /* Embed App Clips */,
+>>>>>>> dev
 			);
 			buildRules = (
 			);
 			dependencies = (
+<<<<<<< HEAD
 				4CB72B0B27690F7900E710E1 /* PBXTargetDependency */,
+=======
 				DFA15A352768041000DFA649 /* PBXTargetDependency */,
+>>>>>>> dev
 			);
 			name = Skincare;
 			productName = Skincare;
@@ -512,8 +530,11 @@
 			projectRoot = "";
 			targets = (
 				99B1646227516C6100DE8120 /* Skincare */,
+<<<<<<< HEAD
 				4CB72AFD27690F7800E710E1 /* SkinfeelWidgetExtension */,
+=======
 				DFA15A262768040E00DFA649 /* Questionario */,
+>>>>>>> dev
 			);
 		};
 /* End PBXProject section */
@@ -612,14 +633,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+<<<<<<< HEAD
 		4CB72B0B27690F7900E710E1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4CB72AFD27690F7800E710E1 /* SkinfeelWidgetExtension */;
 			targetProxy = 4CB72B0A27690F7900E710E1 /* PBXContainerItemProxy */;
+=======
 		DFA15A352768041000DFA649 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DFA15A262768040E00DFA649 /* Questionario */;
 			targetProxy = DFA15A342768041000DFA649 /* PBXContainerItemProxy */;
+>>>>>>> dev
 		};
 /* End PBXTargetDependency section */
 
@@ -821,7 +845,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = 76RG2M4UVB;
+=======
+				DEVELOPMENT_TEAM = 5LFGK7Q7S9;
+>>>>>>> dev
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Skincare/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Skinfeel;
