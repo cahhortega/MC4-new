@@ -33,9 +33,12 @@
 		A02F0F6C275935EF00AFD1C1 /* NewRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F0F6B275935EF00AFD1C1 /* NewRoutineViewController.swift */; };
 		A02F0F6E275940F700AFD1C1 /* SkinRoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F0F6D275940F700AFD1C1 /* SkinRoutineTableViewCell.swift */; };
 		A02F0F7127595EED00AFD1C1 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F0F7027595EED00AFD1C1 /* TaskTableViewCell.swift */; };
+		A035E4032768D3EF00811747 /* NewProductRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A035E4022768D3EF00811747 /* NewProductRoutineViewController.swift */; };
+		A035E4072768E26F00811747 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A035E4062768E26F00811747 /* CoreDataStack.swift */; };
 		A08316CE27626F50006F21B4 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08316CD27626F50006F21B4 /* Identifiers.swift */; };
 		A08316D027627BDA006F21B4 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08316CF27627BDA006F21B4 /* NotificationManager.swift */; };
 		A09A402D275E6AD500E6122F /* ShelfFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09A402C275E6AD500E6122F /* ShelfFormTableViewCell.swift */; };
+		A0B31F7F2763E480004D8154 /* AddProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B31F7E2763E480004D8154 /* AddProductTableViewCell.swift */; };
 		A0F388C92756DDC700153D13 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F388C82756DDC700153D13 /* NameViewController.swift */; };
 		A0F388CB2756DDE600153D13 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F388CA2756DDE600153D13 /* FormViewController.swift */; };
 		A0F388CD2756DE0600153D13 /* SkinTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F388CC2756DE0600153D13 /* SkinTypeViewController.swift */; };
@@ -44,9 +47,15 @@
 		A0FDB2BD27624E4000F3B35D /* YourRoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FDB2BC27624E4000F3B35D /* YourRoutineTableViewCell.swift */; };
 		A0FF1304275EB40200A86323 /* ShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF1303275EB40200A86323 /* ShelfViewController.swift */; };
 		A0FF1306275EB54900A86323 /* ShelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF1305275EB54900A86323 /* ShelfCell.swift */; };
-		A0FF1308275EBC6E00A86323 /* NewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF1307275EBC6E00A86323 /* NewProductViewController.swift */; };
+		A0FF1308275EBC6E00A86323 /* NewProductShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF1307275EBC6E00A86323 /* NewProductShelfViewController.swift */; };
 		DF46B8372757EB920076F349 /* ShelfFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF46B8362757EB920076F349 /* ShelfFormViewController.swift */; };
-		DFA15A08276295B800DFA649 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA15A07276295B800DFA649 /* CircularProgressBar.swift */; };
+		DFA15A2A2768040E00DFA649 /* QuestionarioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA15A292768040E00DFA649 /* QuestionarioApp.swift */; };
+		DFA15A2C2768040E00DFA649 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA15A2B2768040E00DFA649 /* ContentView.swift */; };
+		DFA15A2E2768041000DFA649 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFA15A2D2768041000DFA649 /* Assets.xcassets */; };
+		DFA15A312768041000DFA649 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFA15A302768041000DFA649 /* Preview Assets.xcassets */; };
+		DFA15A362768041000DFA649 /* Questionario.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = DFA15A272768040E00DFA649 /* Questionario.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DFA15A3D2768091F00DFA649 /* CommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA15A3C2768091F00DFA649 /* CommonView.swift */; };
+		DFA15A08276295B800DFA649 /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA15A07276295B800DFA649 /* CircularProgressBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +65,12 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4CB72AFD27690F7800E710E1;
 			remoteInfo = SkinfeelWidgetExtension;
+		DFA15A342768041000DFA649 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99B1645B27516C6100DE8120 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFA15A262768040E00DFA649;
+			remoteInfo = Questionario;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -69,6 +84,15 @@
 				4CB72B0C27690F7900E710E1 /* SkinfeelWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+		DFA15A1D2767BE8B00DFA649 /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				DFA15A362768041000DFA649 /* Questionario.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -103,9 +127,12 @@
 		A02F0F6B275935EF00AFD1C1 /* NewRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoutineViewController.swift; sourceTree = "<group>"; };
 		A02F0F6D275940F700AFD1C1 /* SkinRoutineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinRoutineTableViewCell.swift; sourceTree = "<group>"; };
 		A02F0F7027595EED00AFD1C1 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		A035E4022768D3EF00811747 /* NewProductRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductRoutineViewController.swift; sourceTree = "<group>"; };
+		A035E4062768E26F00811747 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		A08316CD27626F50006F21B4 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		A08316CF27627BDA006F21B4 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		A09A402C275E6AD500E6122F /* ShelfFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfFormTableViewCell.swift; sourceTree = "<group>"; };
+		A0B31F7E2763E480004D8154 /* AddProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductTableViewCell.swift; sourceTree = "<group>"; };
 		A0F388C82756DDC700153D13 /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		A0F388CA2756DDE600153D13 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		A0F388CC2756DE0600153D13 /* SkinTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeViewController.swift; sourceTree = "<group>"; };
@@ -114,9 +141,18 @@
 		A0FDB2BC27624E4000F3B35D /* YourRoutineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourRoutineTableViewCell.swift; sourceTree = "<group>"; };
 		A0FF1303275EB40200A86323 /* ShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfViewController.swift; sourceTree = "<group>"; };
 		A0FF1305275EB54900A86323 /* ShelfCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfCell.swift; sourceTree = "<group>"; };
-		A0FF1307275EBC6E00A86323 /* NewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductViewController.swift; sourceTree = "<group>"; };
+		A0FF1307275EBC6E00A86323 /* NewProductShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductShelfViewController.swift; sourceTree = "<group>"; };
 		DF46B8362757EB920076F349 /* ShelfFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfFormViewController.swift; sourceTree = "<group>"; };
-		DFA15A07276295B800DFA649 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
+		DFA15A272768040E00DFA649 /* Questionario.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Questionario.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFA15A292768040E00DFA649 /* QuestionarioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionarioApp.swift; sourceTree = "<group>"; };
+		DFA15A2B2768040E00DFA649 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DFA15A2D2768041000DFA649 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DFA15A302768041000DFA649 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DFA15A322768041000DFA649 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFA15A332768041000DFA649 /* Questionario.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Questionario.entitlements; sourceTree = "<group>"; };
+		DFA15A3C2768091F00DFA649 /* CommonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonView.swift; sourceTree = "<group>"; };
+		DFA15A3E2769349200DFA649 /* QuestionarioDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuestionarioDebug.entitlements; sourceTree = "<group>"; };
+		DFA15A07276295B800DFA649 /* CircularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +166,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		99B1646027516C6100DE8120 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFA15A242768040E00DFA649 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -162,9 +205,11 @@
 		99B1645A27516C6100DE8120 = {
 			isa = PBXGroup;
 			children = (
+				DFA15A3A2768041B00DFA649 /* Shared */,
 				99B1646527516C6100DE8120 /* Skincare */,
 				4CB72B0427690F7800E710E1 /* SkinfeelWidget */,
 				4CB72AFF27690F7800E710E1 /* Frameworks */,
+				DFA15A282768040E00DFA649 /* Questionario */,
 				99B1646427516C6100DE8120 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -174,6 +219,7 @@
 			children = (
 				99B1646327516C6100DE8120 /* Skincare.app */,
 				4CB72AFE27690F7800E710E1 /* SkinfeelWidgetExtension.appex */,
+				DFA15A272768040E00DFA649 /* Questionario.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,6 +229,7 @@
 			children = (
 				99B1646627516C6100DE8120 /* AppDelegate.swift */,
 				99B1646827516C6100DE8120 /* SceneDelegate.swift */,
+				A035E4052768E23700811747 /* CoreData */,
 				A08316CC27626F34006F21B4 /* Notifications */,
 				A012EDBC2762984A00FD6030 /* Model */,
 				A0F388D02756F9F100153D13 /* Views */,
@@ -192,7 +239,6 @@
 				99B1647427516C6300DE8120 /* LaunchScreen.storyboard */,
 				99B1647227516C6300DE8120 /* Assets.xcassets */,
 				99B1647727516C6300DE8120 /* Info.plist */,
-				99B1646F27516C6100DE8120 /* Skincare.xcdatamodeld */,
 			);
 			path = Skincare;
 			sourceTree = "<group>";
@@ -229,7 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				A02F0F662758242C00AFD1C1 /* RoutineCollectionViewCell.swift */,
-				DFA15A07276295B800DFA649 /* CircularProgressBar.swift */,
+				DFA15A07276295B800DFA649 /* CircularProgressBarView.swift */,
 			);
 			path = "Today Cells";
 			sourceTree = "<group>";
@@ -246,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				A02F0F7027595EED00AFD1C1 /* TaskTableViewCell.swift */,
+				A0B31F7E2763E480004D8154 /* AddProductTableViewCell.swift */,
 			);
 			path = "NewRoutine Cells";
 			sourceTree = "<group>";
@@ -261,6 +308,24 @@
 				A09A402E275E6ADD00E6122F /* Shelf Cells */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		A035E4042768D88A00811747 /* Shelf */ = {
+			isa = PBXGroup;
+			children = (
+				A0FF1303275EB40200A86323 /* ShelfViewController.swift */,
+				A035E4022768D3EF00811747 /* NewProductRoutineViewController.swift */,
+			);
+			path = Shelf;
+			sourceTree = "<group>";
+		};
+		A035E4052768E23700811747 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				99B1646F27516C6100DE8120 /* Skincare.xcdatamodeld */,
+				A035E4062768E26F00811747 /* CoreDataStack.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		A08316CC27626F34006F21B4 /* Notifications */ = {
@@ -286,6 +351,7 @@
 			children = (
 				A0FF1309275FDF9000A86323 /* Onboarding */,
 				A0FF130A275FDF9F00A86323 /* Home */,
+				A035E4042768D88A00811747 /* Shelf */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -314,14 +380,43 @@
 		A0FF130A275FDF9F00A86323 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				A0FDB2B82762480E00F3B35D /* YourRoutineViewController.swift */,
 				A02F0F682758246400AFD1C1 /* TodayViewController.swift */,
 				A02F0F6B275935EF00AFD1C1 /* NewRoutineViewController.swift */,
+				A0FF1307275EBC6E00A86323 /* NewProductShelfViewController.swift */,
+				A0FDB2B82762480E00F3B35D /* YourRoutineViewController.swift */,
 				A02F0F5B275813D800AFD1C1 /* SettingsViewController.swift */,
-				A0FF1303275EB40200A86323 /* ShelfViewController.swift */,
-				A0FF1307275EBC6E00A86323 /* NewProductViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		DFA15A282768040E00DFA649 /* Questionario */ = {
+			isa = PBXGroup;
+			children = (
+				DFA15A3E2769349200DFA649 /* QuestionarioDebug.entitlements */,
+				DFA15A292768040E00DFA649 /* QuestionarioApp.swift */,
+				DFA15A2B2768040E00DFA649 /* ContentView.swift */,
+				DFA15A2D2768041000DFA649 /* Assets.xcassets */,
+				DFA15A322768041000DFA649 /* Info.plist */,
+				DFA15A332768041000DFA649 /* Questionario.entitlements */,
+				DFA15A2F2768041000DFA649 /* Preview Content */,
+			);
+			path = Questionario;
+			sourceTree = "<group>";
+		};
+		DFA15A2F2768041000DFA649 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DFA15A302768041000DFA649 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DFA15A3A2768041B00DFA649 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DFA15A3C2768091F00DFA649 /* CommonView.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,16 +447,35 @@
 				99B1646027516C6100DE8120 /* Frameworks */,
 				99B1646127516C6100DE8120 /* Resources */,
 				4CB72B0D27690F7900E710E1 /* Embed App Extensions */,
+				DFA15A1D2767BE8B00DFA649 /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				4CB72B0B27690F7900E710E1 /* PBXTargetDependency */,
+				DFA15A352768041000DFA649 /* PBXTargetDependency */,
 			);
 			name = Skincare;
 			productName = Skincare;
 			productReference = 99B1646327516C6100DE8120 /* Skincare.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DFA15A262768040E00DFA649 /* Questionario */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFA15A372768041000DFA649 /* Build configuration list for PBXNativeTarget "Questionario" */;
+			buildPhases = (
+				DFA15A232768040E00DFA649 /* Sources */,
+				DFA15A242768040E00DFA649 /* Frameworks */,
+				DFA15A252768040E00DFA649 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Questionario;
+			productName = Questionario;
+			productReference = DFA15A272768040E00DFA649 /* Questionario.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
 		};
 /* End PBXNativeTarget section */
 
@@ -377,6 +491,9 @@
 						CreatedOnToolsVersion = 13.1;
 					};
 					99B1646227516C6100DE8120 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					DFA15A262768040E00DFA649 = {
 						CreatedOnToolsVersion = 13.1;
 					};
 				};
@@ -396,6 +513,7 @@
 			targets = (
 				99B1646227516C6100DE8120 /* Skincare */,
 				4CB72AFD27690F7800E710E1 /* SkinfeelWidgetExtension */,
+				DFA15A262768040E00DFA649 /* Questionario */,
 			);
 		};
 /* End PBXProject section */
@@ -419,6 +537,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DFA15A252768040E00DFA649 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFA15A312768041000DFA649 /* Preview Assets.xcassets in Resources */,
+				DFA15A2E2768041000DFA649 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -437,6 +564,7 @@
 			files = (
 				A0F388CB2756DDE600153D13 /* FormViewController.swift in Sources */,
 				A02F0F6E275940F700AFD1C1 /* SkinRoutineTableViewCell.swift in Sources */,
+				A0B31F7F2763E480004D8154 /* AddProductTableViewCell.swift in Sources */,
 				99B1646B27516C6100DE8120 /* OnboardingViewController.swift in Sources */,
 				99B1647127516C6100DE8120 /* Skincare.xcdatamodeld in Sources */,
 				A0FDB2BD27624E4000F3B35D /* YourRoutineTableViewCell.swift in Sources */,
@@ -447,8 +575,10 @@
 				A02F0F65275814A400AFD1C1 /* SwitchDayTableViewCell.swift in Sources */,
 				A02F0F6C275935EF00AFD1C1 /* NewRoutineViewController.swift in Sources */,
 				99B1646927516C6100DE8120 /* SceneDelegate.swift in Sources */,
+				A035E4032768D3EF00811747 /* NewProductRoutineViewController.swift in Sources */,
 				A02F0F5E2758140200AFD1C1 /* NameTableViewCell.swift in Sources */,
-				A0FF1308275EBC6E00A86323 /* NewProductViewController.swift in Sources */,
+				DFA15A3D2768091F00DFA649 /* CommonView.swift in Sources */,
+				A0FF1308275EBC6E00A86323 /* NewProductShelfViewController.swift in Sources */,
 				A02F0F602758141600AFD1C1 /* AvatarTableViewCell.swift in Sources */,
 				A02F0F7127595EED00AFD1C1 /* TaskTableViewCell.swift in Sources */,
 				A0FDB2B92762480E00F3B35D /* YourRoutineViewController.swift in Sources */,
@@ -462,10 +592,20 @@
 				A0F388CD2756DE0600153D13 /* SkinTypeViewController.swift in Sources */,
 				A09A402D275E6AD500E6122F /* ShelfFormTableViewCell.swift in Sources */,
 				A0F388C92756DDC700153D13 /* NameViewController.swift in Sources */,
+				A035E4072768E26F00811747 /* CoreDataStack.swift in Sources */,
 				212B04B5275FD82500D9DBED /* Model.swift in Sources */,
 				A08316D027627BDA006F21B4 /* NotificationManager.swift in Sources */,
 				A0F388CF2756F9C800153D13 /* YourDayViewController.swift in Sources */,
-				DFA15A08276295B800DFA649 /* CircularProgressBar.swift in Sources */,
+				DFA15A08276295B800DFA649 /* CircularProgressBarView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFA15A232768040E00DFA649 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFA15A2C2768040E00DFA649 /* ContentView.swift in Sources */,
+				DFA15A2A2768040E00DFA649 /* QuestionarioApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +616,10 @@
 			isa = PBXTargetDependency;
 			target = 4CB72AFD27690F7800E710E1 /* SkinfeelWidgetExtension */;
 			targetProxy = 4CB72B0A27690F7900E710E1 /* PBXContainerItemProxy */;
+		DFA15A352768041000DFA649 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFA15A262768040E00DFA649 /* Questionario */;
+			targetProxy = DFA15A342768041000DFA649 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -680,6 +824,7 @@
 				DEVELOPMENT_TEAM = 76RG2M4UVB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Skincare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Skinfeel;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -690,11 +835,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "by-dev.GabiNamie.Skincare";
+				PRODUCT_BUNDLE_IDENTIFIER = sk.com.gabinamie.skincare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -709,6 +854,7 @@
 				DEVELOPMENT_TEAM = 76RG2M4UVB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Skincare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Skinfeel;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -719,11 +865,77 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "by-dev.GabiNamie.Skincare";
+				PRODUCT_BUNDLE_IDENTIFIER = sk.com.gabinamie.skincare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DFA15A382768041000DFA649 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Questionario/QuestionarioDebug.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Questionario/Preview Content\"";
+				DEVELOPMENT_TEAM = 5LFGK7Q7S9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Questionario/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Skincare;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sk.com.gabinamie.skincare.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG APPCLIP";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DFA15A392768041000DFA649 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Questionario/Questionario.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Questionario/Preview Content\"";
+				DEVELOPMENT_TEAM = 2A2JAGWQ62;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Questionario/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Skincare;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sk.com.gabinamie.skincare.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = APPCLIP;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -753,6 +965,15 @@
 			buildConfigurations = (
 				99B1647B27516C6300DE8120 /* Debug */,
 				99B1647C27516C6300DE8120 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFA15A372768041000DFA649 /* Build configuration list for PBXNativeTarget "Questionario" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFA15A382768041000DFA649 /* Debug */,
+				DFA15A392768041000DFA649 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
