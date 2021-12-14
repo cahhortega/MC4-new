@@ -26,12 +26,14 @@ class NewProductRoutineViewController: UIViewController{
         
         navigationController?.setNavigationBarHidden(false, animated: false)
 //        navigationItem.setHidesBackButton(true, animated: false)
+        
         searchProduct = defaults.stringArray(forKey: "completeTable") ?? []
         print(searchProduct)
         selectedProducts = defaults.stringArray(forKey: "myKey") ?? []
         print(selectedProducts)
         filtered = searchProduct.difference(from: selectedProducts)
         print(filtered)
+        
         list = searchProduct
         navigationItem.setHidesBackButton(false, animated: false)
 
@@ -47,15 +49,13 @@ class NewProductRoutineViewController: UIViewController{
         searchBar.delegate = self
         
     }
-//    
-//    override func viewWillAppear(_ animated: Bool) {
-////        super.viewWillAppear(animated)
-////        let chosenProducts = defaults.stringArray(forKey: "myKey") ?? []
-////        print(chosenProducts)
-// //       list = chosenProduct
-//        
-//        
-//    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let chosenProducts = defaults.stringArray(forKey: "myKey") ?? []
+        print(chosenProducts)
+        list = chosenProducts
+    }
 
 }
 
