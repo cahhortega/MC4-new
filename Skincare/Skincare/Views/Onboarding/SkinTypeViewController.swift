@@ -17,8 +17,6 @@ class SkinTypeViewController: UIViewController {
     var jsonObjects: [Product] = []
     public var data: [String] = []
     public let group = DispatchGroup()
-    let defaults = UserDefaults.standard
-    
     var previousView = FormViewController()
     
     @IBOutlet weak var skinImage: UIImageView!
@@ -34,27 +32,29 @@ class SkinTypeViewController: UIViewController {
     var nightTasks: [String] = ["Limpeza", "Esfoliação", "Hidratação"]
     var afternoonTasks: [String] = ["Proteção"]
     var skinType = ""
-    var counts: [Int: Int] = [:]
-
+    var counts: [Int: Int] = [:] //Criando o dicionário
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(currentCounter)
-        print(currentColorCounter)
         
         for i in currentCounter {
-           counts[i] = (counts[i] ?? 0) + 1
+            counts[i] = (counts[i] ?? 0) + 1
         }
-        print(counts)
+        print("Respostas e suas repetições:", counts)
+        getMax()
         setupColor()
-        setupSkinType()
         
-//        let resposta = get_max(dicionario: counts)
-//        print("Resposta:",resposta)
-        
+        let resposta = get_max(dicionario: currentCounter)
+        print("Resposta:",resposta)
+        var repetidos: [Int:Int] = resposta[0]
+        var desempate: [Int:Int] = resposta[1]
+        // if desempate.count > repetidos.count {
+//        UM UNICO VALOR
+    //}
         
         // [{2: 2, 1: 2}, {3: 1}]
-
+        
         let mainString = "Sua pele é \(skinType)"
         progressView.progress = 0.75
         navigationController?.setNavigationBarHidden(false, animated: false)
@@ -64,23 +64,23 @@ class SkinTypeViewController: UIViewController {
         let mutableAttributedString = NSMutableAttributedString.init(string: mainString)
         mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(named: colorSkin)!, range: range)
         skinTypeLabel.attributedText = mutableAttributedString
-
+        
         switch skinType {
         case "oleosa":
             setupPage(girl: "girl1", skin: "oleosa", name: "Maria")
-
+            
         case "normal":
             setupPage(girl: "girl2", skin: "normal", name: "Luiza")
-
+            
         case "seca":
             setupPage(girl: "girl3", skin: "seca", name: "Carla")
-
+            
         case "mista":
             setupPage(girl: "girl4", skin: "mista", name: "Olivia")
-
+            
         default:
             setupPage(girl: "girl1", skin: "oleosa", name: "Maria")
-
+            
         }
         
         //tableView
@@ -88,7 +88,7 @@ class SkinTypeViewController: UIViewController {
         self.routineTableView.dataSource = self
         
         
-//        //navigationBar
+        //        //navigationBar
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             title: "Anterior",
             style: .plain,
@@ -98,83 +98,6 @@ class SkinTypeViewController: UIViewController {
         navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "Rosa")
         setupData(products: jsonObjects)
         
-    }
-    
-//    func get_max(dicionario: [Int:Int]) -> ([Int:Int], [Int:Int]) {
-//        var aux: [Int:Int] = [:]
-//
-//        for k in dicionario.keys {
-//            let valor: Int = dicionario[k]!
-//            if aux[valor] {
-//                aux[valor] += 1
-//            } else {
-//                aux[valor] = 1
-//            }
-//        }
-//
-//        var repetidos: [Int:Int] = [:]
-//        var desimpate: [Int:Int] = [:]
-//
-//        for k in aux.keys {
-//            if aux[k] > 1 {
-//                repetidos[k] = aux[k]
-//            } else {
-//                desimpate[k] = aux[k]
-//            }
-//        }
-//        return (repetidos, desimpate)
-//    }
-    
-    
-    func setupSkinType() {
-        //Pegando o maior valor no vetor
-        let maxValueOfSomeDictionary = counts.max {
-            a, b in a.value < b.value
-        }
-        print(maxValueOfSomeDictionary!.key,maxValueOfSomeDictionary!.value)
-    
-        //Definindo o skinType
-        
-        switch maxValueOfSomeDictionary!.key {
-        case 1:
-            skinType = "mista"
-        case 2:
-            skinType = "normal"
-        case 3:
-            skinType = "oleosa"
-        case 4:
-            skinType = "seca"
-        default:
-            skinType = "mista"
-        }
-      
-    }
-    
-    func setupPage(girl: String, skin: String, name: String){
-        defaults.set("\(girl)-profile", forKey: "profileImage")
-        skinType = skin
-        subtitle.text = "A rotina da \(name) vai te ajudar a começar"
-        meetLabel.text = "Conheça \(name)"
-        skinImage.image = UIImage(named: girl)
-    }
-    
-    func setupColor(){
-        switch skinType {
-        case "oleosa":
-            colorSkin = "Verde"
-        
-        case "normal":
-            colorSkin = "Azul"
-        
-        case "seca":
-            colorSkin = "Rosa"
-
-        case "mista":
-            colorSkin = "Roxo"
-
-        default:
-            colorSkin = "Roxo"
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -202,6 +125,81 @@ class SkinTypeViewController: UIViewController {
         }
     }
     
+    //COM DESEMPATE!!!
+    func get_max(dicionario: [Int]) -> [[Int:Int]]{ //retorno do dicionario de repetidos, e o dicionario de desempate
+        var aux: [Int:Int] = [:] //dicionario auxiliar
+        var repetidos: [Int:Int] = [:] //dicionário de números que foram repetidos
+        var desempate: [Int:Int] = [:] //dicionário com o número de desempate
+//        dicionario.keys.
+        
+        for v in dicionario { //passando por todas as chaves do dicionario
+            if aux.keys.contains(v) {
+                aux[v]! += 1
+            } else {
+                aux[v] = 1
+            }
+        }
+        print("carolinda", aux)
+        for k in aux.keys {
+            if aux[k]! > 1 { //Se o dicionário tiver mais que uma chave, é porque ele entra no dicionário repetidos
+                repetidos[k] = aux[k]
+            } else { //Se o dicionário tiver menos que uma chave, é porque ele entra no dicionário de desempate
+                desempate[k] = aux[k]
+            }
+        }
+        let lista: [[Int:Int]] = [repetidos, desempate]
+        return lista
+    }
+    
+    //SEM DESEMPATE!
+    func getMax() {
+        //Pegando o maior valor no vetor da resposta
+        let maxValueOfSomeDictionary = counts.max {
+            a, b in a.value < b.value
+        }
+        print("Maior chave: \(maxValueOfSomeDictionary!.key):",maxValueOfSomeDictionary!.value) //Pega o maior value de uma key do dicionário
+        
+        //Definindo o skinType
+        
+        switch maxValueOfSomeDictionary!.key { //Verifica qual é a key
+        case 1:
+            skinType = "mista"
+        case 2:
+            skinType = "normal"
+        case 3:
+            skinType = "oleosa"
+        case 4:
+            skinType = "seca"
+        default:
+            print("oi")
+        }
+        
+    }
+    
+    func setupPage(girl: String, skin: String, name: String){ //Configurando a página
+        defaults.set("\(girl)-profile", forKey: "profileImage")
+        skinType = skin
+        subtitle.text = "A rotina da \(name) vai te ajudar a começar"
+        meetLabel.text = "Conheça \(name)"
+        skinImage.image = UIImage(named: girl)
+    }
+    
+    func setupColor(){ //Configurando a cor que ficará no título
+        switch skinType {
+        case "oleosa":
+            colorSkin = "Verde"
+        case "normal":
+            colorSkin = "Azul"
+        case "seca":
+            colorSkin = "Rosa"
+        case "mista":
+            colorSkin = "Roxo"
+        default:
+            print("oi")
+        }
+    }
+    
+    
     //Ação do backButton
     @objc func back(){
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -210,6 +208,7 @@ class SkinTypeViewController: UIViewController {
         vc.currentQuestion = vc.currentQuestion <= vc.questions.count ? 4 : 1
         self.navigationController?.pushViewController(vc, animated: false)
     }
+    
     //segmentedControl
     @IBAction func segmentedControlAction(sender: AnyObject) {
         switch tasksSegmentedControl.selectedSegmentIndex {
@@ -274,11 +273,11 @@ extension SkinTypeViewController: UITableViewDataSource {
     }
     
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "shelfForm" {
-//            let objects = segue.destination as? ShelfFormViewController
-//            objects?.searchProduct=data
-//        }
-//    }
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //        if segue.identifier == "shelfForm" {
+    //            let objects = segue.destination as? ShelfFormViewController
+    //            objects?.searchProduct=data
+    //        }
+    //    }
     
 }

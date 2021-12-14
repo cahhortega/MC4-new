@@ -27,6 +27,8 @@
 		A02F0F6C275935EF00AFD1C1 /* NewRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F0F6B275935EF00AFD1C1 /* NewRoutineViewController.swift */; };
 		A02F0F6E275940F700AFD1C1 /* SkinRoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F0F6D275940F700AFD1C1 /* SkinRoutineTableViewCell.swift */; };
 		A02F0F7127595EED00AFD1C1 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F0F7027595EED00AFD1C1 /* TaskTableViewCell.swift */; };
+		A035E4032768D3EF00811747 /* NewProductRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A035E4022768D3EF00811747 /* NewProductRoutineViewController.swift */; };
+		A035E4072768E26F00811747 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A035E4062768E26F00811747 /* CoreDataStack.swift */; };
 		A08316CE27626F50006F21B4 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08316CD27626F50006F21B4 /* Identifiers.swift */; };
 		A08316D027627BDA006F21B4 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08316CF27627BDA006F21B4 /* NotificationManager.swift */; };
 		A09A402D275E6AD500E6122F /* ShelfFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09A402C275E6AD500E6122F /* ShelfFormTableViewCell.swift */; };
@@ -39,7 +41,7 @@
 		A0FDB2BD27624E4000F3B35D /* YourRoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FDB2BC27624E4000F3B35D /* YourRoutineTableViewCell.swift */; };
 		A0FF1304275EB40200A86323 /* ShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF1303275EB40200A86323 /* ShelfViewController.swift */; };
 		A0FF1306275EB54900A86323 /* ShelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF1305275EB54900A86323 /* ShelfCell.swift */; };
-		A0FF1308275EBC6E00A86323 /* NewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF1307275EBC6E00A86323 /* NewProductViewController.swift */; };
+		A0FF1308275EBC6E00A86323 /* NewProductShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF1307275EBC6E00A86323 /* NewProductShelfViewController.swift */; };
 		DF46B8372757EB920076F349 /* ShelfFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF46B8362757EB920076F349 /* ShelfFormViewController.swift */; };
 		DFA15A08276295B800DFA649 /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA15A07276295B800DFA649 /* CircularProgressBarView.swift */; };
 /* End PBXBuildFile section */
@@ -67,6 +69,8 @@
 		A02F0F6B275935EF00AFD1C1 /* NewRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoutineViewController.swift; sourceTree = "<group>"; };
 		A02F0F6D275940F700AFD1C1 /* SkinRoutineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinRoutineTableViewCell.swift; sourceTree = "<group>"; };
 		A02F0F7027595EED00AFD1C1 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		A035E4022768D3EF00811747 /* NewProductRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductRoutineViewController.swift; sourceTree = "<group>"; };
+		A035E4062768E26F00811747 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		A08316CD27626F50006F21B4 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		A08316CF27627BDA006F21B4 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		A09A402C275E6AD500E6122F /* ShelfFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfFormTableViewCell.swift; sourceTree = "<group>"; };
@@ -79,7 +83,7 @@
 		A0FDB2BC27624E4000F3B35D /* YourRoutineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourRoutineTableViewCell.swift; sourceTree = "<group>"; };
 		A0FF1303275EB40200A86323 /* ShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfViewController.swift; sourceTree = "<group>"; };
 		A0FF1305275EB54900A86323 /* ShelfCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfCell.swift; sourceTree = "<group>"; };
-		A0FF1307275EBC6E00A86323 /* NewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductViewController.swift; sourceTree = "<group>"; };
+		A0FF1307275EBC6E00A86323 /* NewProductShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductShelfViewController.swift; sourceTree = "<group>"; };
 		DF46B8362757EB920076F349 /* ShelfFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfFormViewController.swift; sourceTree = "<group>"; };
 		DFA15A07276295B800DFA649 /* CircularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +120,7 @@
 			children = (
 				99B1646627516C6100DE8120 /* AppDelegate.swift */,
 				99B1646827516C6100DE8120 /* SceneDelegate.swift */,
+				A035E4052768E23700811747 /* CoreData */,
 				A08316CC27626F34006F21B4 /* Notifications */,
 				A012EDBC2762984A00FD6030 /* Model */,
 				A0F388D02756F9F100153D13 /* Views */,
@@ -125,7 +130,6 @@
 				99B1647427516C6300DE8120 /* LaunchScreen.storyboard */,
 				99B1647227516C6300DE8120 /* Assets.xcassets */,
 				99B1647727516C6300DE8120 /* Info.plist */,
-				99B1646F27516C6100DE8120 /* Skincare.xcdatamodeld */,
 			);
 			path = Skincare;
 			sourceTree = "<group>";
@@ -197,6 +201,24 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		A035E4042768D88A00811747 /* Shelf */ = {
+			isa = PBXGroup;
+			children = (
+				A0FF1303275EB40200A86323 /* ShelfViewController.swift */,
+				A035E4022768D3EF00811747 /* NewProductRoutineViewController.swift */,
+			);
+			path = Shelf;
+			sourceTree = "<group>";
+		};
+		A035E4052768E23700811747 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				99B1646F27516C6100DE8120 /* Skincare.xcdatamodeld */,
+				A035E4062768E26F00811747 /* CoreDataStack.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		A08316CC27626F34006F21B4 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +242,7 @@
 			children = (
 				A0FF1309275FDF9000A86323 /* Onboarding */,
 				A0FF130A275FDF9F00A86323 /* Home */,
+				A035E4042768D88A00811747 /* Shelf */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -250,10 +273,9 @@
 			children = (
 				A02F0F682758246400AFD1C1 /* TodayViewController.swift */,
 				A02F0F6B275935EF00AFD1C1 /* NewRoutineViewController.swift */,
+				A0FF1307275EBC6E00A86323 /* NewProductShelfViewController.swift */,
 				A0FDB2B82762480E00F3B35D /* YourRoutineViewController.swift */,
 				A02F0F5B275813D800AFD1C1 /* SettingsViewController.swift */,
-				A0FF1303275EB40200A86323 /* ShelfViewController.swift */,
-				A0FF1307275EBC6E00A86323 /* NewProductViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -342,8 +364,9 @@
 				A02F0F65275814A400AFD1C1 /* SwitchDayTableViewCell.swift in Sources */,
 				A02F0F6C275935EF00AFD1C1 /* NewRoutineViewController.swift in Sources */,
 				99B1646927516C6100DE8120 /* SceneDelegate.swift in Sources */,
+				A035E4032768D3EF00811747 /* NewProductRoutineViewController.swift in Sources */,
 				A02F0F5E2758140200AFD1C1 /* NameTableViewCell.swift in Sources */,
-				A0FF1308275EBC6E00A86323 /* NewProductViewController.swift in Sources */,
+				A0FF1308275EBC6E00A86323 /* NewProductShelfViewController.swift in Sources */,
 				A02F0F602758141600AFD1C1 /* AvatarTableViewCell.swift in Sources */,
 				A02F0F7127595EED00AFD1C1 /* TaskTableViewCell.swift in Sources */,
 				A0FDB2B92762480E00F3B35D /* YourRoutineViewController.swift in Sources */,
@@ -357,6 +380,7 @@
 				A0F388CD2756DE0600153D13 /* SkinTypeViewController.swift in Sources */,
 				A09A402D275E6AD500E6122F /* ShelfFormTableViewCell.swift in Sources */,
 				A0F388C92756DDC700153D13 /* NameViewController.swift in Sources */,
+				A035E4072768E26F00811747 /* CoreDataStack.swift in Sources */,
 				212B04B5275FD82500D9DBED /* Model.swift in Sources */,
 				A08316D027627BDA006F21B4 /* NotificationManager.swift in Sources */,
 				A0F388CF2756F9C800153D13 /* YourDayViewController.swift in Sources */,
@@ -512,6 +536,7 @@
 				DEVELOPMENT_TEAM = 2A2JAGWQ62;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Skincare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Skinfeel;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -526,7 +551,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -540,6 +565,7 @@
 				DEVELOPMENT_TEAM = 2A2JAGWQ62;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Skincare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Skinfeel;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -554,7 +580,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

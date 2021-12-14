@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -470,17 +470,17 @@
                                 <rect key="frame" x="40" y="456.5" width="334.5" height="50"/>
                                 <subviews>
                                     <datePicker verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" placeholderIntrinsicWidth="69" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" id="0jt-Mg-TP7">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="79" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <locale key="locale" localeIdentifier="pt_BR"/>
                                     </datePicker>
                                     <datePicker verifyAmbiguity="ignoreSizes" contentMode="center" placeholderIntrinsicWidth="69" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" id="kes-Nk-86j">
-                                        <rect key="frame" x="128" y="0.0" width="79" height="50"/>
+                                        <rect key="frame" x="127" y="0.0" width="80" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <locale key="locale" localeIdentifier="pt_BR"/>
                                     </datePicker>
                                     <datePicker verifyAmbiguity="ignoreSizes" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" id="G3Y-Y3-PHH">
-                                        <rect key="frame" x="255" y="0.0" width="80" height="50"/>
+                                        <rect key="frame" x="255" y="0.0" width="79" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <locale key="locale" localeIdentifier="pt_BR"/>
                                     </datePicker>
@@ -687,7 +687,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" id="zAj-ee-WsH">
-                                <rect key="frame" x="13" y="152" width="388" height="90"/>
+                                <rect key="frame" x="13" y="152" width="387" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" distribution="fillEqually" spacing="11" baselineRelativeArrangement="YES" id="7eG-Ke-dix">
@@ -859,7 +859,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sF3-Ya-zAj">
                                                 <rect key="frame" x="309.5" y="0.0" width="40.5" height="69"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="SAB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LT-zS-iEz">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="SÁB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LT-zS-iEz">
                                                         <rect key="frame" x="0.0" y="0.0" width="40.5" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                         <color key="textColor" systemColor="tertiaryLabelColor"/>
@@ -891,9 +891,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BxC-Fh-b8b"/>
                         <color key="backgroundColor" name="Bg"/>
-                        <constraints>
-                            <constraint firstItem="zAj-ee-WsH" firstAttribute="centerX" secondItem="YgQ-t1-inJ" secondAttribute="centerX" id="SNt-K1-57H"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Hoje" image="calendar" catalog="system" id="9ue-FL-Sm9"/>
                     <navigationItem key="navigationItem" id="vpI-Ne-hpS">
@@ -941,7 +938,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Início" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j9v-jI-KYW">
-                                <rect key="frame" x="19" y="274" width="94" height="20"/>
+                                <rect key="frame" x="19" y="274" width="93" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -962,7 +959,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fim" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="57K-gr-3Ey">
-                                <rect key="frame" x="221" y="274" width="100" height="21"/>
+                                <rect key="frame" x="220" y="274" width="100" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -997,11 +994,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="Bg"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="task" style="IBUITableViewCellStyleDefault" translatesAutoresizingMaskIntoConstraints="NO" id="gCZ-5h-rM6" customClass="TaskTableViewCell" customModule="Skincare" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="task" style="IBUITableViewCellStyleDefault" translatesAutoresizingMaskIntoConstraints="NO" id="gCZ-5h-rM6" customClass="TaskTableViewCell" customModule="Skincare" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="45" width="375" height="43"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gCZ-5h-rM6" id="5zG-Xy-X1H">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Produto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bb1-Tn-POX">
@@ -1021,7 +1018,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="add" id="ozA-pa-dO1" customClass="AddProductTableViewCell" customModule="Skincare" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="88" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="87.5" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ozA-pa-dO1" id="JOD-yJ-w2D">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -1794,10 +1791,10 @@
             </objects>
             <point key="canvasLocation" x="6761" y="684"/>
         </scene>
-        <!--New Product View Controller-->
+        <!--New Product Shelf View Controller-->
         <scene sceneID="wQJ-s1-h2G">
             <objects>
-                <viewController id="ZGo-eP-RB5" customClass="NewProductViewController" customModule="Skincare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZGo-eP-RB5" customClass="NewProductShelfViewController" customModule="Skincare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kVc-oC-Akj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1866,18 +1863,18 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="productTableView" destination="spB-re-yNv" id="XJt-ts-04B"/>
-                        <outlet property="searchBar" destination="RfZ-JJ-L1u" id="Ao1-xr-9yc"/>
+                        <outlet property="productTableView" destination="spB-re-yNv" id="6BE-zF-vGF"/>
+                        <outlet property="searchBar" destination="spB-re-yNv" id="dab-hU-eit"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4C-lI-G7M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7741" y="684"/>
         </scene>
-        <!--New Product View Controller-->
+        <!--New Product Routine View Controller-->
         <scene sceneID="L27-Q9-Wa3">
             <objects>
-                <viewController id="5Hm-yi-gsZ" customClass="NewProductViewController" customModule="Skincare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5Hm-yi-gsZ" customClass="NewProductRoutineViewController" customModule="Skincare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VzX-vK-MWR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
