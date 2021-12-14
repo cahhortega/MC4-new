@@ -16,9 +16,7 @@ class SkinTypeViewController: UIViewController {
     
     var jsonObjects: [Product] = []
     public var data: [String] = []
-    public let group = DispatchGroup()
-    let defaults = UserDefaults.standard
-    
+    public let group = DispatchGroup()    
     var previousView = FormViewController()
     
     @IBOutlet weak var skinImage: UIImageView!

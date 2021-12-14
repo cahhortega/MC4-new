@@ -12,8 +12,13 @@ class NewProductViewController: UIViewController{
 
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var productTableView: UITableView!
-    var list = ["oi", "tudo", "bem", "com", "vc", "meu", "nome", "é", "carol"] //Colocar aqui a API
+    var list: [String]!
     var searchProduct: [String]!
+    var selectedProducts: [String]!
+    var resultProducts: [String]!
+    var myProducts: [String]!
+    var filtered: [String]!
+    let defaults = UserDefaults.standard
     
     
     override func viewDidLoad() {
@@ -21,6 +26,15 @@ class NewProductViewController: UIViewController{
         
         navigationController?.setNavigationBarHidden(false, animated: false)
 //        navigationItem.setHidesBackButton(true, animated: false)
+        
+        searchProduct = defaults.stringArray(forKey: "completeTable") ?? []
+        print(searchProduct)
+        selectedProducts = defaults.stringArray(forKey: "myKey") ?? []
+        print(selectedProducts)
+        filtered = searchProduct.difference(from: selectedProducts)
+        print(filtered)
+        
+        list = searchProduct
 
         //tableView
         self.productTableView.delegate = self
@@ -32,7 +46,6 @@ class NewProductViewController: UIViewController{
         
         //searchBar
         searchBar.delegate = self
-        searchProduct = list
         
     }
 
@@ -41,19 +54,61 @@ class NewProductViewController: UIViewController{
 extension NewProductViewController: UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchProduct.count
+        return filtered.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "produto", for: indexPath) as! ShelfFormTableViewCell
-        cell.textLabel?.text = searchProduct[indexPath.row]
+        cell.textLabel?.text = filtered[indexPath.row]
         return cell
     }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchProduct = searchText.isEmpty ? list : list.filter({(dataString: String) -> Bool in
-            return dataString.range(of: searchText, options: .caseInsensitive) != nil
-        })
-        productTableView.reloadData()
+        list = []
+        if searchText == ""{
+            list = searchProduct
+        }else {
+            for product in searchProduct{
+                if product.lowercased().contains(searchText.lowercased()){
+                    list.append(product)
+                }
+            }
+        }
+        self.productTableView.reloadData()
+    }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let cell = self.tableView(productTableView, cellForRowAt: indexPath)
+//        cell.accessoryType = .checkmark
+//        let text = cell.textLabel!.text
+//        if let text = text {
+//            NSLog("did select and the text is \(text)")
+//            myProducts.append(text)
+//           // print(myProducts)
+//        }
+//        defaults.set(myProducts, forKey: "myKey")
+//    }
+//
+//
+//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+//        let cell = self.tableView(productTableView, cellForRowAt: indexPath)
+//        cell.accessoryType = .none
+//        let text = cell.textLabel!.text
+//        if let text = text {
+//            NSLog("did select and the text is \(text)")
+//            filtered = myProducts.filter{$0 != text}
+//        }
+//       // print(filtered)
+//        defaults.set(filtered, forKey: "myKey")
+//    }
+
+}
+
+extension Array where Element: Hashable {
+    func difference(from other: [Element]) -> [Element] {
+        let thisSet = Set(self)
+        let otherSet = Set(other)
+        return Array(thisSet.symmetricDifference(otherSet))
     }
 }
 

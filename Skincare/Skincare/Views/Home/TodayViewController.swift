@@ -100,10 +100,9 @@ class TodayViewController: UIViewController {
         profileAvatar.setImage(buttonImage, for: .normal)
         
         navigationController?.setNavigationBarHidden(true, animated: animated)
-        let buttonImage = UIImage(named: defaults.string(forKey: "profileImage")!)
-        profileAvatar.setImage(buttonImage, for: .normal)
-//        self.curriculos = CurriculoRepositorio.shared.buscarTodos()
-        //(lista dos cards collection)
+//        let buttonImage = UIImage(named: defaults.string(forKey: "profileImage")!)
+//        profileAvatar.setImage(buttonImage, for: .normal)
+
         self.routineCollectionView.reloadData()
         numeroDeCelulas()
     }
