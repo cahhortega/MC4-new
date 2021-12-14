@@ -46,7 +46,7 @@ class FormViewController: UIViewController {
     
     var button: UIButton = UIButton() //Botão questão
     
-    var colorCounter: [String] = ["nada","nada","nada","nada", "nada"]{
+    var colorCounter: [String] = ["nada","nada","nada","nada", "nada"]{ //Contador para colocar as cores
         didSet{
             finishButton()
         }
@@ -99,8 +99,6 @@ class FormViewController: UIViewController {
         oilyButton.addTarget(self, action: #selector(clickButton3), for: .touchUpInside)
         dryButton.addTarget(self, action: #selector(clickButton4), for: .touchUpInside)
         
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -129,7 +127,7 @@ class FormViewController: UIViewController {
         dryButton.addTarget(self, action: #selector(clickButton4), for: .touchUpInside)
         
     }
-
+    
     func newQuestion(){
         nextButton.isEnabled = true
         lbl.text = questions[currentQuestion]
@@ -142,17 +140,22 @@ class FormViewController: UIViewController {
         }
         if colorCounter[currentQuestion] == "Roxo botao" {
             defineColor(cor: "Roxo botao", selected: mixedButton, button1: normalButton, button2: oilyButton, button3: dryButton)
+            nextButton.isEnabled = true
         } else if colorCounter[currentQuestion] == "Azul botao" {
             defineColor(cor: "Azul botao", selected: normalButton, button1: mixedButton, button2: oilyButton, button3: dryButton)
+            nextButton.isEnabled = true
         } else if colorCounter[currentQuestion] == "Verde botao" {
             defineColor(cor: "Verde botao", selected: oilyButton, button1: normalButton, button2: mixedButton, button3: dryButton)
+            nextButton.isEnabled = true
         } else if colorCounter[currentQuestion] == "Rosa botao" {
             defineColor(cor: "Rosa botao", selected: dryButton, button1: normalButton, button2: oilyButton, button3: mixedButton)
+            nextButton.isEnabled = true
         } else{
-                mixedButton.backgroundColor = UIColor(named: "gelo botao")
-                normalButton.backgroundColor = UIColor(named: "gelo botao")
-                oilyButton.backgroundColor = UIColor(named: "gelo botao")
-                dryButton.backgroundColor = UIColor(named: "gelo botao")
+            nextButton.isEnabled = false
+            mixedButton.backgroundColor = UIColor(named: "gelo botao")
+            normalButton.backgroundColor = UIColor(named: "gelo botao")
+            oilyButton.backgroundColor = UIColor(named: "gelo botao")
+            dryButton.backgroundColor = UIColor(named: "gelo botao")
             
         }
     }
@@ -236,7 +239,7 @@ class FormViewController: UIViewController {
         if formCounter[0] != 0 && formCounter[1] != 0 && formCounter[2] != 0 && formCounter[3] != 0 && formCounter[4] != 0 {
             defaults.setValue(formCounter, forKey: "contador")
             defaults.setValue(colorCounter, forKey: "corContador")
-
+            
         }
     }
     

@@ -18,6 +18,20 @@ class AvatarTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+
+        switch defaults.string(forKey: "profileImage") {
+        case "girl1-profile":
+            clickAvatar(girlSelected: girl1, girl2: girl2, girl3: girl3, girl4: girl4)
+        case "girl2-profile":
+            clickAvatar(girlSelected: girl2, girl2: girl1, girl3: girl3, girl4: girl4)
+        case "girl3-profile":
+            clickAvatar(girlSelected: girl3, girl2: girl2, girl3: girl1, girl4: girl4)
+        case "girl4-profile":
+            clickAvatar(girlSelected: girl4, girl2: girl2, girl3: girl3, girl4: girl1)
+        default:
+            print("oi")
+        }
+        defaults.set("girl1-profile", forKey: "profileImage")
         
         girl1.translatesAutoresizingMaskIntoConstraints = false
         girl1.addTarget(self, action: #selector(clickGirl1), for: .touchUpInside)

@@ -17,8 +17,6 @@ class SkinTypeViewController: UIViewController {
     var jsonObjects: [Product] = []
     public var data: [String] = []
     public let group = DispatchGroup()
-    let defaults = UserDefaults.standard
-    
     var previousView = FormViewController()
     
     @IBOutlet weak var skinImage: UIImageView!
@@ -34,27 +32,28 @@ class SkinTypeViewController: UIViewController {
     var nightTasks: [String] = ["Limpeza", "Esfoliação", "Hidratação"]
     var afternoonTasks: [String] = ["Proteção"]
     var skinType = ""
-    var counts: [Int: Int] = [:]
-
+    var counts: [Int: Int] = [:] //Criando o dicionário
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(currentCounter)
-        print(currentColorCounter)
+        
+        //        print(currentCounter)
+        //        print(currentColorCounter)
         
         for i in currentCounter {
-           counts[i] = (counts[i] ?? 0) + 1
+            counts[i] = (counts[i] ?? 0) + 1
         }
         print(counts)
-        setupColor()
         setupSkinType()
+        setupColor()
         
-//        let resposta = get_max(dicionario: counts)
-//        print("Resposta:",resposta)
+        //        let resposta = get_max(dicionario: counts)
+        //        print("Resposta:",resposta)
         
         
         // [{2: 2, 1: 2}, {3: 1}]
-
+        
         let mainString = "Sua pele é \(skinType)"
         progressView.progress = 0.75
         navigationController?.setNavigationBarHidden(false, animated: false)
@@ -64,23 +63,23 @@ class SkinTypeViewController: UIViewController {
         let mutableAttributedString = NSMutableAttributedString.init(string: mainString)
         mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(named: colorSkin)!, range: range)
         skinTypeLabel.attributedText = mutableAttributedString
-
+        
         switch skinType {
         case "oleosa":
             setupPage(girl: "girl1", skin: "oleosa", name: "Maria")
-
+            
         case "normal":
             setupPage(girl: "girl2", skin: "normal", name: "Luiza")
-
+            
         case "seca":
             setupPage(girl: "girl3", skin: "seca", name: "Carla")
-
+            
         case "mista":
             setupPage(girl: "girl4", skin: "mista", name: "Olivia")
-
+            
         default:
             setupPage(girl: "girl1", skin: "oleosa", name: "Maria")
-
+            
         }
         
         //tableView
@@ -88,7 +87,7 @@ class SkinTypeViewController: UIViewController {
         self.routineTableView.dataSource = self
         
         
-//        //navigationBar
+        //        //navigationBar
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             title: "Anterior",
             style: .plain,
@@ -100,42 +99,41 @@ class SkinTypeViewController: UIViewController {
         
     }
     
-//    func get_max(dicionario: [Int:Int]) -> ([Int:Int], [Int:Int]) {
-//        var aux: [Int:Int] = [:]
-//
-//        for k in dicionario.keys {
-//            let valor: Int = dicionario[k]!
+//    func get_max(dicionario: [Int:Int]) -> ([Int:Int], [Int:Int]){ //retorno do dicionario de repetidos, e o dicionario de desempate
+//        var aux: [Int:Int] = [:] //dicionario auxiliar
+//        var repetidos: [Int:Int] = [:] //dicionário de números que foram repetidos
+//        var desempate: [Int:Int] = [:] //dicionário com o número de desempate
+//        
+//        for k in dicionario.keys { //passando por todas as chaves do dicionario
+//            let valor = dicionario[k]
 //            if aux[valor] {
 //                aux[valor] += 1
 //            } else {
 //                aux[valor] = 1
 //            }
 //        }
-//
-//        var repetidos: [Int:Int] = [:]
-//        var desimpate: [Int:Int] = [:]
-//
+//        
 //        for k in aux.keys {
-//            if aux[k] > 1 {
+//            if aux.count > 1 { //Se o dicionário tiver mais que uma chave, é porque ele entra no dicionário repetidos
 //                repetidos[k] = aux[k]
-//            } else {
-//                desimpate[k] = aux[k]
+//            } else { //Se o dicionário tiver menos que uma chave, é porque ele entra no dicionário de desempate
+//                desempate[k] = aux[k]
 //            }
 //        }
-//        return (repetidos, desimpate)
+//        return (repetidos, desempate)
 //    }
     
     
-    func setupSkinType() {
+    func setupSkinType() { //Configurando o tipo de pele, SEM DESEMPATE!
         //Pegando o maior valor no vetor
         let maxValueOfSomeDictionary = counts.max {
             a, b in a.value < b.value
         }
-        print(maxValueOfSomeDictionary!.key,maxValueOfSomeDictionary!.value)
-    
+        print(maxValueOfSomeDictionary!.key,maxValueOfSomeDictionary!.value) //Pega o maior value de uma key do dicionário
+        
         //Definindo o skinType
         
-        switch maxValueOfSomeDictionary!.key {
+        switch maxValueOfSomeDictionary!.key { //Verifica qual é a key
         case 1:
             skinType = "mista"
         case 2:
@@ -145,12 +143,12 @@ class SkinTypeViewController: UIViewController {
         case 4:
             skinType = "seca"
         default:
-            skinType = "mista"
+            print("oi")
         }
-      
+        
     }
     
-    func setupPage(girl: String, skin: String, name: String){
+    func setupPage(girl: String, skin: String, name: String){ //Configurando a página
         defaults.set("\(girl)-profile", forKey: "profileImage")
         skinType = skin
         subtitle.text = "A rotina da \(name) vai te ajudar a começar"
@@ -158,22 +156,18 @@ class SkinTypeViewController: UIViewController {
         skinImage.image = UIImage(named: girl)
     }
     
-    func setupColor(){
+    func setupColor(){ //Configurando a cor que ficará no título
         switch skinType {
         case "oleosa":
             colorSkin = "Verde"
-        
         case "normal":
             colorSkin = "Azul"
-        
         case "seca":
             colorSkin = "Rosa"
-
         case "mista":
             colorSkin = "Roxo"
-
         default:
-            colorSkin = "Roxo"
+            print("oi")
         }
     }
     
@@ -274,11 +268,11 @@ extension SkinTypeViewController: UITableViewDataSource {
     }
     
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "shelfForm" {
-//            let objects = segue.destination as? ShelfFormViewController
-//            objects?.searchProduct=data
-//        }
-//    }
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //        if segue.identifier == "shelfForm" {
+    //            let objects = segue.destination as? ShelfFormViewController
+    //            objects?.searchProduct=data
+    //        }
+    //    }
     
 }

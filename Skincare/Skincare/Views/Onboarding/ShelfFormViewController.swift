@@ -25,8 +25,6 @@ class ShelfFormViewController: UIViewController{
         super.viewDidLoad()
         progressView.progress = 0.85
         navigationController?.setNavigationBarHidden(false, animated: false)
-        
-        defaults.set("girl1-profile", forKey: "profileImage")
         searchProduct = defaults.stringArray(forKey: "completeTable") ?? []
         print(searchProduct)
         
