@@ -28,6 +28,7 @@
 		A02F0F6E275940F700AFD1C1 /* SkinRoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F0F6D275940F700AFD1C1 /* SkinRoutineTableViewCell.swift */; };
 		A02F0F7127595EED00AFD1C1 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F0F7027595EED00AFD1C1 /* TaskTableViewCell.swift */; };
 		A035E4032768D3EF00811747 /* NewProductRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A035E4022768D3EF00811747 /* NewProductRoutineViewController.swift */; };
+		A035E4072768E26F00811747 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A035E4062768E26F00811747 /* CoreDataStack.swift */; };
 		A08316CE27626F50006F21B4 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08316CD27626F50006F21B4 /* Identifiers.swift */; };
 		A08316D027627BDA006F21B4 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08316CF27627BDA006F21B4 /* NotificationManager.swift */; };
 		A09A402D275E6AD500E6122F /* ShelfFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09A402C275E6AD500E6122F /* ShelfFormTableViewCell.swift */; };
@@ -69,6 +70,7 @@
 		A02F0F6D275940F700AFD1C1 /* SkinRoutineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinRoutineTableViewCell.swift; sourceTree = "<group>"; };
 		A02F0F7027595EED00AFD1C1 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		A035E4022768D3EF00811747 /* NewProductRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductRoutineViewController.swift; sourceTree = "<group>"; };
+		A035E4062768E26F00811747 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		A08316CD27626F50006F21B4 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		A08316CF27627BDA006F21B4 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		A09A402C275E6AD500E6122F /* ShelfFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfFormTableViewCell.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				99B1646627516C6100DE8120 /* AppDelegate.swift */,
 				99B1646827516C6100DE8120 /* SceneDelegate.swift */,
+				A035E4052768E23700811747 /* CoreData */,
 				A08316CC27626F34006F21B4 /* Notifications */,
 				A012EDBC2762984A00FD6030 /* Model */,
 				A0F388D02756F9F100153D13 /* Views */,
@@ -127,7 +130,6 @@
 				99B1647427516C6300DE8120 /* LaunchScreen.storyboard */,
 				99B1647227516C6300DE8120 /* Assets.xcassets */,
 				99B1647727516C6300DE8120 /* Info.plist */,
-				99B1646F27516C6100DE8120 /* Skincare.xcdatamodeld */,
 			);
 			path = Skincare;
 			sourceTree = "<group>";
@@ -206,6 +208,15 @@
 				A035E4022768D3EF00811747 /* NewProductRoutineViewController.swift */,
 			);
 			path = Shelf;
+			sourceTree = "<group>";
+		};
+		A035E4052768E23700811747 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				99B1646F27516C6100DE8120 /* Skincare.xcdatamodeld */,
+				A035E4062768E26F00811747 /* CoreDataStack.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		A08316CC27626F34006F21B4 /* Notifications */ = {
@@ -369,6 +380,7 @@
 				A0F388CD2756DE0600153D13 /* SkinTypeViewController.swift in Sources */,
 				A09A402D275E6AD500E6122F /* ShelfFormTableViewCell.swift in Sources */,
 				A0F388C92756DDC700153D13 /* NameViewController.swift in Sources */,
+				A035E4072768E26F00811747 /* CoreDataStack.swift in Sources */,
 				212B04B5275FD82500D9DBED /* Model.swift in Sources */,
 				A08316D027627BDA006F21B4 /* NotificationManager.swift in Sources */,
 				A0F388CF2756F9C800153D13 /* YourDayViewController.swift in Sources */,
@@ -524,6 +536,7 @@
 				DEVELOPMENT_TEAM = 2A2JAGWQ62;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Skincare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Skinfeel;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -552,6 +565,7 @@
 				DEVELOPMENT_TEAM = 2A2JAGWQ62;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Skincare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Skinfeel;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

@@ -38,14 +38,11 @@ class SkinTypeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        print(currentCounter)
-        //        print(currentColorCounter)
-        
         for i in currentCounter {
             counts[i] = (counts[i] ?? 0) + 1
         }
-        print(counts)
-        setupSkinType()
+        print("Respostas e suas repetições: ",counts)
+        getMax()
         setupColor()
         
         //        let resposta = get_max(dicionario: counts)
@@ -99,37 +96,63 @@ class SkinTypeViewController: UIViewController {
         
     }
     
-//    func get_max(dicionario: [Int:Int]) -> ([Int:Int], [Int:Int]){ //retorno do dicionario de repetidos, e o dicionario de desempate
-//        var aux: [Int:Int] = [:] //dicionario auxiliar
-//        var repetidos: [Int:Int] = [:] //dicionário de números que foram repetidos
-//        var desempate: [Int:Int] = [:] //dicionário com o número de desempate
-//        
-//        for k in dicionario.keys { //passando por todas as chaves do dicionario
-//            let valor = dicionario[k]
-//            if aux[valor] {
-//                aux[valor] += 1
-//            } else {
-//                aux[valor] = 1
-//            }
-//        }
-//        
-//        for k in aux.keys {
-//            if aux.count > 1 { //Se o dicionário tiver mais que uma chave, é porque ele entra no dicionário repetidos
-//                repetidos[k] = aux[k]
-//            } else { //Se o dicionário tiver menos que uma chave, é porque ele entra no dicionário de desempate
-//                desempate[k] = aux[k]
-//            }
-//        }
-//        return (repetidos, desempate)
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let url = "https://restapi-skinfeel.herokuapp.com/produtos"
+        let instance = Request()
+        group.enter()
+        instance.getData(from: url) { result in
+            defer{self.group.leave()}
+            switch result {
+            case .success(let products):
+                for product in products{
+                    self.jsonObjects.append(product)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+        group.notify(queue: .main){
+            print(self.jsonObjects)
+            self.setupData(products: self.jsonObjects)
+            print(self.data)
+            self.defaults.set(self.data, forKey: "completeTable")
+        }
+    }
     
+    //COM DESEMPATE!!!
+    //    func get_max(dicionario: [Int:Int]) -> ([Int:Int], [Int:Int]){ //retorno do dicionario de repetidos, e o dicionario de desempate
+    //        var aux: [Int:Int] = [:] //dicionario auxiliar
+    //        var repetidos: [Int:Int] = [:] //dicionário de números que foram repetidos
+    //        var desempate: [Int:Int] = [:] //dicionário com o número de desempate
+    //
+    //        for k in dicionario.keys { //passando por todas as chaves do dicionario
+    //            let valor = dicionario[k]
+    //            if let chave = aux[valor!] {
+    //                aux[chave]! += 1
+    //            } else {
+    //                aux[valor!] = 1
+    //            }
+    //        }
+    //
+    //        for k in aux.keys {
+    //            if aux.count > 1 { //Se o dicionário tiver mais que uma chave, é porque ele entra no dicionário repetidos
+    //                repetidos[k] = aux[k]
+    //            } else { //Se o dicionário tiver menos que uma chave, é porque ele entra no dicionário de desempate
+    //                desempate[k] = aux[k]
+    //            }
+    //        }
+    //        return (repetidos, desempate)
+    //    }
     
-    func setupSkinType() { //Configurando o tipo de pele, SEM DESEMPATE!
-        //Pegando o maior valor no vetor
+    //SEM DESEMPATE!
+    func getMax() {
+        //Pegando o maior valor no vetor da resposta
         let maxValueOfSomeDictionary = counts.max {
             a, b in a.value < b.value
         }
-        print(maxValueOfSomeDictionary!.key,maxValueOfSomeDictionary!.value) //Pega o maior value de uma key do dicionário
+        print("Maior chave: \(maxValueOfSomeDictionary!.key):",maxValueOfSomeDictionary!.value) //Pega o maior value de uma key do dicionário
         
         //Definindo o skinType
         
@@ -171,30 +194,6 @@ class SkinTypeViewController: UIViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        let url = "https://restapi-skinfeel.herokuapp.com/produtos"
-        let instance = Request()
-        group.enter()
-        instance.getData(from: url) { result in
-            defer{self.group.leave()}
-            switch result {
-            case .success(let products):
-                for product in products{
-                    self.jsonObjects.append(product)
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
-        
-        group.notify(queue: .main){
-            print(self.jsonObjects)
-            self.setupData(products: self.jsonObjects)
-            print(self.data)
-            self.defaults.set(self.data, forKey: "completeTable")
-        }
-    }
     
     //Ação do backButton
     @objc func back(){
