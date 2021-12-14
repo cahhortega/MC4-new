@@ -16,7 +16,7 @@ class SkinTypeViewController: UIViewController {
     
     var jsonObjects: [Product] = []
     public var data: [String] = []
-    public let group = DispatchGroup()    
+    public let group = DispatchGroup()
     var previousView = FormViewController()
     
     @IBOutlet weak var skinImage: UIImageView!
@@ -47,16 +47,17 @@ class SkinTypeViewController: UIViewController {
         let desempate: [Int:Int] = resposta[1]
         print("Repetidos:", repetidos)
         print("Desempate:", desempate)
-
         
+        //        var maior: Int = 0
+        if repetidos.count <=  desempate.count || desempate.count == 0 { //Sem desempate, mas algo tava no desempate (y:4, x:1)
+            getMax(dicionario: repetidos)
+        } else { //Quando houver empate
+            getSkin(dicionarioRepetido: repetidos, dicionarioDesempate: desempate)
+        }
         
         //Caso existem chaves que estão se repetindo, ele pega a maior
-        getMax(dicionario: repetidos)
         setupColor()
-
-        // if desempate.count > repetidos.count {
-        //        UM UNICO VALOR
-        //}
+        
         
         let mainString = "Sua pele é \(skinType)"
         progressView.progress = 0.75
@@ -82,8 +83,7 @@ class SkinTypeViewController: UIViewController {
             setupPage(girl: "girl4", skin: "mista", name: "Olivia")
             
         default:
-            setupPage(girl: "girl1", skin: "oleosa", name: "Maria")
-            
+            print("erro")
         }
         
         //tableView
@@ -128,7 +128,7 @@ class SkinTypeViewController: UIViewController {
         }
     }
     
-    //COM DESEMPATE
+    //COM EMPATE
     func getAnswers(dicionario: [Int]) -> [[Int:Int]]{ //retorno do dicionario de repetidos, e o dicionario de desempate
         var aux: [Int:Int] = [:] //dicionario auxiliar
         var repetidos: [Int:Int] = [:] //dicionário de números que foram repetidos
@@ -152,28 +152,74 @@ class SkinTypeViewController: UIViewController {
         return lista
     }
     
-    //SEM DESEMPATE
+    //SEM EMPATE
     func getMax(dicionario: [Int:Int]) {
-            //Pegando o maior valor no vetor da resposta
-            let maxValueOfSomeDictionary = dicionario.max {
-                a, b in a.value < b.value
-            }
-            print("Maior chave: \(maxValueOfSomeDictionary!.key):",maxValueOfSomeDictionary!.value) //Pega o maior value de uma key do dicionário
-
-            switch maxValueOfSomeDictionary!.key { //Verifica qual é a key
-            case 1:
-                skinType = "mista"
-            case 2:
-                skinType = "normal"
-            case 3:
-                skinType = "oleosa"
-            case 4:
-                skinType = "seca"
-            default:
-                skinType = "erro"
-            }
-    
+        //Pegando o maior valor no vetor da resposta
+        let maxValueOfSomeDictionary = dicionario.max {
+            a, b in a.value < b.value
         }
+        print("Maior chave: \(maxValueOfSomeDictionary!.key):",maxValueOfSomeDictionary!.value) //Pega o maior value de uma key do dicionário
+        
+        switch maxValueOfSomeDictionary!.key { //Verifica qual é a key
+        case 1:
+            skinType = "mista"
+        case 2:
+            skinType = "normal"
+        case 3:
+            skinType = "oleosa"
+        case 4:
+            skinType = "seca"
+        default:
+            skinType = "erro"
+        }
+        
+    }
+    func getSkin(dicionarioRepetido: [Int:Int], dicionarioDesempate: [Int:Int]) {
+        //Pegando o maior valor no vetor da resposta
+        let maxValueOfSomeDictionary = dicionarioDesempate.max {
+            a, b in a.value < b.value
+        }
+        print("Chave de desempate: \(maxValueOfSomeDictionary!.key)") //Pega o maior value de uma key do dicionário
+        let valor1 = dicionarioRepetido.keys.max()!
+        let valor2 = dicionarioRepetido.keys.min()!
+        switch maxValueOfSomeDictionary!.key { //Verifica qual é a key
+        case 1:
+            if (valor1 == 2 && valor2 == 3) || (valor1 == 3 && valor2 == 2) {
+                skinType = "oleosa"
+            } else if (valor1 == 4 && valor2 == 2) || (valor1 == 2 && valor2 == 4) {
+                skinType = "seca"
+            } else if (valor1 == 3 && valor2 == 4) || (valor1 == 4 && valor2 == 3) {
+                skinType = "oleosa"
+            }
+        case 2:
+            if (valor1 == 1 && valor2 == 3) || (valor1 == 3 && valor2 == 1) {
+                skinType = "oleosa"
+            } else if (valor1 == 4 && valor2 == 1) || (valor1 == 1 && valor2 == 4) {
+                skinType = "seca"
+            } else if (valor1 == 3 && valor2 == 4) || (valor1 == 4 && valor2 == 3) {
+                skinType = "seca"
+            }
+        case 3:
+            if (valor1 == 2 && valor2 == 1) || (valor1 == 1 && valor2 == 2) {
+                skinType = "mista"
+            } else if (valor1 == 4 && valor2 == 1) || (valor1 == 1 && valor2 == 4) {
+                skinType = "mista"
+            } else if (valor1 == 2 && valor2 == 4) || (valor1 == 4 && valor2 == 2) {
+                skinType = "normal"
+            }
+        case 4:
+            if (valor1 == 2 && valor2 == 1) || (valor1 == 1 && valor2 == 2) {
+                skinType = "normal"
+            } else if (valor1 == 2 && valor2 == 3) || (valor1 == 3 && valor2 == 2) {
+                skinType = "normal"
+            } else if (valor1 == 1 && valor2 == 3) || (valor1 == 3 && valor2 == 1) {
+                skinType = "mista"
+            }
+        default:
+            skinType = "erro"
+        }
+        
+    }
     
     func setupPage(girl: String, skin: String, name: String){ //Configurando a página
         defaults.set("\(girl)-profile", forKey: "profileImage")
