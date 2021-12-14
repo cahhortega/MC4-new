@@ -116,6 +116,7 @@
 		DFA15A322768041000DFA649 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFA15A332768041000DFA649 /* Questionario.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Questionario.entitlements; sourceTree = "<group>"; };
 		DFA15A3C2768091F00DFA649 /* CommonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonView.swift; sourceTree = "<group>"; };
+		DFA15A3E2769349200DFA649 /* QuestionarioDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuestionarioDebug.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +304,7 @@
 		DFA15A282768040E00DFA649 /* Questionario */ = {
 			isa = PBXGroup;
 			children = (
+				DFA15A3E2769349200DFA649 /* QuestionarioDebug.entitlements */,
 				DFA15A292768040E00DFA649 /* QuestionarioApp.swift */,
 				DFA15A2B2768040E00DFA649 /* ContentView.swift */,
 				DFA15A2D2768041000DFA649 /* Assets.xcassets */,
@@ -684,7 +686,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Questionario/Questionario.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Questionario/QuestionarioDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Questionario/Preview Content\"";
