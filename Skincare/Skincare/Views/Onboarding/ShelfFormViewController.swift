@@ -21,7 +21,6 @@ class ShelfFormViewController: UIViewController{
     
 
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         progressView.progress = 0.85

@@ -17,6 +17,7 @@ class YourDayViewController: UIViewController {
     let dateFormatterHour = DateFormatter()
     let dateFormatterMin = DateFormatter()
     
+    
     override func viewDidDisappear(_ animated: Bool) {
         //Pegando os valores dos pickers
         let morningHour = dateFormatterHour.string(from: pickerMorning.date)

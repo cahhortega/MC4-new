@@ -26,3 +26,10 @@ enum NotificationPicker: String {
     case NightMin = "pickerNightMin"
 
 }
+
+enum FormQuestions: String {
+    case Normal = "A"
+    case Oily = "B"
+    case Seca = "C"
+    case Mixed = "D"
+}

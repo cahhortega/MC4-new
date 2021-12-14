@@ -16,9 +16,11 @@ class TodayViewController: UIViewController {
     //-1 é para igualar as posições do dia com as posições dos botões no vetor
     let currentDay = Calendar.current.component(.day, from: Date()) //Dia
     var currentMonth = Calendar.current.component(.month, from: Date()) //Mês
+    let fraseSemRotina = UILabel()
+    let imagemBoasVindas = UIImageView()
+
     
     @IBOutlet weak var profileAvatar: UIButton!
-    
     @IBOutlet var day1: UIButton!
     @IBOutlet var day2: UIButton!
     @IBOutlet var day3: UIButton!
@@ -29,15 +31,35 @@ class TodayViewController: UIViewController {
     
     lazy var days: [UIButton] = [day1, day2, day3, day4, day5, day6, day7]
     
+    var oi: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
         //collectionView
         self.routineCollectionView.delegate = self
         self.routineCollectionView.dataSource = self
+        view.addSubview(fraseSemRotina)
+        view.addSubview(imagemBoasVindas)
         
+        imagemBoasVindas.image = UIImage(named: "menina triste")
+        imagemBoasVindas.translatesAutoresizingMaskIntoConstraints = false
         
+        imagemBoasVindas.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 50).isActive = true
+        imagemBoasVindas.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
+        fraseSemRotina.text = "Clique em ”+” para criar sua primeira rotina"
+
+        fraseSemRotina.numberOfLines = 0
+        fraseSemRotina.textAlignment = .center
+        fraseSemRotina.textColor = .label
+
+        fraseSemRotina.translatesAutoresizingMaskIntoConstraints = false
+        fraseSemRotina.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35).isActive = true
+        fraseSemRotina.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35).isActive = true
+        fraseSemRotina.topAnchor.constraint(equalTo: imagemBoasVindas.bottomAnchor, constant: 35).isActive = true
+        
+
         //Botões dos dias da semana
         day1.translatesAutoresizingMaskIntoConstraints = false
         day1.addTarget(self, action: #selector(clicarDia1), for: .touchUpInside)
@@ -68,12 +90,36 @@ class TodayViewController: UIViewController {
         calendario()
         
     }
+    
+
+
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         var buttonImage = UIImage(named: defaults.string(forKey: "profileImage")!)
         profileAvatar.setImage(buttonImage, for: .normal)
         
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        let buttonImage = UIImage(named: defaults.string(forKey: "profileImage")!)
+        profileAvatar.setImage(buttonImage, for: .normal)
+//        self.curriculos = CurriculoRepositorio.shared.buscarTodos()
+        //(lista dos cards collection)
+        self.routineCollectionView.reloadData()
+        numeroDeCelulas()
+    }
+    
+    func numeroDeCelulas(){
+        if Int(self.oi.count) != 0 { //Colocar aqui a lista de cards
+            routineCollectionView.isHidden = false
+            fraseSemRotina.isHidden = true
+            imagemBoasVindas.isHidden = true
+            
+        } else{
+            routineCollectionView.isHidden = true
+            fraseSemRotina.isHidden = false
+            imagemBoasVindas.isHidden = false
+            
+        }
     }
     
     func calendario(){
@@ -118,6 +164,7 @@ class TodayViewController: UIViewController {
                          day5: UIButton,
                          day6: UIButton,
                          day7: UIButton) {
+        
         if !selected.isSelected{
             selected.backgroundColor = UIColor(named: "Rosa")
             selected.titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
@@ -176,6 +223,8 @@ class TodayViewController: UIViewController {
         clickDays(selected: day7, day2: day2, day3: day3, day4: day4, day5: day5, day6: day6, day7: day1)
     }
     
+
+    
 }
 //Formatação da collectionView
 extension TodayViewController: UICollectionViewDelegate{
@@ -184,7 +233,7 @@ extension TodayViewController: UICollectionViewDelegate{
 
 extension TodayViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
