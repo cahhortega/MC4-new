@@ -26,8 +26,6 @@ class ShelfFormViewController: UIViewController{
         super.viewDidLoad()
         progressView.progress = 0.85
         navigationController?.setNavigationBarHidden(false, animated: false)
-        
-        defaults.set("girl1-profile", forKey: "profileImage")
         searchProduct = defaults.stringArray(forKey: "completeTable") ?? []
         print(searchProduct)
         
@@ -106,6 +104,13 @@ extension ShelfFormViewController: UISearchBarDelegate, UITableViewDataSource, U
             myProducts.append(text)
             print(myProducts)
         }
+        for myProduct in myProducts {
+            if text == myProduct{
+                cell.accessoryType = .checkmark
+            } else{
+                cell.accessoryType = .none
+            }
+        }
         defaults.set(myProducts, forKey: "myKey")
     }
     
@@ -119,6 +124,13 @@ extension ShelfFormViewController: UISearchBarDelegate, UITableViewDataSource, U
             filtered = myProducts.filter{$0 != text}
         }
         print(filtered)
+        for myProduct in myProducts {
+            if text == myProduct{
+                cell.accessoryType = .checkmark
+            } else{
+                cell.accessoryType = .none
+            }
+        }
         defaults.set(filtered, forKey: "myKey")
     }
 

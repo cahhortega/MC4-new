@@ -11,7 +11,6 @@ class NewRoutineViewController: UIViewController {
     @IBOutlet var tasksTableView: UITableView!
     @IBOutlet var routineName: UITextField!
     @IBOutlet var segmentedControl: UISegmentedControl!
-
     
     var dataFilter = 0
     var morningTasks: [String] = ["Limpeza", "Hidratação", "Proteção"]
