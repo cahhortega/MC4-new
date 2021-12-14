@@ -52,7 +52,7 @@ class NewProductRoutineViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let chosenProducts = defaults.stringArray(forKey: "myKey") ?? []
+        chosenProducts = defaults.stringArray(forKey: "myKey") ?? []
         print(chosenProducts)
         list = chosenProducts
     }
