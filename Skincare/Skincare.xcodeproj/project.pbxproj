@@ -248,9 +248,9 @@
 		A0FF130A275FDF9F00A86323 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				A0FDB2B82762480E00F3B35D /* YourRoutineViewController.swift */,
 				A02F0F682758246400AFD1C1 /* TodayViewController.swift */,
 				A02F0F6B275935EF00AFD1C1 /* NewRoutineViewController.swift */,
+				A0FDB2B82762480E00F3B35D /* YourRoutineViewController.swift */,
 				A02F0F5B275813D800AFD1C1 /* SettingsViewController.swift */,
 				A0FF1303275EB40200A86323 /* ShelfViewController.swift */,
 				A0FF1307275EBC6E00A86323 /* NewProductViewController.swift */,

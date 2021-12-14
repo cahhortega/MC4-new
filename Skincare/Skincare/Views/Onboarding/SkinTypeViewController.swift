@@ -12,33 +12,79 @@ class SkinTypeViewController: UIViewController {
     @IBOutlet var tasksSegmentedControl: UISegmentedControl!
     @IBOutlet var skinTypeLabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
+    var defaults = UserDefaults.standard
+    
     var jsonObjects: [Product] = []
     public var data: [String] = []
     public let group = DispatchGroup()
     
+    var previousView = FormViewController()
+    
+    @IBOutlet weak var skinImage: UIImageView!
+    @IBOutlet weak var subtitle: UILabel!
+    @IBOutlet weak var meetLabel: UILabel!
+    var colorSkin: String = ""
+    
+    var currentCounter = UserDefaults.standard.array(forKey: "contador") as? [Int] ?? [0,0,0,0,0]
+    var currentColorCounter = UserDefaults.standard.array(forKey: "corContador") as? [String] ?? ["","","","",""]
     
     var dataFilter = 0
     var morningTasks: [String] = ["Limpeza", "Hidratação", "Proteção"]
     var nightTasks: [String] = ["Limpeza", "Esfoliação", "Hidratação"]
     var afternoonTasks: [String] = ["Proteção"]
-    //    var types = ["oleosa", "seca", "normal", "mista"]
-    let mainString = "Sua pele é oleosa"
-    let skinType = "oleosa"
+    var skinType = ""
+    var counts: [Int: Int] = [:]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(currentCounter)
+        print(currentColorCounter)
+        
+        for i in currentCounter {
+           counts[i] = (counts[i] ?? 0) + 1
+        }
+        print(counts)
+        setupColor()
+        setupSkinType()
+        
+//        let resposta = get_max(dicionario: counts)
+//        print("Resposta:",resposta)
+        
+        
+        // [{2: 2, 1: 2}, {3: 1}]
+
+        let mainString = "Sua pele é \(skinType)"
         progressView.progress = 0.75
         navigationController?.setNavigationBarHidden(false, animated: false)
-        
-        //tableView
-        self.routineTableView.delegate = self
-        self.routineTableView.dataSource = self
         
         //atributted string para mudar a cor do tipo de pele
         let range = (mainString as NSString).range(of: skinType)
         let mutableAttributedString = NSMutableAttributedString.init(string: mainString)
-        mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(named: "Verde")!, range: range)
+        mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(named: colorSkin)!, range: range)
         skinTypeLabel.attributedText = mutableAttributedString
+
+        switch skinType {
+        case "oleosa":
+            setupPage(girl: "girl1", skin: "oleosa", name: "Maria")
+
+        case "normal":
+            setupPage(girl: "girl2", skin: "normal", name: "Luiza")
+
+        case "seca":
+            setupPage(girl: "girl3", skin: "seca", name: "Carla")
+
+        case "mista":
+            setupPage(girl: "girl4", skin: "mista", name: "Olivia")
+
+        default:
+            setupPage(girl: "girl1", skin: "oleosa", name: "Maria")
+
+        }
+        
+        //tableView
+        self.routineTableView.delegate = self
+        self.routineTableView.dataSource = self
         
         
 //        //navigationBar
@@ -49,10 +95,85 @@ class SkinTypeViewController: UIViewController {
             action: #selector(back)
         )
         navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "Rosa")
-
-        
         setupData(products: jsonObjects)
         
+    }
+    
+//    func get_max(dicionario: [Int:Int]) -> ([Int:Int], [Int:Int]) {
+//        var aux: [Int:Int] = [:]
+//
+//        for k in dicionario.keys {
+//            let valor: Int = dicionario[k]!
+//            if aux[valor] {
+//                aux[valor] += 1
+//            } else {
+//                aux[valor] = 1
+//            }
+//        }
+//
+//        var repetidos: [Int:Int] = [:]
+//        var desimpate: [Int:Int] = [:]
+//
+//        for k in aux.keys {
+//            if aux[k] > 1 {
+//                repetidos[k] = aux[k]
+//            } else {
+//                desimpate[k] = aux[k]
+//            }
+//        }
+//        return (repetidos, desimpate)
+//    }
+    
+    
+    func setupSkinType() {
+        //Pegando o maior valor no vetor
+        let maxValueOfSomeDictionary = counts.max {
+            a, b in a.value < b.value
+        }
+        print(maxValueOfSomeDictionary!.key,maxValueOfSomeDictionary!.value)
+    
+        //Definindo o skinType
+        
+        switch maxValueOfSomeDictionary!.key {
+        case 1:
+            skinType = "mista"
+        case 2:
+            skinType = "normal"
+        case 3:
+            skinType = "oleosa"
+        case 4:
+            skinType = "seca"
+        default:
+            skinType = "mista"
+        }
+      
+    }
+    
+    func setupPage(girl: String, skin: String, name: String){
+        defaults.set("\(girl)-profile", forKey: "profileImage")
+        skinType = skin
+        subtitle.text = "A rotina da \(name) vai te ajudar a começar"
+        meetLabel.text = "Conheça \(name)"
+        skinImage.image = UIImage(named: girl)
+    }
+    
+    func setupColor(){
+        switch skinType {
+        case "oleosa":
+            colorSkin = "Verde"
+        
+        case "normal":
+            colorSkin = "Azul"
+        
+        case "seca":
+            colorSkin = "Rosa"
+
+        case "mista":
+            colorSkin = "Roxo"
+
+        default:
+            colorSkin = "Roxo"
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,6 +198,7 @@ class SkinTypeViewController: UIViewController {
             self.setupData(products: self.jsonObjects)
         }
     }
+    
     //Ação do backButton
     @objc func back(){
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)

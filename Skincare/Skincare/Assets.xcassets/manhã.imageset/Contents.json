@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "manhã.png",
+      "filename" : "manhã.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "manhã@2x.png",
+      "filename" : "manhã@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "manhã@3x.png",
+      "filename" : "manhã@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

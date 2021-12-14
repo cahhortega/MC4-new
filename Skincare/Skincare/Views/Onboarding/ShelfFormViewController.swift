@@ -14,10 +14,7 @@ class ShelfFormViewController: UIViewController{
     @IBOutlet var productTableView: UITableView!
     var searchProduct: [String] = []
     var filteredData: [String]!
-    
-    
 
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
