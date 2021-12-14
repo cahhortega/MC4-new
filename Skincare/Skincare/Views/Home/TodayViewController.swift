@@ -35,10 +35,8 @@ class TodayViewController: UIViewController {
         //collectionView
         self.routineCollectionView.delegate = self
         self.routineCollectionView.dataSource = self
-        defaults.set("girl1-profile", forKey: "profileImage")
         
-        var buttonImage = UIImage(named: defaults.string(forKey: "profileImage")!)
-        profileAvatar.setImage(buttonImage, for: .normal)
+        
         
         //Botões dos dias da semana
         day1.translatesAutoresizingMaskIntoConstraints = false
@@ -72,6 +70,9 @@ class TodayViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        var buttonImage = UIImage(named: defaults.string(forKey: "profileImage")!)
+        profileAvatar.setImage(buttonImage, for: .normal)
+        
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
