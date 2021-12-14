@@ -14,17 +14,23 @@ class ShelfFormViewController: UIViewController{
     @IBOutlet var productTableView: UITableView!
     var searchProduct: [String] = []
     var filteredData: [String]!
+    var myProducts: [String] = []
+    let defaults = UserDefaults.standard
+    var filtered: [String] = []
+    var checkedItems = Set<String>()
     
     
 
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         progressView.progress = 0.85
         navigationController?.setNavigationBarHidden(false, animated: false)
+        searchProduct = defaults.stringArray(forKey: "completeTable") ?? []
         print(searchProduct)
+        
         filteredData = searchProduct
+        
         //tableView
         self.productTableView.delegate = self
         self.productTableView.dataSource = self
@@ -53,12 +59,7 @@ class ShelfFormViewController: UIViewController{
         let vc = storyBoard.instantiateViewController(identifier: "type") as! SkinTypeViewController
         self.navigationController?.pushViewController(vc, animated: false)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
-    
-    
+
 
 }
 
@@ -71,6 +72,12 @@ extension ShelfFormViewController: UISearchBarDelegate, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "produto", for: indexPath) as! ShelfFormTableViewCell
         cell.textLabel?.text = filteredData[indexPath.row]
+        let items = filteredData[indexPath.row]
+        if myProducts.contains(items){
+            cell.accessoryType = .checkmark
+        }else {
+            cell.accessoryType = .none
+        }
         return cell
     }
     
@@ -87,5 +94,45 @@ extension ShelfFormViewController: UISearchBarDelegate, UITableViewDataSource, U
         }
         self.productTableView.reloadData()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = self.tableView(productTableView, cellForRowAt: indexPath)
+        cell.accessoryType = .checkmark
+        let text = cell.textLabel!.text
+        if let text = text {
+            NSLog("did select and the text is \(text)")
+            myProducts.append(text)
+            print(myProducts)
+        }
+        for myProduct in myProducts {
+            if text == myProduct{
+                cell.accessoryType = .checkmark
+            } else{
+                cell.accessoryType = .none
+            }
+        }
+        defaults.set(myProducts, forKey: "myKey")
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = self.tableView(productTableView, cellForRowAt: indexPath)
+        cell.accessoryType = .none
+        let text = cell.textLabel!.text
+        if let text = text {
+            NSLog("did select and the text is \(text)")
+            filtered = myProducts.filter{$0 != text}
+        }
+        print(filtered)
+        for myProduct in myProducts {
+            if text == myProduct{
+                cell.accessoryType = .checkmark
+            } else{
+                cell.accessoryType = .none
+            }
+        }
+        defaults.set(filtered, forKey: "myKey")
+    }
+
 }
 

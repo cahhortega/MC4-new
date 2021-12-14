@@ -1,14 +1,15 @@
 //
-//  TaskTableViewCell.swift
+//  addProductTableViewCell.swift
 //  Skincare
 //
-//  Created by Carolina Ortega on 02/12/21.
+//  Created by Carolina Ortega on 10/12/21.
 //
 
+import Foundation
 import UIKit
 
-class TaskTableViewCell: UITableViewCell {
-    @IBOutlet weak var titleTask: UILabel!
+
+class AddProductTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
