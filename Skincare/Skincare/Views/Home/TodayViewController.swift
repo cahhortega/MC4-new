@@ -96,6 +96,9 @@ class TodayViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        var buttonImage = UIImage(named: defaults.string(forKey: "profileImage")!)
+        profileAvatar.setImage(buttonImage, for: .normal)
+        
         navigationController?.setNavigationBarHidden(true, animated: animated)
         let buttonImage = UIImage(named: defaults.string(forKey: "profileImage")!)
         profileAvatar.setImage(buttonImage, for: .normal)

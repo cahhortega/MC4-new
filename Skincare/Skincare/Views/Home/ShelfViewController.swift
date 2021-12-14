@@ -11,14 +11,15 @@ class ShelfViewController: UIViewController {
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var productTableView: UITableView!
-    var list = ["oi", "tudo", "bem", "com", "vc", "meu", "nome", "é", "carol"] //Colocar aqui a API
+    var list: [String] = []
     var searchProduct: [String]!
-    
+    let defaults = UserDefaults.standard
+    var chosenProducts: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
-
+        
         //tableView
         self.productTableView.delegate = self
         self.productTableView.dataSource = self
@@ -26,20 +27,23 @@ class ShelfViewController: UIViewController {
         
         //searchBar
         searchBar.delegate = self
-        searchProduct = list
+        
         
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        chosenProducts = defaults.stringArray(forKey: "myKey") ?? []
+        print(chosenProducts)
+        list = chosenProducts
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
-    
+
 }
 
 extension ShelfViewController: UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchProduct.count
+        return list.count
     }
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -56,13 +60,20 @@ extension ShelfViewController: UISearchBarDelegate, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "estante", for: indexPath) as! ShelfTableViewCell
-        cell.textLabel?.text = searchProduct[indexPath.row]
+        cell.textLabel?.text = list[indexPath.row]
         return cell
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchProduct = searchText.isEmpty ? list : list.filter({(dataString: String) -> Bool in
-            return dataString.range(of: searchText, options: .caseInsensitive) != nil
-        })
-        productTableView.reloadData()
+        list = []
+        if searchText == ""{
+            list = chosenProducts
+        }else {
+            for product in chosenProducts{
+                if product.lowercased().contains(searchText.lowercased()){
+                    list.append(product)
+                }
+            }
+        }
+        self.productTableView.reloadData()
     }
 }
