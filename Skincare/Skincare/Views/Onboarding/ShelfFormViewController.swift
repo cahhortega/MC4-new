@@ -10,7 +10,6 @@ import UIKit
 class ShelfFormViewController: UIViewController{
 
     @IBOutlet weak var progressView: UIProgressView!
-    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var productTableView: UITableView!
     var searchProduct: [String] = []
     var filteredData: [String]!
@@ -18,8 +17,6 @@ class ShelfFormViewController: UIViewController{
     let defaults = UserDefaults.standard
     var filtered: [String] = []
     var checkedItems = Set<String>()
-    var selection: Bool = false
-    
 
     
     override func viewDidLoad() {
@@ -30,8 +27,6 @@ class ShelfFormViewController: UIViewController{
         print(searchProduct)
         
         filteredData = searchProduct
-        defaults.setValue(selection, forKey: "isSelected")
-        
         //tableView
         self.productTableView.delegate = self
         self.productTableView.dataSource = self
@@ -40,8 +35,6 @@ class ShelfFormViewController: UIViewController{
         self.productTableView.allowsMultipleSelection = true
         self.productTableView.allowsMultipleSelectionDuringEditing = true
         
-        //searchBar
-        searchBar.delegate = self
         
         //navigationBar
         navigationItem.leftBarButtonItem = UIBarButtonItem(
@@ -64,11 +57,15 @@ class ShelfFormViewController: UIViewController{
 
 }
 
-extension ShelfFormViewController: UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
+extension ShelfFormViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredData.count
     }
+
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        cell.accessoryType = selectedIndexPaths.contains(indexPath) ? .checkmark : .none
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "produto", for: indexPath) as! ShelfFormTableViewCell
@@ -82,23 +79,9 @@ extension ShelfFormViewController: UISearchBarDelegate, UITableViewDataSource, U
         return cell
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredData = []
-        if searchText == ""{
-            filteredData = searchProduct
-        }else {
-            for product in searchProduct{
-                if product.lowercased().contains(searchText.lowercased()){
-                    filteredData.append(product)
-                }
-            }
-        }
-        self.productTableView.reloadData()
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = self.tableView(productTableView, cellForRowAt: indexPath)
-        cell.accessoryType = .checkmark
         let text = cell.textLabel!.text
         if let text = text {
             NSLog("did select and the text is \(text)")
@@ -106,6 +89,7 @@ extension ShelfFormViewController: UISearchBarDelegate, UITableViewDataSource, U
                 myProducts.append(text)
                 print(myProducts)
             }
+            
             
 //        for myProduct in myProducts {
 //            if text == myProduct{
@@ -120,7 +104,6 @@ extension ShelfFormViewController: UISearchBarDelegate, UITableViewDataSource, U
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let cell = self.tableView(productTableView, cellForRowAt: indexPath)
-        cell.accessoryType = .none
         let text = cell.textLabel!.text
         if let text = text {
             NSLog("did select and the text is \(text)")

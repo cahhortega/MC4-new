@@ -272,12 +272,4 @@ extension SkinTypeViewController: UITableViewDataSource {
         return cell
     }
     
-    
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        if segue.identifier == "shelfForm" {
-    //            let objects = segue.destination as? ShelfFormViewController
-    //            objects?.searchProduct=data
-    //        }
-    //    }
-    
 }

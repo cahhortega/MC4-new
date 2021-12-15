@@ -12,7 +12,6 @@ import UIKit
 
 class NewProductShelfViewController: UIViewController{
     @IBOutlet weak var productTableView: UITableView!
-    @IBOutlet weak var searchBar: UITableView!
     var list: [String]!
     var searchProduct: [String]!
     var selectedProducts: [String]!
@@ -42,8 +41,6 @@ class NewProductShelfViewController: UIViewController{
         self.productTableView.allowsMultipleSelection = true
         self.productTableView.allowsMultipleSelectionDuringEditing = true
         
-        //searchBar
-        searchBar.delegate = self
         
         navigationController?.setNavigationBarHidden(false, animated: false)
         navigationItem.setHidesBackButton(false, animated: false)
@@ -52,7 +49,7 @@ class NewProductShelfViewController: UIViewController{
     
 }
 
-extension NewProductShelfViewController: UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
+extension NewProductShelfViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filtered.count
@@ -63,54 +60,9 @@ extension NewProductShelfViewController: UISearchBarDelegate, UITableViewDataSou
         cell.textLabel?.text = filtered[indexPath.row]
         return cell
     }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        list = []
-        if searchText == ""{
-            list = searchProduct
-        }else {
-            for product in searchProduct{
-                if product.lowercased().contains(searchText.lowercased()){
-                    list.append(product)
-                }
-            }
-        }
-        self.productTableView.reloadData()
-    }
-    
-    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        let cell = self.tableView(productTableView, cellForRowAt: indexPath)
-    //        cell.accessoryType = .checkmark
-    //        let text = cell.textLabel!.text
-    //        if let text = text {
-    //            NSLog("did select and the text is \(text)")
-    //            myProducts.append(text)
-    //           // print(myProducts)
-    //        }
-    //        defaults.set(myProducts, forKey: "myKey")
-    //    }
-    //
-    //
-    //    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-    //        let cell = self.tableView(productTableView, cellForRowAt: indexPath)
-    //        cell.accessoryType = .none
-    //        let text = cell.textLabel!.text
-    //        if let text = text {
-    //            NSLog("did select and the text is \(text)")
-    //            filtered = myProducts.filter{$0 != text}
-    //        }
-    //       // print(filtered)
-    //        defaults.set(filtered, forKey: "myKey")
-    //    }
+
     
 }
 
-//extension Array where Element: Hashable {
-//    func difference(from other: [Element]) -> [Element] {
-//        let thisSet = Set(self)
-//        let otherSet = Set(other)
-//        return Array(thisSet.symmetricDifference(otherSet))
-//    }
-//}
 
 

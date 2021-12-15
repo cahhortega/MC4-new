@@ -9,7 +9,6 @@ import UIKit
 
 class ShelfViewController: UIViewController {
     
-    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var productTableView: UITableView!
     var list: [String] = []
     var searchProduct: [String]!
@@ -24,10 +23,7 @@ class ShelfViewController: UIViewController {
         self.productTableView.delegate = self
         self.productTableView.dataSource = self
         
-        
-        //searchBar
-        searchBar.delegate = self
-        
+
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -40,7 +36,7 @@ class ShelfViewController: UIViewController {
 
 }
 
-extension ShelfViewController: UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
+extension ShelfViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
@@ -62,18 +58,5 @@ extension ShelfViewController: UISearchBarDelegate, UITableViewDataSource, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "estante", for: indexPath) as! ShelfTableViewCell
         cell.textLabel?.text = list[indexPath.row]
         return cell
-    }
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        list = []
-        if searchText == ""{
-            list = chosenProducts
-        }else {
-            for product in chosenProducts{
-                if product.lowercased().contains(searchText.lowercased()){
-                    list.append(product)
-                }
-            }
-        }
-        self.productTableView.reloadData()
     }
 }
