@@ -33,17 +33,17 @@ class NewProductRoutineViewController: UIViewController{
         searchBar.delegate = self
         
     }
-    
+//    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         chosenProducts = defaults.stringArray(forKey: "myKey") ?? []
         print(chosenProducts)
         list = chosenProducts
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
 
     }
     
-}
 
     
 extension NewProductRoutineViewController: UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
