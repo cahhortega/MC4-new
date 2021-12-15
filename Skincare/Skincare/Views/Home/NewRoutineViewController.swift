@@ -10,8 +10,11 @@ import UIKit
 class NewRoutineViewController: UIViewController {
     @IBOutlet var tasksTableView: UITableView!
     @IBOutlet var routineName: UITextField!
+    @IBOutlet weak var dataStart: UIDatePicker!
+    @IBOutlet weak var dataEnd: UIDatePicker!
     @IBOutlet var segmentedControl: UISegmentedControl!
     
+    weak var TodayViewControllerDelegate: TodayViewControllerDelegate?
     var dataFilter = 0
     var morningTasks: [String] = ["Limpeza", "Hidratação", "Proteção"]
     // Data for home tasks
@@ -98,6 +101,30 @@ class NewRoutineViewController: UIViewController {
         self.tasksTableView.reloadData()
     }
     
+    @IBAction func saveFunc(_ sender: Any) {
+        guard let routineName = self.routineName.text else {
+            return
+        }
+        let dataEnd: Date = self.dataEnd.date
+        let dataStart: Date = self.dataStart.date
+        let seg: Bool = (self.seg != nil)
+        let ter: Bool = (self.ter != nil)
+        let qua: Bool = (self.qua != nil)
+        let qui: Bool = (self.qui != nil)
+        let sex: Bool = (self.sex != nil)
+        let sab: Bool = (self.sab != nil)
+        let dom: Bool = (self.dom != nil)
+        if dataStart <= Date(){
+            print("data invalida")
+        }
+        if dataEnd <= dataStart{
+            print("data fim invalida")
+        }
+        if seg == false && ter == false && qua == false && qui == false && sex == false && sab == false && dom == false{
+            print("ta faltando coisa ai")
+        }
+       var _ = CoreDataStack.shared.createRoutine(routineName: routineName, dataEnd: Date(), dataStart: Date(), seg: Bool(), ter: Bool(), qua: Bool(), qui: Bool(), sex: Bool(), sab: Bool(), dom: Bool())
+    }
 }
 
 //tableView
@@ -108,17 +135,6 @@ extension NewRoutineViewController: UITableViewDelegate{
 extension NewRoutineViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
-//        switch dataFilter {
-//        case 0:
-//            return 1
-//        case 1:
-//            return 1
-//        case 2:
-//            return 1
-//        default:
-//            return 1
-//        }
-//
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         switch dataFilter {
@@ -190,35 +206,14 @@ extension NewRoutineViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 
         if editingStyle == .insert {
-//            numberOfCell -= 1
-//            allCellsText.remove(at: indexPath.row)
             tasksTableView.beginUpdates()
-//            tasksTableView.deleteRows(at: [indexPath], with: .automatic)
             tasksTableView.endUpdates()
         }
     }
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        allCellsText.append(textField.text!)
-//        print(allCellsText)
-//    }
-//
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tasksTableView.dequeueReusableCell(withIdentifier: "add", for: indexPath) as! AddProductTableViewCell
-//        switch dataFilter {
-//        case 0:
-//            cell.titleTask.text = morningTasks[indexPath.row]
-//        case 1:
-//            cell.titleTask.text = afternoonTasks[indexPath.row]
-//        case 2:
-//            cell.titleTask.text = nightTasks[indexPath.row]
-//        default:
-//            cell.titleTask.text = morningTasks[indexPath.row]
-//
-//        }
         
         return cell
         
     }
-    
-    
 }
