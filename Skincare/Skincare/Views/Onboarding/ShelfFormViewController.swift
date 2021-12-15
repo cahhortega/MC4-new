@@ -18,7 +18,7 @@ class ShelfFormViewController: UIViewController{
     let defaults = UserDefaults.standard
     var filtered: [String] = []
     var checkedItems = Set<String>()
-    
+    var selection: Bool = false
     
 
     
@@ -30,6 +30,7 @@ class ShelfFormViewController: UIViewController{
         print(searchProduct)
         
         filteredData = searchProduct
+        defaults.setValue(selection, forKey: "isSelected")
         
         //tableView
         self.productTableView.delegate = self
@@ -101,19 +102,21 @@ extension ShelfFormViewController: UISearchBarDelegate, UITableViewDataSource, U
         let text = cell.textLabel!.text
         if let text = text {
             NSLog("did select and the text is \(text)")
-            myProducts.append(text)
-            print(myProducts)
-        }
-        for myProduct in myProducts {
-            if text == myProduct{
-                cell.accessoryType = .checkmark
-            } else{
-                cell.accessoryType = .none
+            if !myProducts.contains(text){
+                myProducts.append(text)
+                print(myProducts)
             }
-        }
+            
+//        for myProduct in myProducts {
+//            if text == myProduct{
+//                cell.accessoryType = .checkmark
+//            } else{
+//                cell.accessoryType = .none
+//            }
+//        }
         defaults.set(myProducts, forKey: "myKey")
     }
-    
+}
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let cell = self.tableView(productTableView, cellForRowAt: indexPath)
@@ -124,13 +127,13 @@ extension ShelfFormViewController: UISearchBarDelegate, UITableViewDataSource, U
             filtered = myProducts.filter{$0 != text}
         }
         print(filtered)
-        for myProduct in myProducts {
-            if text == myProduct{
-                cell.accessoryType = .checkmark
-            } else{
-                cell.accessoryType = .none
-            }
-        }
+//        for myProduct in myProducts {
+//            if text == myProduct{
+//                cell.accessoryType = .checkmark
+//            } else{
+//                cell.accessoryType = .none
+//            }
+//        }
         defaults.set(filtered, forKey: "myKey")
     }
 
