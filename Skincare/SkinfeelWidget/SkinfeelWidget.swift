@@ -2,7 +2,7 @@
 //  SkinfeelWidget.swift
 //  SkinfeelWidget
 //
-//  Created by Marcus Vinicius Silva de Sousa on 14/12/21.
+//  Created by Carolina Ortega on 14/12/21.
 //
 
 import WidgetKit

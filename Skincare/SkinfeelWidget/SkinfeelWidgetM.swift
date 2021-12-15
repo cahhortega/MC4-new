@@ -1,8 +1,8 @@
 //
-//  SkinfeelWidgetMedium.swift
+//  SkinfeelWidgetM.swift
 //  SkinfeelWidgetExtension
 //
-//  Created by Marcus Vinicius Silva de Sousa on 14/12/21.
+//  Created by Carolina Ortega on 14/12/21.
 //
 
 import SwiftUI
@@ -11,25 +11,25 @@ import UIKit
 
 struct SkinfeelWidgetMedium: View {
   var body: some View {
-    HStack{
-        Text("Minha rotina diurna").font(.system(size: 17, weight: .light, design: .serif))
-      Spacer()
-      HStack{
+      VStack{
+          Text("Minha rotina diurna").font(.system(size: 20)).fontWeight(.medium).multilineTextAlignment(.leading)
+              .padding()
+//        Spacer()
+          HStack(alignment: .center, spacing: 50){
           Circle()
               .fill(Color.init(UIColor(named: "progressCircleButton")!))
-              .frame(width: 35, height: 100, alignment: .center)
+              .frame(width: 50, height: 50, alignment: .center)
           Circle()
               .fill(Color.init(UIColor(named: "progressCircleButton")!))
-              .frame(width: 35, height: 100, alignment: .center)
+              .frame(width: 50, height: 50, alignment: .center)
           Circle()
               .fill(Color.init(UIColor(named: "progressCircleButton")!))
-              .frame(width: 35, height: 100, alignment: .center)
+              .frame(width: 50, height: 50, alignment: .center)
       }
     } .padding()
       .cornerRadius(10)
-      .background(Color.gray)
+      
   }
-  
 }
 
 struct SkinfeelWidgetMedium_Previews: PreviewProvider {
