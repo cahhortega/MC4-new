@@ -12,13 +12,10 @@ class NewProductRoutineViewController: UIViewController{
 
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var productTableView: UITableView!
-    var list: [String]!
+    var list: [String] = []
     var searchProduct: [String]!
-    var selectedProducts: [String]!
-    var resultProducts: [String]!
-    var myProducts: [String]!
-    var filtered: [String]!
     let defaults = UserDefaults.standard
+    var chosenProducts: [String] = []
     
     
     override func viewDidLoad() {
@@ -27,23 +24,10 @@ class NewProductRoutineViewController: UIViewController{
         navigationController?.setNavigationBarHidden(false, animated: false)
 //        navigationItem.setHidesBackButton(true, animated: false)
         
-        searchProduct = defaults.stringArray(forKey: "completeTable") ?? []
-        print(searchProduct)
-        selectedProducts = defaults.stringArray(forKey: "myKey") ?? []
-        print(selectedProducts)
-        filtered = searchProduct.difference(from: selectedProducts)
-        print(filtered)
-        
-        list = searchProduct
-        navigationItem.setHidesBackButton(false, animated: false)
-
         //tableView
         self.productTableView.delegate = self
         self.productTableView.dataSource = self
         
-        //multi seleção
-        self.productTableView.allowsMultipleSelection = true
-        self.productTableView.allowsMultipleSelectionDuringEditing = true
         
         //searchBar
         searchBar.delegate = self
@@ -52,31 +36,44 @@ class NewProductRoutineViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let chosenProducts = defaults.stringArray(forKey: "myKey") ?? []
+        chosenProducts = defaults.stringArray(forKey: "myKey") ?? []
         print(chosenProducts)
         list = chosenProducts
-    }
+        navigationController?.setNavigationBarHidden(true, animated: animated)
 
+    }
+    
 }
 
-extension NewProductRoutineViewController: UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
     
+extension NewProductRoutineViewController: UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filtered.count
+        return list.count
+    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+//    Delete the row from the data source
+//    productTableView.deleteRows(at: [indexPath], with: .fade)
+    }
+//        else if editingStyle == .insert {
+//    Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//    }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "produto", for: indexPath) as! ShelfFormTableViewCell
-        cell.textLabel?.text = filtered[indexPath.row]
+        cell.textLabel?.text = list[indexPath.row]
         return cell
     }
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         list = []
         if searchText == ""{
-            list = searchProduct
+            list = chosenProducts
         }else {
-            for product in searchProduct{
+            for product in chosenProducts{
                 if product.lowercased().contains(searchText.lowercased()){
                     list.append(product)
                 }
@@ -84,33 +81,8 @@ extension NewProductRoutineViewController: UISearchBarDelegate, UITableViewDataS
         }
         self.productTableView.reloadData()
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cell = self.tableView(productTableView, cellForRowAt: indexPath)
-//        cell.accessoryType = .checkmark
-//        let text = cell.textLabel!.text
-//        if let text = text {
-//            NSLog("did select and the text is \(text)")
-//            myProducts.append(text)
-//           // print(myProducts)
-//        }
-//        defaults.set(myProducts, forKey: "myKey")
-//    }
-//
-//
-//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-//        let cell = self.tableView(productTableView, cellForRowAt: indexPath)
-//        cell.accessoryType = .none
-//        let text = cell.textLabel!.text
-//        if let text = text {
-//            NSLog("did select and the text is \(text)")
-//            filtered = myProducts.filter{$0 != text}
-//        }
-//       // print(filtered)
-//        defaults.set(filtered, forKey: "myKey")
-//    }
-
 }
+    
 
 extension Array where Element: Hashable {
     func difference(from other: [Element]) -> [Element] {
@@ -119,3 +91,4 @@ extension Array where Element: Hashable {
         return Array(thisSet.symmetricDifference(otherSet))
     }
 }
+
