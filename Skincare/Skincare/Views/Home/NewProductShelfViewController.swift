@@ -9,8 +9,7 @@ import Foundation
 import UIKit
 
 class NewProductRoutineViewController: UIViewController{
-
-    @IBOutlet var searchBar: UISearchBar!
+    
     @IBOutlet var productTableView: UITableView!
     var list: [String] = []
     var searchProduct: [String]!
@@ -29,8 +28,6 @@ class NewProductRoutineViewController: UIViewController{
         self.productTableView.dataSource = self
         
         
-        //searchBar
-        searchBar.delegate = self
         
     }
 //    
@@ -46,7 +43,7 @@ class NewProductRoutineViewController: UIViewController{
     
 
     
-extension NewProductRoutineViewController: UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
+extension NewProductRoutineViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
     }
@@ -67,19 +64,6 @@ extension NewProductRoutineViewController: UISearchBarDelegate, UITableViewDataS
         let cell = tableView.dequeueReusableCell(withIdentifier: "produto", for: indexPath) as! ShelfFormTableViewCell
         cell.textLabel?.text = list[indexPath.row]
         return cell
-    }
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        list = []
-        if searchText == ""{
-            list = chosenProducts
-        }else {
-            for product in chosenProducts{
-                if product.lowercased().contains(searchText.lowercased()){
-                    list.append(product)
-                }
-            }
-        }
-        self.productTableView.reloadData()
     }
 }
     

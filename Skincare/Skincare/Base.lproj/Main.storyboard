@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -945,7 +945,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" borderStyle="roundedRect" placeholder="Ex: &quot;Minha rotina caseira”" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWP-O7-B7N">
-                                <rect key="frame" x="20" y="220" width="374" height="34"/>
+                                <rect key="frame" x="20" y="220" width="396" height="34"/>
                                 <color key="backgroundColor" name="Bg"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="5AU-F8-0Iv"/>
@@ -1596,16 +1596,9 @@
                                 <rect key="frame" x="9" y="314" width="384" height="462"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="Bg"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" placeholder="Procurar produto" id="YmT-jk-iAb">
-                                    <rect key="frame" x="0.0" y="0.0" width="384" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" name="Bg"/>
-                                    <color key="barTintColor" name="Bg"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="produto" textLabel="9I1-uy-qum" style="IBUITableViewCellStyleDefault" id="EkL-zI-Kju" customClass="ShelfFormTableViewCell" customModule="Skincare" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="88.5" width="384" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="384" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EkL-zI-Kju" id="zkt-Lp-pVG">
                                             <rect key="frame" x="0.0" y="0.0" width="384" height="43.5"/>
@@ -1660,7 +1653,6 @@
                     <connections>
                         <outlet property="productTableView" destination="whE-K2-ZTN" id="3mw-UV-8QF"/>
                         <outlet property="progressView" destination="yEc-AN-GzF" id="env-OD-jj6"/>
-                        <outlet property="searchBar" destination="YmT-jk-iAb" id="UkE-Lv-stp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TkN-91-06W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1715,16 +1707,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="og1-fV-Jbs">
                                 <rect key="frame" x="10" y="206" width="384" height="418"/>
                                 <color key="backgroundColor" name="Bg"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" placeholder="Procurar produto" id="vCg-j7-VkI">
-                                    <rect key="frame" x="0.0" y="0.0" width="384" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" name="Bg"/>
-                                    <color key="barTintColor" name="Bg"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="estante" textLabel="LNX-hL-afn" style="IBUITableViewCellStyleDefault" id="Gmw-I1-3ME" customClass="ShelfTableViewCell" customModule="Skincare" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="88.5" width="384" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="384" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gmw-I1-3ME" id="pS4-tF-djj">
                                             <rect key="frame" x="0.0" y="0.0" width="384" height="43.5"/>
@@ -1790,7 +1775,6 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="productTableView" destination="og1-fV-Jbs" id="dht-sj-9GI"/>
-                        <outlet property="searchBar" destination="vCg-j7-VkI" id="MWh-fC-Hoe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UrU-l6-kxA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1814,16 +1798,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="spB-re-yNv">
                                 <rect key="frame" x="10" y="189" width="384" height="575"/>
                                 <color key="backgroundColor" name="Bg"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" placeholder="Procurar produto" id="RfZ-JJ-L1u">
-                                    <rect key="frame" x="0.0" y="0.0" width="384" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" name="Bg"/>
-                                    <color key="barTintColor" name="Bg"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="produto" textLabel="0Oa-qs-Pio" style="IBUITableViewCellStyleDefault" id="Ri9-yS-wa1" customClass="ShelfFormTableViewCell" customModule="Skincare" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="88.5" width="384" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="384" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ri9-yS-wa1" id="hTX-IP-4d0">
                                             <rect key="frame" x="0.0" y="0.0" width="384" height="43.5"/>
@@ -1870,7 +1847,6 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="productTableView" destination="spB-re-yNv" id="6BE-zF-vGF"/>
-                        <outlet property="searchBar" destination="spB-re-yNv" id="dab-hU-eit"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4C-lI-G7M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1894,16 +1870,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BQr-C4-L3v">
                                 <rect key="frame" x="10" y="101" width="384" height="692"/>
                                 <color key="backgroundColor" name="Bg"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" placeholder="Procurar produto" id="gdR-hm-mjN">
-                                    <rect key="frame" x="0.0" y="0.0" width="384" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" name="Bg"/>
-                                    <color key="barTintColor" name="Bg"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="produto" textLabel="Teu-OI-pQX" style="IBUITableViewCellStyleDefault" id="hcs-8X-kZz" customClass="ShelfFormTableViewCell" customModule="Skincare" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="88.5" width="384" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="384" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hcs-8X-kZz" id="LgW-Y4-tfG">
                                             <rect key="frame" x="0.0" y="0.0" width="384" height="43.5"/>
@@ -1950,7 +1919,6 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="productTableView" destination="BQr-C4-L3v" id="i1J-nP-2pH"/>
-                        <outlet property="searchBar" destination="gdR-hm-mjN" id="Xxe-d8-lEx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vgt-se-gGT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
