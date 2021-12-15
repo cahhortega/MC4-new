@@ -5,119 +5,95 @@
 //  Created by Carolina Ortega on 14/12/21.
 //
 //
-//import CoreData
-//
-//class CoreDataStack {
-//
-//    static var shared = CoreDataStack()
-//    private let model: String
-//
-//    private lazy var container: NSPersistentContainer = {
-//        let container = NSPersistentContainer(name: self.model)
-//        let defaultURL = NSPersistentContainer.defaultDirectoryURL()
-//        let sqliteURL = defaultURL.appendingPathComponent("\(self.model).sqlite")
-//
-//        container.loadPersistentStores { (_, error) in
-//            if let error = error {
-//                fatalError("Failed to load persistent store: \(error.localizedDescription)")
-//            }
-//        }
-//
-//        return container
-//    }()
-//
-//    var mainContext: NSManagedObjectContext {
-//        return container.viewContext
-//    }
-//
-//    private init(model: String = "Skincare") {
-//        self.model = model
-//    }
-//
-//    func save() throws {
-//        if mainContext.hasChanges {
-//            do {
-//                try mainContext.save()
-//            } catch(let error) {
-//                print(error)
-//                throw CoreDataStackError.failedToSave
-//            }
-//        } else {
-//            throw CoreDataStackError.contextHasNoChanges
-//        }
-//    }
-//
-//    func createRoutine(name: String, start: String, finish: String) throws -> Routine{
-//        let routine = Routine(context: mainContext)
-//        routine.name = name
-//        routine.start = start
-//        routine.finish = finish
-//        try save()
-//        return routine
-//    }
+import Foundation
+import CoreData
 
+class CoreDataStack {
+    static let shared: CoreDataStack = CoreDataStack()
+    
+    private init() {}
+    
+    // MARK: - Core Data stack
 
-//
-//
-//    //MARK: Bag Items
-//    func createBagItem(itemName: String, trip: Trip) throws -> Bag{
-//        let item = Bag(context: mainContext)
-//        item.itemName = itemName
-//        trip.addToTripBagItems(item)
-//        try save()
-//        return item
-//    }
-//
-//    func deleteBagItem(item: Bag) throws{
-//        mainContext.delete(item)
-//        try save()
-//    }
-//
-//    //MARK: Notes
-//    func createNote(textInput: String, trip: Trip) throws{
-//        let text = Notes(context: mainContext)
-//        text.text = textInput
-//        trip.tripNotes = text
-//        try save()
-//    }
-//
-//    func editNote(note: Notes, text: String) throws{
-//        note.text = text
-//        try save()
-//    }
-//
-//    //MARK: Photos
-//    func saveImage(data: Data, trip: Trip) throws -> Data{
-//        let imageInstance = Images(context: mainContext)
-//        imageInstance.img = data
-//        trip.addToTripPhotos(imageInstance)
-//        try save()
-//        return data
-//    }
-//
-//    func deleteImage(image: Images) throws {
-//        mainContext.delete(image)
-//        try save()
-//    }
-//
-//    //MARK: Cover Image
-//    func createCoverImage(data: Data, trip: Trip) throws -> Data{
-//        let coverImage = CoverImage(context: mainContext)
-//        coverImage.coverName = data
-//        trip.tripCoverImge = coverImage
-//        try save()
-//        return data
-//    }
-//
-//    func editCoverImage(data: Data, trip: Trip) throws -> Data{
-//        trip.coverImage = data
-//        try save()
-//        return data
-//    }
+    lazy var persistentContainer: NSPersistentContainer = {
+        /*
+         The persistent container for the application. This implementation
+         creates and returns a container, having loaded the store for the
+         application to it. This property is optional since there are legitimate
+         error conditions that could cause the creation of the store to fail.
+        */
+        let container = NSPersistentContainer(name: "Model")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                 
+                /*
+                 Typical reasons for an error here include:
+                 * The parent directory does not exist, cannot be created, or disallows writing.
+                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
+                 * The device is out of space.
+                 * The store could not be migrated to the current model version.
+                 Check the error message to determine what the actual problem was.
+                 */
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
 
-//}
-//
-//enum CoreDataStackError: Error {
-//    case failedToSave
-//    case contextHasNoChanges
-//}
+    // MARK: - Core Data Saving support
+
+    func saveContext () {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
+    
+    // MARK: - Core Data Getting support
+    
+    func getAllRoutines() -> [Routine] {
+        let fr = NSFetchRequest<Routine>(entityName: "Routine")
+        do {
+            return try self.persistentContainer.viewContext.fetch(fr)
+        } catch {
+            print(error)
+        }
+        return []
+    }
+    
+    // MARK: - Core Data Creating support
+    
+    func createRoutine(routineName: String, dataEnd: Date, dataStart: Date, seg: Bool, ter: Bool, qua: Bool, qui: Bool, sex: Bool, sab: Bool, dom: Bool) -> Routine {
+        let routine = Routine(context: self.persistentContainer.viewContext)
+        
+        routine.routineName = routineName
+        routine.dataEnd = dataEnd
+        routine.dataStart = dataStart
+        routine.seg = seg
+        routine.ter = ter
+        routine.qua = qua
+        routine.qui = qui
+        routine.sex = sex
+        routine.sab = sab
+        routine.dom = dom
+        
+        self.saveContext()
+        return routine
+    }
+    
+    // MARK: - Core Data deleting support
+    
+    func deleteObject(routine: Routine) {
+        self.persistentContainer.viewContext.delete(routine)
+        self.saveContext()
+    }
+}
