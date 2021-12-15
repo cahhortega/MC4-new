@@ -220,9 +220,12 @@ class TodayViewController: UIViewController {
     @objc func clicarDia7() {
         clickDays(selected: day7, day2: day2, day3: day3, day4: day4, day5: day5, day6: day6, day7: day1)
     }
-    
-
-    
+    @IBAction func AddRoutine(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "NewRoutineView") as! NewRoutineViewController
+        vc.TodayViewControllerDelegate = self
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
 }
 //Formatação da collectionView
 extension TodayViewController: UICollectionViewDelegate{
@@ -236,10 +239,17 @@ extension TodayViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = routineCollectionView.dequeueReusableCell(withReuseIdentifier: "rotine", for: indexPath) as! RoutineCollectionViewCell
+        cell.nameRoutine.text = oi[indexPath.row].routineName
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 360, height: 170)
+    }
+}
+extension TodayViewController: TodayViewControllerDelegate{
+    func didRegister() {
+        oi = CoreDataStack.shared.getAllRoutines() 
+        routineCollectionView.reloadData()
     }
 }
