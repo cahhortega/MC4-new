@@ -18,6 +18,7 @@ class TodayViewController: UIViewController {
     var currentMonth = Calendar.current.component(.month, from: Date()) //Mês
     let fraseSemRotina = UILabel()
     let imagemBoasVindas = UIImageView()
+    weak var NewRoutineViewControllerDelegate: NewRoutineViewControllerDelegate?
 
     
     @IBOutlet weak var profileAvatar: UIButton!
@@ -31,7 +32,7 @@ class TodayViewController: UIViewController {
     
     lazy var days: [UIButton] = [day1, day2, day3, day4, day5, day6, day7]
     
-    var oi: [String] = []
+    var oi = CoreDataStack.shared.getAllRoutines()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -230,7 +231,7 @@ extension TodayViewController: UICollectionViewDelegate{
 
 extension TodayViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return oi.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

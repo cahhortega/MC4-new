@@ -14,6 +14,7 @@ class NewRoutineViewController: UIViewController {
     @IBOutlet weak var dataEnd: UIDatePicker!
     @IBOutlet var segmentedControl: UISegmentedControl!
     
+    weak var TodayViewControllerDelegate: TodayViewControllerDelegate?
     var dataFilter = 0
     var morningTasks: [String] = ["Limpeza", "Hidratação", "Proteção"]
     // Data for home tasks
@@ -101,9 +102,28 @@ class NewRoutineViewController: UIViewController {
     }
     
     @IBAction func saveFunc(_ sender: Any) {
-        let routineName: String? = self.routineName.text
-        CoreDataStack.shared.createRoutine(routineName: routineName!, dataEnd: Date(), dataStart: Date(), seg: Bool(), ter: Bool(), qua: Bool(), qui: Bool(), sex: Bool(), sab: Bool(), dom: Bool())
-        
+        guard let routineName = self.routineName.text else {
+            return
+        }
+        let dataEnd: Date = self.dataEnd.date
+        let dataStart: Date = self.dataStart.date
+        let seg: Bool = (self.seg != nil)
+        let ter: Bool = (self.ter != nil)
+        let qua: Bool = (self.qua != nil)
+        let qui: Bool = (self.qui != nil)
+        let sex: Bool = (self.sex != nil)
+        let sab: Bool = (self.sab != nil)
+        let dom: Bool = (self.dom != nil)
+        if dataStart <= Date(){
+            print("data invalida")
+        }
+        if dataEnd <= dataStart{
+            print("data fim invalida")
+        }
+        if seg == false && ter == false && qua == false && qui == false && sex == false && sab == false && dom == false{
+            print("ta faltando coisa ai")
+        }
+       var _ = CoreDataStack.shared.createRoutine(routineName: routineName, dataEnd: Date(), dataStart: Date(), seg: Bool(), ter: Bool(), qua: Bool(), qui: Bool(), sex: Bool(), sab: Bool(), dom: Bool())
     }
 }
 
@@ -196,6 +216,4 @@ extension NewRoutineViewController: UITableViewDataSource{
         return cell
         
     }
-    
-    
 }
