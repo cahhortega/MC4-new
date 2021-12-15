@@ -27,7 +27,7 @@ class NewProductShelfViewController: UIViewController{
         print(searchProduct)
         selectedProducts = defaults.stringArray(forKey: "myKey") ?? []
         print(selectedProducts)
-        filtered = searchProduct.difference(from: selectedProducts)
+        filtered = searchProduct.difference(from: selectedProducts).sorted()
         print(filtered)
         
         list = searchProduct

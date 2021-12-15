@@ -26,7 +26,12 @@ class ShelfFormViewController: UIViewController{
         searchProduct = defaults.stringArray(forKey: "completeTable") ?? []
         print(searchProduct)
         
+
         filteredData = searchProduct
+
+        let sortedProducts = searchProduct.sorted()
+        filteredData = sortedProducts
+        
         //tableView
         self.productTableView.delegate = self
         self.productTableView.dataSource = self
@@ -70,11 +75,9 @@ extension ShelfFormViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "produto", for: indexPath) as! ShelfFormTableViewCell
         cell.textLabel?.text = filteredData[indexPath.row]
-        let items = filteredData[indexPath.row]
-        if myProducts.contains(items){
+        if myProducts.contains((cell.textLabel?.text)!){
+            print("entrei aqui")
             cell.accessoryType = .checkmark
-        }else {
-            cell.accessoryType = .none
         }
         return cell
     }

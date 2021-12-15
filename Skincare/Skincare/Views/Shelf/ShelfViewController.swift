@@ -30,7 +30,8 @@ class ShelfViewController: UIViewController {
         super.viewWillAppear(animated)
         chosenProducts = defaults.stringArray(forKey: "myKey") ?? []
         print(chosenProducts)
-        list = chosenProducts
+        let sortedProducts = chosenProducts.sorted()
+        list = sortedProducts
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
