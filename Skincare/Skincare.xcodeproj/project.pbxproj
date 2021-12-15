@@ -52,11 +52,6 @@
 		A0FF1308275EBC6E00A86323 /* NewProductShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF1307275EBC6E00A86323 /* NewProductShelfViewController.swift */; };
 		DF46B8372757EB920076F349 /* ShelfFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF46B8362757EB920076F349 /* ShelfFormViewController.swift */; };
 		DFA15A08276295B800DFA649 /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA15A07276295B800DFA649 /* CircularProgressBarView.swift */; };
-		DFA15A2A2768040E00DFA649 /* QuestionarioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA15A292768040E00DFA649 /* QuestionarioApp.swift */; };
-		DFA15A2C2768040E00DFA649 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA15A2B2768040E00DFA649 /* ContentView.swift */; };
-		DFA15A2E2768041000DFA649 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFA15A2D2768041000DFA649 /* Assets.xcassets */; };
-		DFA15A312768041000DFA649 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFA15A302768041000DFA649 /* Preview Assets.xcassets */; };
-		DFA15A362768041000DFA649 /* Questionario.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = DFA15A272768040E00DFA649 /* Questionario.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DFA15A3D2768091F00DFA649 /* CommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA15A3C2768091F00DFA649 /* CommonView.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,13 +62,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = A0EFEFF027696E880048394E;
 			remoteInfo = SkinfeelWidgetExtension;
-		};
-		DFA15A342768041000DFA649 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 99B1645B27516C6100DE8120 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DFA15A262768040E00DFA649;
-			remoteInfo = Questionario;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -95,7 +83,6 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
 			dstSubfolderSpec = 16;
 			files = (
-				DFA15A362768041000DFA649 /* Questionario.app in Embed App Clips */,
 			);
 			name = "Embed App Clips";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,15 +138,7 @@
 		A0FF1307275EBC6E00A86323 /* NewProductShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductShelfViewController.swift; sourceTree = "<group>"; };
 		DF46B8362757EB920076F349 /* ShelfFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfFormViewController.swift; sourceTree = "<group>"; };
 		DFA15A07276295B800DFA649 /* CircularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
-		DFA15A272768040E00DFA649 /* Questionario.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Questionario.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DFA15A292768040E00DFA649 /* QuestionarioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionarioApp.swift; sourceTree = "<group>"; };
-		DFA15A2B2768040E00DFA649 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		DFA15A2D2768041000DFA649 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DFA15A302768041000DFA649 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DFA15A322768041000DFA649 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DFA15A332768041000DFA649 /* Questionario.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Questionario.entitlements; sourceTree = "<group>"; };
 		DFA15A3C2768091F00DFA649 /* CommonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonView.swift; sourceTree = "<group>"; };
-		DFA15A3E2769349200DFA649 /* QuestionarioDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuestionarioDebug.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,13 +158,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DFA15A242768040E00DFA649 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -194,7 +166,6 @@
 			children = (
 				DFA15A3A2768041B00DFA649 /* Shared */,
 				99B1646527516C6100DE8120 /* Skincare */,
-				DFA15A282768040E00DFA649 /* Questionario */,
 				A0EFEFF727696E880048394E /* SkinfeelWidget */,
 				A0EFEFF227696E880048394E /* Frameworks */,
 				99B1646427516C6100DE8120 /* Products */,
@@ -205,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				99B1646327516C6100DE8120 /* Skincare.app */,
-				DFA15A272768040E00DFA649 /* Questionario.app */,
 				A0EFEFF127696E880048394E /* SkinfeelWidgetExtension.appex */,
 			);
 			name = Products;
@@ -398,28 +368,6 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		DFA15A282768040E00DFA649 /* Questionario */ = {
-			isa = PBXGroup;
-			children = (
-				DFA15A3E2769349200DFA649 /* QuestionarioDebug.entitlements */,
-				DFA15A292768040E00DFA649 /* QuestionarioApp.swift */,
-				DFA15A2B2768040E00DFA649 /* ContentView.swift */,
-				DFA15A2D2768041000DFA649 /* Assets.xcassets */,
-				DFA15A322768041000DFA649 /* Info.plist */,
-				DFA15A332768041000DFA649 /* Questionario.entitlements */,
-				DFA15A2F2768041000DFA649 /* Preview Content */,
-			);
-			path = Questionario;
-			sourceTree = "<group>";
-		};
-		DFA15A2F2768041000DFA649 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				DFA15A302768041000DFA649 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		DFA15A3A2768041B00DFA649 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,7 +392,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				DFA15A352768041000DFA649 /* PBXTargetDependency */,
 				A0EFEFFE27696E8D0048394E /* PBXTargetDependency */,
 			);
 			name = Skincare;
@@ -469,23 +416,6 @@
 			productReference = A0EFEFF127696E880048394E /* SkinfeelWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		DFA15A262768040E00DFA649 /* Questionario */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DFA15A372768041000DFA649 /* Build configuration list for PBXNativeTarget "Questionario" */;
-			buildPhases = (
-				DFA15A232768040E00DFA649 /* Sources */,
-				DFA15A242768040E00DFA649 /* Frameworks */,
-				DFA15A252768040E00DFA649 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Questionario;
-			productName = Questionario;
-			productReference = DFA15A272768040E00DFA649 /* Questionario.app */;
-			productType = "com.apple.product-type.application.on-demand-install-capable";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -501,9 +431,6 @@
 					};
 					A0EFEFF027696E880048394E = {
 						CreatedOnToolsVersion = 13.2;
-					};
-					DFA15A262768040E00DFA649 = {
-						CreatedOnToolsVersion = 13.1;
 					};
 				};
 			};
@@ -521,7 +448,6 @@
 			projectRoot = "";
 			targets = (
 				99B1646227516C6100DE8120 /* Skincare */,
-				DFA15A262768040E00DFA649 /* Questionario */,
 				A0EFEFF027696E880048394E /* SkinfeelWidgetExtension */,
 			);
 		};
@@ -543,15 +469,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0EFEFFB27696E8D0048394E /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DFA15A252768040E00DFA649 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DFA15A312768041000DFA649 /* Preview Assets.xcassets in Resources */,
-				DFA15A2E2768041000DFA649 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,15 +528,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DFA15A232768040E00DFA649 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DFA15A2C2768040E00DFA649 /* ContentView.swift in Sources */,
-				DFA15A2A2768040E00DFA649 /* QuestionarioApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -627,11 +535,6 @@
 			isa = PBXTargetDependency;
 			target = A0EFEFF027696E880048394E /* SkinfeelWidgetExtension */;
 			targetProxy = A0EFEFFD27696E8D0048394E /* PBXContainerItemProxy */;
-		};
-		DFA15A352768041000DFA649 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DFA15A262768040E00DFA649 /* Questionario */;
-			targetProxy = DFA15A342768041000DFA649 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -779,7 +682,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2A2JAGWQ62;
+				DEVELOPMENT_TEAM = 7Y74F655Y8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Skincare/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Skinfeel;
@@ -809,7 +712,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2A2JAGWQ62;
+				DEVELOPMENT_TEAM = 7Y74F655Y8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Skincare/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Skinfeel;
@@ -838,7 +741,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2A2JAGWQ62;
+				DEVELOPMENT_TEAM = 7Y74F655Y8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SkinfeelWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SkinfeelWidget;
@@ -866,7 +769,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2A2JAGWQ62;
+				DEVELOPMENT_TEAM = 7Y74F655Y8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SkinfeelWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SkinfeelWidget;
@@ -884,72 +787,6 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		DFA15A382768041000DFA649 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Questionario/QuestionarioDebug.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Questionario/Preview Content\"";
-				DEVELOPMENT_TEAM = 2A2JAGWQ62;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Questionario/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Skincare;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sk.com.gabinamie.skincare.Clip;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG APPCLIP";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		DFA15A392768041000DFA649 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Questionario/Questionario.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Questionario/Preview Content\"";
-				DEVELOPMENT_TEAM = 2A2JAGWQ62;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Questionario/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Skincare;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sk.com.gabinamie.skincare.Clip;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = APPCLIP;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -979,15 +816,6 @@
 			buildConfigurations = (
 				A0EFF00127696E8D0048394E /* Debug */,
 				A0EFF00227696E8D0048394E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DFA15A372768041000DFA649 /* Build configuration list for PBXNativeTarget "Questionario" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DFA15A382768041000DFA649 /* Debug */,
-				DFA15A392768041000DFA649 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
