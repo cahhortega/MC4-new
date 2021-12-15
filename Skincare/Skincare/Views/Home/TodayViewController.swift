@@ -220,6 +220,12 @@ class TodayViewController: UIViewController {
     @objc func clicarDia7() {
         clickDays(selected: day7, day2: day2, day3: day3, day4: day4, day5: day5, day6: day6, day7: day1)
     }
+    @IBAction func AddRoutine(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "NewRoutineView") as! NewRoutineViewController
+        //falta algo
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
     
 
     

@@ -124,6 +124,10 @@ class NewRoutineViewController: UIViewController {
             print("ta faltando coisa ai")
         }
        var _ = CoreDataStack.shared.createRoutine(routineName: routineName, dataEnd: Date(), dataStart: Date(), seg: Bool(), ter: Bool(), qua: Bool(), qui: Bool(), sex: Bool(), sab: Bool(), dom: Bool())
+        //falta algo
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "TodayView") as! TodayViewController
+        self.navigationController?.pushViewController(vc, animated: false)
     }
 }
 
