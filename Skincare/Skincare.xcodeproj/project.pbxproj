@@ -14,7 +14,7 @@
 		99B1646927516C6100DE8120 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B1646827516C6100DE8120 /* SceneDelegate.swift */; };
 		99B1646B27516C6100DE8120 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B1646A27516C6100DE8120 /* OnboardingViewController.swift */; };
 		99B1646E27516C6100DE8120 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B1646C27516C6100DE8120 /* Main.storyboard */; };
-		99B1647127516C6100DE8120 /* Skincare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99B1646F27516C6100DE8120 /* Skincare.xcdatamodeld */; };
+		99B1647127516C6100DE8120 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99B1646F27516C6100DE8120 /* Model.xcdatamodeld */; };
 		99B1647327516C6300DE8120 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99B1647227516C6300DE8120 /* Assets.xcassets */; };
 		99B1647627516C6300DE8120 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B1647427516C6300DE8120 /* LaunchScreen.storyboard */; };
 		A02F0F5C275813D800AFD1C1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F0F5B275813D800AFD1C1 /* SettingsViewController.swift */; };
@@ -305,7 +305,7 @@
 		A035E4052768E23700811747 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				99B1646F27516C6100DE8120 /* Skincare.xcdatamodeld */,
+				99B1646F27516C6100DE8120 /* Model.xcdatamodeld */,
 				A035E4062768E26F00811747 /* CoreDataStack.swift */,
 			);
 			path = CoreData;
@@ -560,7 +560,7 @@
 				A02F0F6E275940F700AFD1C1 /* SkinRoutineTableViewCell.swift in Sources */,
 				A0B31F7F2763E480004D8154 /* AddProductTableViewCell.swift in Sources */,
 				99B1646B27516C6100DE8120 /* OnboardingViewController.swift in Sources */,
-				99B1647127516C6100DE8120 /* Skincare.xcdatamodeld in Sources */,
+				99B1647127516C6100DE8120 /* Model.xcdatamodeld in Sources */,
 				A0FDB2BD27624E4000F3B35D /* YourRoutineTableViewCell.swift in Sources */,
 				99B1646727516C6100DE8120 /* AppDelegate.swift in Sources */,
 				A0FF1304275EB40200A86323 /* ShelfViewController.swift in Sources */,
@@ -987,13 +987,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		99B1646F27516C6100DE8120 /* Skincare.xcdatamodeld */ = {
+		99B1646F27516C6100DE8120 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				99B1647027516C6100DE8120 /* Skincare.xcdatamodel */,
 			);
 			currentVersion = 99B1647027516C6100DE8120 /* Skincare.xcdatamodel */;
-			path = Skincare.xcdatamodeld;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
