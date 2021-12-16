@@ -91,18 +91,20 @@ class TodayViewController: UIViewController {
         calendario()
         
     }
-    
 
-
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    
         navigationController?.setNavigationBarHidden(true, animated: animated)
         let buttonImage = UIImage(named: defaults.string(forKey: "profileImage")!)
         profileAvatar.setImage(buttonImage, for: .normal)
-        self.routineCollectionView.reloadData()
         numeroDeCelulas()
+        oi = CoreDataStack.shared.getAllRoutines()
+        self.routineCollectionView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.routineCollectionView.reloadData()
     }
     
     func numeroDeCelulas(){
@@ -215,15 +217,24 @@ class TodayViewController: UIViewController {
     }
     @objc func clicarDia6() {
         clickDays(selected: day6, day2: day2, day3: day3, day4: day4, day5: day5, day6: day1, day7: day7)
+        routineCollectionView.reloadData()
     }
     @objc func clicarDia7() {
         clickDays(selected: day7, day2: day2, day3: day3, day4: day4, day5: day5, day6: day6, day7: day1)
     }
     @IBAction func AddRoutine(_ sender: Any) {
+        defaults.removeObject(forKey: "limpezaManha")
+        defaults.removeObject(forKey: "hidratacaoManha")
+        defaults.removeObject(forKey: "protecaoManha")
+        defaults.removeObject(forKey: "protecaoTarde")
+        defaults.removeObject(forKey: "limpezaNoite")
+        defaults.removeObject(forKey: "esfoliacaoNoite")
+        defaults.removeObject(forKey: "protecaoNoite")
+        
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(identifier: "NewRoutineView") as! NewRoutineViewController
         vc.TodayViewControllerDelegate = self
-        self.navigationController?.pushViewController(vc, animated: false)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 //Formatação da collectionView

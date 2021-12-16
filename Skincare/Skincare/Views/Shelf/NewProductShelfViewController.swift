@@ -8,8 +8,6 @@
 import Foundation
 import UIKit
 
-//DEVE RETORNAR TODA A API
-
 class NewProductShelfViewController: UIViewController{
     @IBOutlet weak var productTableView: UITableView!
     var list: [String]!
@@ -20,18 +18,22 @@ class NewProductShelfViewController: UIViewController{
     var filtered: [String]!
     let defaults = UserDefaults.standard
     
+    @IBAction func saveButton(_ sender: Any) {
+        defaults.set(selectedProducts, forKey: "myKey")
+        self.navigationController?.popViewController(animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         searchProduct = defaults.stringArray(forKey: "completeTable") ?? []
-        print(searchProduct)
+        print("Tabela completa:",searchProduct!)
         selectedProducts = defaults.stringArray(forKey: "myKey") ?? []
-        print(selectedProducts)
+        print("Produtos selecionados",selectedProducts!)
         filtered = searchProduct.difference(from: selectedProducts).sorted()
-        print(filtered)
+        print("Diferença",filtered!)
         
         list = searchProduct
-        navigationItem.setHidesBackButton(false, animated: false)
 
         //tableView
         self.productTableView.delegate = self
@@ -43,8 +45,10 @@ class NewProductShelfViewController: UIViewController{
         
         
         navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationItem.setHidesBackButton(false, animated: false)
+
     }
+    
+
     
     
 }
@@ -59,6 +63,35 @@ extension NewProductShelfViewController: UITableViewDataSource, UITableViewDeleg
         let cell = tableView.dequeueReusableCell(withIdentifier: "produto", for: indexPath) as! ShelfFormTableViewCell
         cell.textLabel?.text = filtered[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let cell = self.tableView(productTableView, cellForRowAt: indexPath)
+            let text = cell.textLabel!.text
+            if let text = text {
+                NSLog("did select and the text is \(text)")
+                if !selectedProducts.contains(text){
+                    selectedProducts.append(text)
+                    print("Novo array", selectedProducts!)
+                }
+
+        }
+    }
+        
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = self.tableView(productTableView, cellForRowAt: indexPath)
+        let text = cell.textLabel!.text
+        if let text = text {
+            NSLog("did deselect and the text is \(text)")
+            if let index = selectedProducts.firstIndex(of: text) {
+                selectedProducts.remove(at: index)
+                print("Novo array", selectedProducts!)
+                
+            }
+            
+        }
+
+
     }
 
     
