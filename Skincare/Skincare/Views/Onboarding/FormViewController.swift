@@ -42,12 +42,12 @@ class FormViewController: UIViewController {
                     "Muito oleoso e 'pegajoso'","Avermelhado e ardendo"]]
     
     var currentQuestion = 0 //0 a 4
-    var defaults = UserDefaults.standard
+    var defaults = UserDefaults(suiteName: "group.by-dev.GabiNamie.Skincare")
     
     var button: UIButton = UIButton() //Botão questão
     
-    var formCounter = UserDefaults.standard.array(forKey: "contador") as? [Int] ?? [0,0,0,0,0] //Pega defaults
-    var colorCounter = UserDefaults.standard.array(forKey: "corContador") as? [String] ?? ["a","a","a","a","a"] //Pega defaults
+    var formCounter = UserDefaults(suiteName: "group.by-dev.GabiNamie.Skincare")?.array(forKey: "contador") as? [Int] ?? [0,0,0,0,0] //Pega defaults
+    var colorCounter = UserDefaults(suiteName: "group.by-dev.GabiNamie.Skincare")?.array(forKey: "corContador") as? [String] ?? ["a","a","a","a","a"] //Pega defaults
     //label
     @IBOutlet weak var nextButton: UIBarButtonItem!
     @IBOutlet weak var lbl: UILabel!

@@ -15,7 +15,7 @@ class NameTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         self.name.isUserInteractionEnabled = true
-        self.name.text = UserDefaults.standard.string(forKey: "name") ?? ""
+        self.name.text = UserDefaults(suiteName: "group.by-dev.GabiNamie.Skincare")?.string(forKey: "name") ?? ""
 
     }
 

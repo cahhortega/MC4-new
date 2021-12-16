@@ -13,7 +13,7 @@ class ShelfViewController: UIViewController {
     @IBOutlet var productTableView: UITableView!
     var list: [String] = []
     var searchProduct: [String]!
-    let defaults = UserDefaults.standard
+    let defaults = UserDefaults(suiteName: "group.by-dev.GabiNamie.Skincare")
     var chosenProducts: [String] = []
     
     override func viewDidLoad() {
@@ -32,7 +32,7 @@ class ShelfViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        chosenProducts = defaults.stringArray(forKey: "myKey") ?? []
+        chosenProducts = defaults?.stringArray(forKey: "myKey") ?? []
         print(chosenProducts)
         list = chosenProducts
         navigationController?.setNavigationBarHidden(true, animated: animated)

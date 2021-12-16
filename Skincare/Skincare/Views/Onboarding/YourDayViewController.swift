@@ -12,7 +12,7 @@ class YourDayViewController: UIViewController {
     @IBOutlet var pickerAfternoon: UIDatePicker!
     @IBOutlet var pickerNight: UIDatePicker!
     @IBOutlet weak var progressView: UIProgressView!
-    var defaults = UserDefaults.standard
+    var defaults = UserDefaults(suiteName: "group.by-dev.GabiNamie.Skincare")
     // Create Date Formatter
     let dateFormatterHour = DateFormatter()
     let dateFormatterMin = DateFormatter()
@@ -28,24 +28,24 @@ class YourDayViewController: UIViewController {
         let nightMin = dateFormatterMin.string(from: pickerNight.date)
         
         //Cadastrando os horários em UserDefaults
-        defaults.setValue(Int(morningHour)!, forKey: NotificationPicker.MorningHour.rawValue)
-        defaults.setValue(Int(morningMin)!, forKey: NotificationPicker.MorningMin.rawValue)
+        defaults?.setValue(Int(morningHour)!, forKey: NotificationPicker.MorningHour.rawValue)
+        defaults?.setValue(Int(morningMin)!, forKey: NotificationPicker.MorningMin.rawValue)
 
-        defaults.setValue(Int(afternoonHour)!, forKey: NotificationPicker.AfternoonHour.rawValue)
-        defaults.setValue(Int(afternoonMin)!, forKey: NotificationPicker.AfternoonMin.rawValue)
+        defaults?.setValue(Int(afternoonHour)!, forKey: NotificationPicker.AfternoonHour.rawValue)
+        defaults?.setValue(Int(afternoonMin)!, forKey: NotificationPicker.AfternoonMin.rawValue)
 
-        defaults.setValue(Int(nightHour)!, forKey: NotificationPicker.NightHour.rawValue)
-        defaults.setValue(Int(nightMin)!, forKey: NotificationPicker.NightMin.rawValue)
+        defaults?.setValue(Int(nightHour)!, forKey: NotificationPicker.NightHour.rawValue)
+        defaults?.setValue(Int(nightMin)!, forKey: NotificationPicker.NightMin.rawValue)
 
         
-        print("manha:",defaults.string(forKey: NotificationPicker.MorningHour.rawValue)!,defaults.string(forKey: NotificationPicker.MorningMin.rawValue)!,
-              "tarde:",defaults.string(forKey: NotificationPicker.AfternoonHour.rawValue)!,defaults.string(forKey: NotificationPicker.AfternoonMin.rawValue)!,
-              "noite:",defaults.string(forKey: NotificationPicker.NightHour.rawValue)!,defaults.string(forKey: NotificationPicker.NightMin.rawValue)!)
+        print("manha:",defaults?.string(forKey: NotificationPicker.MorningHour.rawValue)!,defaults?.string(forKey: NotificationPicker.MorningMin.rawValue)!,
+              "tarde:",defaults?.string(forKey: NotificationPicker.AfternoonHour.rawValue)!,defaults?.string(forKey: NotificationPicker.AfternoonMin.rawValue)!,
+              "noite:",defaults?.string(forKey: NotificationPicker.NightHour.rawValue)!,defaults?.string(forKey: NotificationPicker.NightMin.rawValue)!)
        
         //Configurando as notificações iniciais
-        defaults.set(true, forKey: NotificationIdentifier.Morning.rawValue)
-        defaults.set(true, forKey: NotificationIdentifier.Afternoon.rawValue)
-        defaults.set(true, forKey: NotificationIdentifier.Night.rawValue)
+        defaults?.set(true, forKey: NotificationIdentifier.Morning.rawValue)
+        defaults?.set(true, forKey: NotificationIdentifier.Afternoon.rawValue)
+        defaults?.set(true, forKey: NotificationIdentifier.Night.rawValue)
         
         
         NotificationManager.shared.changeNotificationStatus(notificationId: .Morning, isEnabled: true)

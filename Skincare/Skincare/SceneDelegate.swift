@@ -10,7 +10,7 @@ import UserNotifications
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-    var defaults = UserDefaults.standard
+    var defaults = UserDefaults(suiteName: "group.by-dev.GabiNamie.Skincare")
     var window: UIWindow?
 
 
@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
-        let vc = storyboard.instantiateViewController(withIdentifier: UserDefaults.standard.string(forKey: NotificationPicker.MorningHour.rawValue) == nil ? "firstView" : "homeView")
+        let vc = storyboard.instantiateViewController(withIdentifier: UserDefaults(suiteName: "group.by-dev.GabiNamie.Skincare").string(forKey: NotificationPicker.MorningHour.rawValue) == nil ? "firstView" : "homeView")
         let navigationController = UINavigationController(rootViewController: vc)
         window?.rootViewController = navigationController
         navigationController.navigationItem.backBarButtonItem?.tintColor = UIColor(named: "Rosa")

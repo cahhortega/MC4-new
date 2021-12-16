@@ -10,7 +10,7 @@ import UIKit
 
 
 class NameViewController: UIViewController {
-    var defaults = UserDefaults.standard
+    var defaults = UserDefaults(suiteName: "group.by-dev.GabiNamie.Skincare")
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet var name: UITextField!
     
@@ -25,9 +25,9 @@ class NameViewController: UIViewController {
     }
     
     func next() {
-        defaults.setValue(name.text, forKey: "name")
-        defaults.setValue(formCounter, forKey: "contador") //Cria defaults
-        defaults.setValue(colorCounter, forKey: "corContador")//Cria defaults cor
+        defaults?.setValue(name.text, forKey: "name")
+        defaults?.setValue(formCounter, forKey: "contador") //Cria defaults
+        defaults?.setValue(colorCounter, forKey: "corContador")//Cria defaults cor
     }
     
     override func viewDidLoad() {

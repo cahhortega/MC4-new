@@ -11,7 +11,7 @@ import UserNotifications
 class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
     static let shared = NotificationManager()
     let center = UNUserNotificationCenter.current()
-    var defaults = UserDefaults.standard
+    var defaults = UserDefaults(suiteName: "group.by-dev.GabiNamie.Skincare")
     
     
     private override init() {
@@ -36,7 +36,7 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
     }
     
     func changeNotificationStatus(notificationId: NotificationIdentifier, isEnabled: Bool) {
-        defaults.set(isEnabled, forKey: notificationId.rawValue)
+        defaults?.set(isEnabled, forKey: notificationId.rawValue)
         if isEnabled {
             registerNotification(identifier: notificationId)
         } else {
@@ -95,20 +95,20 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
     
     func registerNotification(identifier: NotificationIdentifier){
         switch (identifier) {
-        case .Morning: createLocalNotification(title: "🧖‍♀️ Bom dia, \(defaults.string(forKey: "name") ?? "")!",
+        case .Morning: createLocalNotification(title: "🧖‍♀️ Bom dia, \(defaults?.string(forKey: "name") ?? "")!",
                                                body: "Que tal começar o seu dia iniciando sua rotina de cuidados com a pele?",
-                                               hour: defaults.integer(forKey: NotificationPicker.MorningHour.rawValue),
-                                               min: defaults.integer(forKey:NotificationPicker.MorningMin.rawValue),
+                                               hour: (defaults?.integer(forKey: NotificationPicker.MorningHour.rawValue))!,
+                                               min: (defaults?.integer(forKey:NotificationPicker.MorningMin.rawValue))!,
                                                identifier: NotificationIdentifier.Morning.rawValue)
-        case .Afternoon: createLocalNotification(title: "🌤 Boa tarde, \(defaults.string(forKey: "name") ?? "")!",
+        case .Afternoon: createLocalNotification(title: "🌤 Boa tarde, \(defaults?.string(forKey: "name") ?? "")!",
                                                  body: "Não se esqueça de reforçar a proteção da sua pele.",
-                                                 hour: defaults.integer(forKey: NotificationPicker.AfternoonHour.rawValue),
-                                                 min: defaults.integer(forKey: NotificationPicker.AfternoonMin.rawValue),
+                                                 hour: (defaults?.integer(forKey: NotificationPicker.AfternoonHour.rawValue))!,
+                                                 min: (defaults?.integer(forKey: NotificationPicker.AfternoonMin.rawValue))!,
                                                  identifier: NotificationIdentifier.Afternoon.rawValue)
-        case .Night: createLocalNotification(title: "🌙 Boa noite, \(defaults.string(forKey: "name") ?? "")!",
+        case .Night: createLocalNotification(title: "🌙 Boa noite, \(defaults?.string(forKey: "name") ?? "")!",
                                              body: "Vamos finalizar o dia cuidando da sua pele?",
-                                             hour: defaults.integer(forKey: NotificationPicker.NightHour.rawValue),
-                                             min: defaults.integer(forKey: NotificationPicker.NightMin.rawValue),
+                                             hour: (defaults?.integer(forKey: NotificationPicker.NightHour.rawValue))!,
+                                             min: (defaults?.integer(forKey: NotificationPicker.NightMin.rawValue))!,
                                              identifier: NotificationIdentifier.Night.rawValue)
         }
     }

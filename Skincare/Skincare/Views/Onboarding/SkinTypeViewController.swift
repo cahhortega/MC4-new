@@ -12,7 +12,7 @@ class SkinTypeViewController: UIViewController {
     @IBOutlet var tasksSegmentedControl: UISegmentedControl!
     @IBOutlet var skinTypeLabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
-    var defaults = UserDefaults.standard
+    var defaults = UserDefaults(suiteName: "group.by-dev.GabiNamie.Skincare")
     
     var jsonObjects: [Product] = []
     public var data: [String] = []
@@ -24,8 +24,8 @@ class SkinTypeViewController: UIViewController {
     @IBOutlet weak var meetLabel: UILabel!
     var colorSkin: String = ""
     
-    var currentCounter = UserDefaults.standard.array(forKey: "contador") as? [Int] ?? [0,0,0,0,0] //Pega novo defaults
-    var currentColorCounter = UserDefaults.standard.array(forKey: "corContador") as? [String] ?? ["","","","",""] //Pega novo defaults
+    var currentCounter = UserDefaults(suiteName: "group.by-dev.GabiNamie.Skincare").array(forKey: "contador") as? [Int] ?? [0,0,0,0,0] //Pega novo defaults
+    var currentColorCounter = UserDefaults(suiteName: "group.by-dev.GabiNamie.Skincare").array(forKey: "corContador") as? [String] ?? ["","","","",""] //Pega novo defaults
     
     var dataFilter = 0
     var morningTasks: [String] = ["Limpeza", "Hidratação", "Proteção"]

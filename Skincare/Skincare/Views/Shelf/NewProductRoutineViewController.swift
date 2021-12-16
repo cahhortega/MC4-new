@@ -19,14 +19,14 @@ class NewProductShelfViewController: UIViewController{
     var resultProducts: [String]!
     var myProducts: [String]!
     var filtered: [String]!
-    let defaults = UserDefaults.standard
+    let defaults = UserDefaults(suiteName: "group.by-dev.GabiNamie.Skincare")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchProduct = defaults.stringArray(forKey: "completeTable") ?? []
+        searchProduct = defaults?.stringArray(forKey: "completeTable") ?? []
         print(searchProduct)
-        selectedProducts = defaults.stringArray(forKey: "myKey") ?? []
+        selectedProducts = defaults?.stringArray(forKey: "myKey") ?? []
         print(selectedProducts)
         filtered = searchProduct.difference(from: selectedProducts)
         print(filtered)

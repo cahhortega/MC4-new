@@ -15,7 +15,7 @@ class ShelfFormViewController: UIViewController{
     var searchProduct: [String] = []
     var filteredData: [String]!
     var myProducts: [String] = []
-    let defaults = UserDefaults.standard
+    let defaults = UserDefaults(suiteName: "group.by-dev.GabiNamie.Skincare")
     var filtered: [String] = []
     var checkedItems = Set<String>()
     
@@ -26,7 +26,7 @@ class ShelfFormViewController: UIViewController{
         super.viewDidLoad()
         progressView.progress = 0.85
         navigationController?.setNavigationBarHidden(false, animated: false)
-        searchProduct = defaults.stringArray(forKey: "completeTable") ?? []
+        searchProduct = defaults?.stringArray(forKey: "completeTable") ?? []
         print(searchProduct)
         
         filteredData = searchProduct

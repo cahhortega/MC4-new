@@ -12,12 +12,12 @@ class SwitchDayTableViewCell: UITableViewCell {
     @IBOutlet var labelDay: UILabel!
     @IBOutlet var switchDay: UISwitch!
     var notificationId: NotificationIdentifier = .Morning
-    var defaults = UserDefaults.standard
+    var defaults = UserDefaults(suiteName: "group.by-dev.GabiNamie.Skincare")
     
     
     func setup(notificationId: NotificationIdentifier){
         self.notificationId = notificationId
-        switchDay.isOn = defaults.bool(forKey: notificationId.rawValue)
+        switchDay.isOn = defaults?.bool(forKey: notificationId.rawValue) ?? false
         switch notificationId {
         case .Morning:
             labelDay.text = "Manhã"
