@@ -109,10 +109,12 @@ extension ShelfFormViewController: UITableViewDataSource, UITableViewDelegate{
         let cell = self.tableView(productTableView, cellForRowAt: indexPath)
         let text = cell.textLabel!.text
         if let text = text {
-            NSLog("did select and the text is \(text)")
+            NSLog("did deselect and the text is \(text)")
             filtered = myProducts.filter{$0 != text}
+            defaults.set(filtered, forKey: "myKey")
+            
         }
-        print(filtered)
+        print("Removi", filtered)
 //        for myProduct in myProducts {
 //            if text == myProduct{
 //                cell.accessoryType = .checkmark
@@ -120,7 +122,7 @@ extension ShelfFormViewController: UITableViewDataSource, UITableViewDelegate{
 //                cell.accessoryType = .none
 //            }
 //        }
-        defaults.set(filtered, forKey: "myKey")
+//        defaults.set(filtered, forKey: "myKey")
     }
 
 }

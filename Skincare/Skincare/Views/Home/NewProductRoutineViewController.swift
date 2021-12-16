@@ -15,11 +15,17 @@ class NewProductRoutineViewController: UIViewController{
     var searchProduct: [String]!
     let defaults = UserDefaults.standard
     var chosenProducts: [String] = []
+    var array: [String] = [] //trocar!!!
+    var filtered: [String] = []
     
+    @IBAction func saveButton(_ sender: Any) {
+        defaults.setValue(array, forKey: "newArray")
+    }
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationController?.setNavigationBarHidden(false, animated: false)
 //        navigationItem.setHidesBackButton(true, animated: false)
         
@@ -27,6 +33,12 @@ class NewProductRoutineViewController: UIViewController{
         self.productTableView.delegate = self
         self.productTableView.dataSource = self
         
+        //multi seleção
+        self.productTableView.allowsMultipleSelection = true
+        self.productTableView.allowsMultipleSelectionDuringEditing = true
+        
+
+
         
         
     }
@@ -38,6 +50,8 @@ class NewProductRoutineViewController: UIViewController{
         list = chosenProducts
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+    
+
 
     }
     
@@ -50,21 +64,35 @@ extension NewProductRoutineViewController: UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-    if editingStyle == .delete {
-//    Delete the row from the data source
-//    productTableView.deleteRows(at: [indexPath], with: .fade)
-    }
-//        else if editingStyle == .insert {
-//    Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-//    }
-    }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "produto", for: indexPath) as! ShelfFormTableViewCell
         cell.textLabel?.text = list[indexPath.row]
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let cell = self.tableView(productTableView, cellForRowAt: indexPath)
+            let text = cell.textLabel!.text
+            if let text = text {
+                NSLog("did select and the text is \(text)")
+                if !array.contains(text){
+                    array.append(text)
+                    print("Novo array", array)
+                }
+
+        }
+    }
+        
+        func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+            let cell = self.tableView(productTableView, cellForRowAt: indexPath)
+            let text = cell.textLabel!.text
+            if let text = text {
+                NSLog("did deselect and the text is \(text)")
+                filtered = array.filter{$0 != text}
+            }
+            print("Novo array", filtered)
+        }
 }
     
 

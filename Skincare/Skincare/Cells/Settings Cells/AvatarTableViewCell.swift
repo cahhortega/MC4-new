@@ -31,7 +31,7 @@ class AvatarTableViewCell: UITableViewCell {
         default:
             print("oi")
         }
-        defaults.set("girl1-profile", forKey: "profileImage")
+//        defaults.set("girl1-profile", forKey: "profileImage")
         
         girl1.translatesAutoresizingMaskIntoConstraints = false
         girl1.addTarget(self, action: #selector(clickGirl1), for: .touchUpInside)
