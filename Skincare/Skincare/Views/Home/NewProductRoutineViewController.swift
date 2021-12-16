@@ -45,6 +45,7 @@ class NewProductRoutineViewController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         chosenProducts = defaults.stringArray(forKey: "myKey") ?? []
+        array = defaults.stringArray(forKey: "newArray") ?? []
         print(chosenProducts)
         list = chosenProducts
         navigationController?.setNavigationBarHidden(false, animated: animated)

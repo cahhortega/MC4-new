@@ -251,13 +251,13 @@ extension NewRoutineViewController: UITableViewDataSource{
                 let cell = tasksTableView.dequeueReusableCell(withIdentifier: "add", for: indexPath) as! AddProductTableViewCell
                 return cell
             } else {
-                let cell = tasksTableView.dequeueReusableCell(withIdentifier: "add", for: indexPath) as! AddProductTableViewCell
-                return cell
-                //outras células
-//                limpezaManha[] = defaults.stringArray(forKey: "newArray")!
-//                let cell = tasksTableView.dequeueReusableCell(withIdentifier: "task", for: indexPath) as! TaskTableViewCell
-//                cell.titleTask.text = limpezaManha[indexPath.row]
+//                let cell = tasksTableView.dequeueReusableCell(withIdentifier: "add", for: indexPath) as! AddProductTableViewCell
 //                return cell
+                //outras células
+                limpezaManha = defaults.stringArray(forKey: "newArray")!
+                let cell = tasksTableView.dequeueReusableCell(withIdentifier: "task", for: indexPath) as! TaskTableViewCell
+                cell.titleTask.text = limpezaManha[indexPath.row]
+                return cell
                 
             }
         }
