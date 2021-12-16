@@ -16,7 +16,6 @@ class NewProductRoutineViewController: UIViewController{
     let defaults = UserDefaults.standard
     var chosenProducts: [String] = []
     var array: [String] = [] //trocar!!!
-    var filtered: [String] = []
     
     @IBAction func saveButton(_ sender: Any) {
         defaults.setValue(array, forKey: "newArray")
@@ -84,16 +83,20 @@ extension NewProductRoutineViewController: UITableViewDataSource, UITableViewDel
         }
     }
         
-        func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-            let cell = self.tableView(productTableView, cellForRowAt: indexPath)
-            let text = cell.textLabel!.text
-            if let text = text {
-                NSLog("did deselect and the text is \(text)")
-                filtered = array.filter{$0 != text}
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = self.tableView(productTableView, cellForRowAt: indexPath)
+        let text = cell.textLabel!.text
+        if let text = text {
+            NSLog("did deselect and the text is \(text)")
+            if let index = array.firstIndex(of: text) {
+                array.remove(at: index)
+                print(array)
+                
             }
-            print("Novo array", filtered)
+
         }
-}
+
+    }}
     
 
 extension Array where Element: Hashable {
