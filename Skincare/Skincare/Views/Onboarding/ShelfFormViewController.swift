@@ -15,7 +15,6 @@ class ShelfFormViewController: UIViewController{
     var filteredData: [String]!
     var myProducts: [String] = []
     let defaults = UserDefaults.standard
-    var filtered: [String] = []
     var checkedItems = Set<String>()
 
     
@@ -93,14 +92,6 @@ extension ShelfFormViewController: UITableViewDataSource, UITableViewDelegate{
                 print(myProducts)
             }
             
-            
-//        for myProduct in myProducts {
-//            if text == myProduct{
-//                cell.accessoryType = .checkmark
-//            } else{
-//                cell.accessoryType = .none
-//            }
-//        }
         defaults.set(myProducts, forKey: "myKey")
     }
 }
@@ -109,18 +100,16 @@ extension ShelfFormViewController: UITableViewDataSource, UITableViewDelegate{
         let cell = self.tableView(productTableView, cellForRowAt: indexPath)
         let text = cell.textLabel!.text
         if let text = text {
-            NSLog("did select and the text is \(text)")
-            filtered = myProducts.filter{$0 != text}
+            NSLog("did deselect and the text is \(text)")
+            if let index = myProducts.firstIndex(of: text) {
+                myProducts.remove(at: index)
+                print(myProducts)
+                
+            }
+            defaults.set(myProducts, forKey: "myKey")
+
         }
-        print(filtered)
-//        for myProduct in myProducts {
-//            if text == myProduct{
-//                cell.accessoryType = .checkmark
-//            } else{
-//                cell.accessoryType = .none
-//            }
-//        }
-        defaults.set(filtered, forKey: "myKey")
+
     }
 
 }

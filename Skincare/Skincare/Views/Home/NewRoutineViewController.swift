@@ -14,8 +14,11 @@ class NewRoutineViewController: UIViewController {
     @IBOutlet weak var dataEnd: UIDatePicker!
     @IBOutlet var segmentedControl: UISegmentedControl!
     
+    var arrayView = NewProductRoutineViewController()
+    
     weak var TodayViewControllerDelegate: TodayViewControllerDelegate?
     var dataFilter = 0
+    var defaults = UserDefaults.standard
     var morningTasks: [String] = ["Limpeza", "Hidratação", "Proteção"]
     // Data for home tasks
     var nightTasks: [String] = ["Limpeza", "Esfoliação", "Hidratação"]
@@ -29,11 +32,27 @@ class NewRoutineViewController: UIViewController {
     @IBOutlet var sex: UIButton!
     @IBOutlet var sab: UIButton!
     
+    var limpezaManha: [String] = []
+    var hidratacaoManha: [String] = []
+    var protecaoManha: [String] = []
+    var protecaoTarde: [String] = []
+    var limpezaNoite: [String] = []
+    var esfoliacaoNoite: [String] = []
+    var protecaoNoite: [String] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: false)
-
+        
+        defaults.set(limpezaManha, forKey: "hidratacaoManha")
+        defaults.set(hidratacaoManha, forKey: "hidratacaoManha")
+        defaults.set(protecaoManha, forKey: "protecaoManha")
+        defaults.set(protecaoTarde, forKey: "protecaoTarde")
+        defaults.set(limpezaNoite, forKey: "limpezaNoite")
+        defaults.set(esfoliacaoNoite, forKey: "esfoliacaoNoite")
+        defaults.set(protecaoNoite, forKey: "protecaoNoite")
+        
         //picker
         UIDatePicker.appearance().tintColor = UIColor(named: "Rosa")
         //        var week: [UIButton] = [dom, seg, ter, qua, qui, sex, sab]
@@ -64,15 +83,20 @@ class NewRoutineViewController: UIViewController {
         sab.addTarget(self, action: #selector(click(button:)), for: .touchUpInside)
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        reload()
+        limpezaManha = defaults.stringArray(forKey: "newArray") ?? []
+        print(limpezaManha)
+    }
     //ação do botão de repetição
     @objc func click(button: UIButton){
         if !button.isSelected{
-//            botao.setTitleColor(.white, for: .normal)
+            //            botao.setTitleColor(.white, for: .normal)
             button.backgroundColor = UIColor(named: "Rosa")
             button.titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
             
         } else {
-//            botao.setTitleColor(.black, for: .normal)
+            //            botao.setTitleColor(.black, for: .normal)
             button.titleLabel?.font = .systemFont(ofSize: 17, weight: .regular)
             button.backgroundColor = UIColor(named: "Bg")
             
@@ -123,7 +147,7 @@ class NewRoutineViewController: UIViewController {
         if seg == false && ter == false && qua == false && qui == false && sex == false && sab == false && dom == false{
             print("ta faltando coisa ai")
         }
-       var _ = CoreDataStack.shared.createRoutine(routineName: routineName, dataEnd: Date(), dataStart: Date(), seg: Bool(), ter: Bool(), qua: Bool(), qui: Bool(), sex: Bool(), sab: Bool(), dom: Bool())
+        var _ = CoreDataStack.shared.createRoutine(routineName: routineName, dataEnd: Date(), dataStart: Date(), seg: Bool(), ter: Bool(), qua: Bool(), qui: Bool(), sex: Bool(), sab: Bool(), dom: Bool())
         //falta algo
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(identifier: "TodayView") as! TodayViewController
@@ -138,7 +162,7 @@ extension NewRoutineViewController: UITableViewDelegate{
 
 extension NewRoutineViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return limpezaManha.count + 1
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         switch dataFilter {
@@ -153,7 +177,7 @@ extension NewRoutineViewController: UITableViewDataSource{
         }
         
     }
-
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch dataFilter {
         case 0:
@@ -207,22 +231,46 @@ extension NewRoutineViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-
-        if editingStyle == .insert {
-            tasksTableView.beginUpdates()
-            tasksTableView.endUpdates()
-        }
-    }
+    //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    //
+    //        if editingStyle == .insert {
+    //            tasksTableView.beginUpdates()
+    //            tasksTableView.endUpdates()
+    //        }
+    //    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tasksTableView.dequeueReusableCell(withIdentifier: "add", for: indexPath) as! AddProductTableViewCell
         
-        return cell
+        let totalOfRows = tasksTableView.numberOfRows(inSection: indexPath.section)
+        if limpezaManha.count == 0 {
+            let cell = tasksTableView.dequeueReusableCell(withIdentifier: "add", for: indexPath) as! AddProductTableViewCell
+            return cell
+        }
+        
+        else {
+            if indexPath.row == totalOfRows - 1 { //ultima celula
+                let cell = tasksTableView.dequeueReusableCell(withIdentifier: "add", for: indexPath) as! AddProductTableViewCell
+                return cell
+            } else {
+                let cell = tasksTableView.dequeueReusableCell(withIdentifier: "add", for: indexPath) as! AddProductTableViewCell
+                return cell
+                //outras células
+//                limpezaManha[] = defaults.stringArray(forKey: "newArray")!
+//                let cell = tasksTableView.dequeueReusableCell(withIdentifier: "task", for: indexPath) as! TaskTableViewCell
+//                cell.titleTask.text = limpezaManha[indexPath.row]
+//                return cell
+                
+            }
+        }
+        
         
     }
+    
+    
+    
 }
+
 extension NewRoutineViewController: NewRoutineViewControllerDelegate{
     func didRegister() {
-       
+        
     }
 }

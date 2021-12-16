@@ -10,7 +10,7 @@
 		212B04B5275FD82500D9DBED /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B04B4275FD82500D9DBED /* Model.swift */; };
 		212B04B7275FD84900D9DBED /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B04B6275FD84900D9DBED /* Request.swift */; };
 		218E4F3327652529001D3A94 /* DataSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218E4F3227652529001D3A94 /* DataSingleton.swift */; };
-		990DC764276A480000E35AE1 /* NewRoutineViewaControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990DC763276A480000E35AE1 /* NewRoutineViewaControllerDelegate.swift */; };
+		990DC764276A480000E35AE1 /* NewRoutineViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990DC763276A480000E35AE1 /* NewRoutineViewControllerDelegate.swift */; };
 		990DC766276A481500E35AE1 /* TodayViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990DC765276A481500E35AE1 /* TodayViewControllerDelegate.swift */; };
 		99B1646727516C6100DE8120 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B1646627516C6100DE8120 /* AppDelegate.swift */; };
 		99B1646927516C6100DE8120 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B1646827516C6100DE8120 /* SceneDelegate.swift */; };
@@ -29,7 +29,7 @@
 		A02F0F6C275935EF00AFD1C1 /* NewRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F0F6B275935EF00AFD1C1 /* NewRoutineViewController.swift */; };
 		A02F0F6E275940F700AFD1C1 /* SkinRoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F0F6D275940F700AFD1C1 /* SkinRoutineTableViewCell.swift */; };
 		A02F0F7127595EED00AFD1C1 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F0F7027595EED00AFD1C1 /* TaskTableViewCell.swift */; };
-		A035E4032768D3EF00811747 /* NewProductRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A035E4022768D3EF00811747 /* NewProductRoutineViewController.swift */; };
+		A035E4032768D3EF00811747 /* NewProductShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A035E4022768D3EF00811747 /* NewProductShelfViewController.swift */; };
 		A035E4072768E26F00811747 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A035E4062768E26F00811747 /* CoreDataStack.swift */; };
 		A08316CE27626F50006F21B4 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08316CD27626F50006F21B4 /* Identifiers.swift */; };
 		A08316D027627BDA006F21B4 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08316CF27627BDA006F21B4 /* NotificationManager.swift */; };
@@ -49,7 +49,7 @@
 		A0FDB2BD27624E4000F3B35D /* YourRoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FDB2BC27624E4000F3B35D /* YourRoutineTableViewCell.swift */; };
 		A0FF1304275EB40200A86323 /* ShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF1303275EB40200A86323 /* ShelfViewController.swift */; };
 		A0FF1306275EB54900A86323 /* ShelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF1305275EB54900A86323 /* ShelfCell.swift */; };
-		A0FF1308275EBC6E00A86323 /* NewProductShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF1307275EBC6E00A86323 /* NewProductShelfViewController.swift */; };
+		A0FF1308275EBC6E00A86323 /* NewProductRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF1307275EBC6E00A86323 /* NewProductRoutineViewController.swift */; };
 		DF46B8372757EB920076F349 /* ShelfFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF46B8362757EB920076F349 /* ShelfFormViewController.swift */; };
 		DFA15A08276295B800DFA649 /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA15A07276295B800DFA649 /* CircularProgressBarView.swift */; };
 		DFA15A3D2768091F00DFA649 /* CommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA15A3C2768091F00DFA649 /* CommonView.swift */; };
@@ -93,7 +93,7 @@
 		212B04B4275FD82500D9DBED /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		212B04B6275FD84900D9DBED /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		218E4F3227652529001D3A94 /* DataSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSingleton.swift; sourceTree = "<group>"; };
-		990DC763276A480000E35AE1 /* NewRoutineViewaControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoutineViewaControllerDelegate.swift; sourceTree = "<group>"; };
+		990DC763276A480000E35AE1 /* NewRoutineViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoutineViewControllerDelegate.swift; sourceTree = "<group>"; };
 		990DC765276A481500E35AE1 /* TodayViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewControllerDelegate.swift; sourceTree = "<group>"; };
 		99B1646327516C6100DE8120 /* Skincare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skincare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B1646627516C6100DE8120 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 		A02F0F6B275935EF00AFD1C1 /* NewRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoutineViewController.swift; sourceTree = "<group>"; };
 		A02F0F6D275940F700AFD1C1 /* SkinRoutineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinRoutineTableViewCell.swift; sourceTree = "<group>"; };
 		A02F0F7027595EED00AFD1C1 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
-		A035E4022768D3EF00811747 /* NewProductRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductRoutineViewController.swift; sourceTree = "<group>"; };
+		A035E4022768D3EF00811747 /* NewProductShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductShelfViewController.swift; sourceTree = "<group>"; };
 		A035E4062768E26F00811747 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		A08316CD27626F50006F21B4 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		A08316CF27627BDA006F21B4 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 		A0FDB2BC27624E4000F3B35D /* YourRoutineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourRoutineTableViewCell.swift; sourceTree = "<group>"; };
 		A0FF1303275EB40200A86323 /* ShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfViewController.swift; sourceTree = "<group>"; };
 		A0FF1305275EB54900A86323 /* ShelfCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfCell.swift; sourceTree = "<group>"; };
-		A0FF1307275EBC6E00A86323 /* NewProductShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductShelfViewController.swift; sourceTree = "<group>"; };
+		A0FF1307275EBC6E00A86323 /* NewProductRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductRoutineViewController.swift; sourceTree = "<group>"; };
 		DF46B8362757EB920076F349 /* ShelfFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfFormViewController.swift; sourceTree = "<group>"; };
 		DFA15A07276295B800DFA649 /* CircularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
 		DFA15A3C2768091F00DFA649 /* CommonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonView.swift; sourceTree = "<group>"; };
@@ -271,7 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				A0FF1303275EB40200A86323 /* ShelfViewController.swift */,
-				A035E4022768D3EF00811747 /* NewProductRoutineViewController.swift */,
+				A035E4022768D3EF00811747 /* NewProductShelfViewController.swift */,
 			);
 			path = Shelf;
 			sourceTree = "<group>";
@@ -359,10 +359,10 @@
 			children = (
 				A02F0F682758246400AFD1C1 /* TodayViewController.swift */,
 				A02F0F6B275935EF00AFD1C1 /* NewRoutineViewController.swift */,
-				A0FF1307275EBC6E00A86323 /* NewProductShelfViewController.swift */,
+				A0FF1307275EBC6E00A86323 /* NewProductRoutineViewController.swift */,
 				A0FDB2B82762480E00F3B35D /* YourRoutineViewController.swift */,
 				A02F0F5B275813D800AFD1C1 /* SettingsViewController.swift */,
-				990DC763276A480000E35AE1 /* NewRoutineViewaControllerDelegate.swift */,
+				990DC763276A480000E35AE1 /* NewRoutineViewControllerDelegate.swift */,
 				990DC765276A481500E35AE1 /* TodayViewControllerDelegate.swift */,
 			);
 			path = Home;
@@ -492,15 +492,15 @@
 				A02F0F65275814A400AFD1C1 /* SwitchDayTableViewCell.swift in Sources */,
 				A02F0F6C275935EF00AFD1C1 /* NewRoutineViewController.swift in Sources */,
 				99B1646927516C6100DE8120 /* SceneDelegate.swift in Sources */,
-				A035E4032768D3EF00811747 /* NewProductRoutineViewController.swift in Sources */,
+				A035E4032768D3EF00811747 /* NewProductShelfViewController.swift in Sources */,
 				A02F0F5E2758140200AFD1C1 /* NameTableViewCell.swift in Sources */,
 				DFA15A3D2768091F00DFA649 /* CommonView.swift in Sources */,
-				A0FF1308275EBC6E00A86323 /* NewProductShelfViewController.swift in Sources */,
+				A0FF1308275EBC6E00A86323 /* NewProductRoutineViewController.swift in Sources */,
 				A02F0F602758141600AFD1C1 /* AvatarTableViewCell.swift in Sources */,
 				A02F0F7127595EED00AFD1C1 /* TaskTableViewCell.swift in Sources */,
 				A0FDB2B92762480E00F3B35D /* YourRoutineViewController.swift in Sources */,
 				DF46B8372757EB920076F349 /* ShelfFormViewController.swift in Sources */,
-				990DC764276A480000E35AE1 /* NewRoutineViewaControllerDelegate.swift in Sources */,
+				990DC764276A480000E35AE1 /* NewRoutineViewControllerDelegate.swift in Sources */,
 				A0FF1306275EB54900A86323 /* ShelfCell.swift in Sources */,
 				A02F0F5C275813D800AFD1C1 /* SettingsViewController.swift in Sources */,
 				A02F0F672758242C00AFD1C1 /* RoutineCollectionViewCell.swift in Sources */,
