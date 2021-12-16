@@ -84,9 +84,9 @@ class NewRoutineViewController: UIViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        reload()
         limpezaManha = defaults.stringArray(forKey: "newArray") ?? []
         print(limpezaManha)
+        reload()
     }
     //ação do botão de repetição
     @objc func click(button: UIButton){
@@ -228,16 +228,7 @@ extension NewRoutineViewController: UITableViewDataSource{
         }
         
     }
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-    //
-    //        if editingStyle == .insert {
-    //            tasksTableView.beginUpdates()
-    //            tasksTableView.endUpdates()
-    //        }
-    //    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let totalOfRows = tasksTableView.numberOfRows(inSection: indexPath.section)
@@ -251,8 +242,7 @@ extension NewRoutineViewController: UITableViewDataSource{
                 let cell = tasksTableView.dequeueReusableCell(withIdentifier: "add", for: indexPath) as! AddProductTableViewCell
                 return cell
             } else {
-//                let cell = tasksTableView.dequeueReusableCell(withIdentifier: "add", for: indexPath) as! AddProductTableViewCell
-//                return cell
+
                 //outras células
                 limpezaManha = defaults.stringArray(forKey: "newArray")!
                 let cell = tasksTableView.dequeueReusableCell(withIdentifier: "task", for: indexPath) as! TaskTableViewCell
