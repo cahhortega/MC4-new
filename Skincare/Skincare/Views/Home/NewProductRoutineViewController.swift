@@ -53,6 +53,7 @@ class NewProductRoutineViewController: UIViewController{
                 defaults.removeObject(forKey: "newArray")
             }
         }
+        navigationController?.popViewController(animated: false)
     }
 
     

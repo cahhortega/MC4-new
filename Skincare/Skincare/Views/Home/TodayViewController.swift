@@ -19,7 +19,8 @@ class TodayViewController: UIViewController {
     let fraseSemRotina = UILabel()
     let imagemBoasVindas = UIImageView()
     weak var NewRoutineViewControllerDelegate: NewRoutineViewControllerDelegate?
-
+    
+    var isDone: Bool = false
     
     @IBOutlet weak var profileAvatar: UIButton!
     @IBOutlet var day1: UIButton!
@@ -36,6 +37,7 @@ class TodayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        defaults.set(isDone, forKey: "feito") //mudar
         navigationController?.setNavigationBarHidden(true, animated: false)
         //collectionView
         self.routineCollectionView.delegate = self
@@ -83,6 +85,8 @@ class TodayViewController: UIViewController {
         day7.translatesAutoresizingMaskIntoConstraints = false
         day7.addTarget(self, action: #selector(clicarDia7), for: .touchUpInside)
         
+        oi = CoreDataStack.shared.getAllRoutines()
+        routineCollectionView.reloadData()
         
         //Dia atual
         days[currentWeekDay].backgroundColor = UIColor(named: "Rosa")
@@ -104,6 +108,7 @@ class TodayViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        oi = CoreDataStack.shared.getAllRoutines()
         self.routineCollectionView.reloadData()
     }
     
@@ -217,7 +222,6 @@ class TodayViewController: UIViewController {
     }
     @objc func clicarDia6() {
         clickDays(selected: day6, day2: day2, day3: day3, day4: day4, day5: day5, day6: day1, day7: day7)
-        routineCollectionView.reloadData()
     }
     @objc func clicarDia7() {
         clickDays(selected: day7, day2: day2, day3: day3, day4: day4, day5: day5, day6: day6, day7: day1)
@@ -250,6 +254,16 @@ extension TodayViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = routineCollectionView.dequeueReusableCell(withReuseIdentifier: "rotine", for: indexPath) as! RoutineCollectionViewCell
         cell.nameRoutine.text = oi[indexPath.row].routineName
+        if defaults.bool(forKey: "feito") == false {
+            cell.morningCircularProgress.setProgress(duration: 1.0, value: 0)
+            cell.afternoonCircularProgress.setProgress(duration: 1.0, value: 0)
+            cell.nightCircularProgress.setProgress(duration: 1.0, value: 0)
+        } else {
+            cell.morningCircularProgress.setProgress(duration: 1.0, value: defaults.float(forKey: "somaManha")/10)
+            cell.afternoonCircularProgress.setProgress(duration: 1.0, value: defaults.float(forKey: "somaTarde")/10)
+            cell.nightCircularProgress.setProgress(duration: 1.0, value: defaults.float(forKey: "somaNoite")/10)
+
+        }
         return cell
     }
     

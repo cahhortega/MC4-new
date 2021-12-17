@@ -470,17 +470,17 @@
                                 <rect key="frame" x="40" y="456.5" width="334.5" height="50"/>
                                 <subviews>
                                     <datePicker verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" placeholderIntrinsicWidth="69" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" id="0jt-Mg-TP7">
-                                        <rect key="frame" x="0.0" y="0.0" width="79" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <locale key="locale" localeIdentifier="pt_BR"/>
                                     </datePicker>
                                     <datePicker verifyAmbiguity="ignoreSizes" contentMode="center" placeholderIntrinsicWidth="69" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" id="kes-Nk-86j">
-                                        <rect key="frame" x="127" y="0.0" width="80" height="50"/>
+                                        <rect key="frame" x="128" y="0.0" width="79" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <locale key="locale" localeIdentifier="pt_BR"/>
                                     </datePicker>
                                     <datePicker verifyAmbiguity="ignoreSizes" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" id="G3Y-Y3-PHH">
-                                        <rect key="frame" x="255" y="0.0" width="79" height="50"/>
+                                        <rect key="frame" x="255" y="0.0" width="80" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <locale key="locale" localeIdentifier="pt_BR"/>
                                     </datePicker>
@@ -590,7 +590,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="rotine" translatesAutoresizingMaskIntoConstraints="NO" id="0Kr-Hd-NGa" customClass="RoutineCollectionViewCell" customModule="Skincare" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="rotine" translatesAutoresizingMaskIntoConstraints="NO" id="0Kr-Hd-NGa" customClass="RoutineCollectionViewCell" customModule="Skincare" customModuleProvider="target">
                                         <rect key="frame" x="23" y="8" width="370" height="170"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLr-Vj-LoN">
@@ -945,7 +945,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ex: &quot;Minha rotina caseira”" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWP-O7-B7N">
-                                <rect key="frame" x="20" y="220" width="374" height="34"/>
+                                <rect key="frame" x="20" y="220" width="396" height="34"/>
                                 <color key="backgroundColor" name="Bg"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="5AU-F8-0Iv"/>
@@ -979,7 +979,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xgH-LR-Xqs">
-                                <rect key="frame" x="20" y="503" width="374" height="34"/>
+                                <rect key="frame" x="20" y="505" width="396" height="32"/>
                                 <segments>
                                     <segment title="Manhã"/>
                                     <segment title="Tarde"/>
@@ -1064,15 +1064,15 @@
                                 <color key="tintColor" name="Ciano"/>
                                 <locale key="locale" localeIdentifier="pt_BR"/>
                             </datePicker>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="7" id="IV0-1x-1EG">
-                                <rect key="frame" x="6" y="382" width="397" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="IV0-1x-1EG">
+                                <rect key="frame" x="24" y="384" width="388" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ClS-xw-TgZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="50.5" height="46"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="53.5" height="50"/>
                                         <color key="backgroundColor" name="Bg"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="46" id="MlJ-V4-e3Y"/>
+                                            <constraint firstAttribute="width" constant="50" id="2TI-r8-ajz"/>
+                                            <constraint firstAttribute="height" constant="50" id="Nj5-lv-VhA"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="tintColor" systemColor="labelColor"/>
@@ -1082,15 +1082,16 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <integer key="value" value="23"/>
+                                                <integer key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hrx-hU-lfZ">
-                                        <rect key="frame" x="57.5" y="0.0" width="51" height="46"/>
+                                        <rect key="frame" x="55.5" y="0.0" width="54" height="50"/>
                                         <color key="backgroundColor" name="Bg"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="46" id="Ib6-cI-qhF"/>
+                                            <constraint firstAttribute="height" constant="50" id="Ib6-cI-qhF"/>
+                                            <constraint firstAttribute="width" constant="50" id="fxz-nz-1Dk"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="tintColor" systemColor="labelColor"/>
@@ -1100,15 +1101,16 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <integer key="value" value="23"/>
+                                                <integer key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2h-9n-H40">
-                                        <rect key="frame" x="115.5" y="0.0" width="50.5" height="46"/>
+                                        <rect key="frame" x="111.5" y="0.0" width="53.5" height="50"/>
                                         <color key="backgroundColor" name="Bg"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="46" id="pwj-1Q-hZ6"/>
+                                            <constraint firstAttribute="width" constant="50" id="i2G-0Q-v10"/>
+                                            <constraint firstAttribute="height" constant="50" id="pwj-1Q-hZ6"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="tintColor" systemColor="labelColor"/>
@@ -1118,15 +1120,16 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <integer key="value" value="23"/>
+                                                <integer key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHw-WQ-7OD">
-                                        <rect key="frame" x="173" y="0.0" width="51" height="46"/>
+                                        <rect key="frame" x="167" y="0.0" width="53.5" height="50"/>
                                         <color key="backgroundColor" name="Bg"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="46" id="30f-Cw-r1P"/>
+                                            <constraint firstAttribute="height" constant="50" id="30f-Cw-r1P"/>
+                                            <constraint firstAttribute="width" constant="50" id="6c9-6n-npq"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="tintColor" systemColor="labelColor"/>
@@ -1136,15 +1139,16 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <integer key="value" value="23"/>
+                                                <integer key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="710-TD-DbU">
-                                        <rect key="frame" x="231" y="0.0" width="50.5" height="46"/>
+                                        <rect key="frame" x="222.5" y="0.0" width="54" height="50"/>
                                         <color key="backgroundColor" name="Bg"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="46" id="gSn-7c-smx"/>
+                                            <constraint firstAttribute="width" constant="50" id="7lt-3I-W9X"/>
+                                            <constraint firstAttribute="height" constant="50" id="gSn-7c-smx"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="tintColor" systemColor="labelColor"/>
@@ -1154,15 +1158,16 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <integer key="value" value="23"/>
+                                                <integer key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpn-CG-qGm">
-                                        <rect key="frame" x="288.5" y="0.0" width="51" height="46"/>
+                                        <rect key="frame" x="278.5" y="0.0" width="53.5" height="50"/>
                                         <color key="backgroundColor" name="Bg"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="46" id="J0V-Fh-dKx"/>
+                                            <constraint firstAttribute="height" constant="50" id="J0V-Fh-dKx"/>
+                                            <constraint firstAttribute="width" constant="50" id="ayI-CM-9WC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="tintColor" systemColor="labelColor"/>
@@ -1172,15 +1177,16 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <integer key="value" value="23"/>
+                                                <integer key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fro-oh-M1g">
-                                        <rect key="frame" x="346.5" y="0.0" width="50.5" height="46"/>
+                                        <rect key="frame" x="334" y="0.0" width="54" height="50"/>
                                         <color key="backgroundColor" name="Bg"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="46" id="tfJ-la-6gB"/>
+                                            <constraint firstAttribute="width" constant="50" id="gah-mL-Yrw"/>
+                                            <constraint firstAttribute="height" constant="50" id="tfJ-la-6gB"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="tintColor" systemColor="labelColor"/>
@@ -1195,9 +1201,6 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="8Nt-9H-7eN"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bhA-Wa-leI"/>
@@ -1206,19 +1209,18 @@
                             <constraint firstItem="bhA-Wa-leI" firstAttribute="trailing" secondItem="sWP-O7-B7N" secondAttribute="trailing" constant="20" id="0YD-M6-X38"/>
                             <constraint firstItem="9gl-Dp-rAA" firstAttribute="leading" secondItem="bhA-Wa-leI" secondAttribute="leading" constant="20" id="2Zp-Pc-dEw"/>
                             <constraint firstItem="xgH-LR-Xqs" firstAttribute="leading" secondItem="7Ng-nu-s5V" secondAttribute="leading" constant="20" id="4H8-vS-vYk"/>
-                            <constraint firstItem="IV0-1x-1EG" firstAttribute="top" secondItem="qoc-KW-sLi" secondAttribute="bottom" constant="10" id="5Zu-Hv-xQW"/>
                             <constraint firstItem="bhA-Wa-leI" firstAttribute="trailing" secondItem="V0X-eu-wk2" secondAttribute="trailing" constant="20" id="7Z2-KH-tWV"/>
-                            <constraint firstItem="V0X-eu-wk2" firstAttribute="top" secondItem="IV0-1x-1EG" secondAttribute="bottom" constant="26" id="8Um-3J-Mj5"/>
                             <constraint firstItem="qoc-KW-sLi" firstAttribute="leading" secondItem="bhA-Wa-leI" secondAttribute="leading" constant="20" id="8iF-Le-yfK"/>
                             <constraint firstItem="bhA-Wa-leI" firstAttribute="trailing" secondItem="xgH-LR-Xqs" secondAttribute="trailing" constant="20" id="KOB-0r-pwa"/>
-                            <constraint firstItem="IV0-1x-1EG" firstAttribute="leading" secondItem="bhA-Wa-leI" secondAttribute="leading" constant="20" id="Ltt-pk-ERc"/>
+                            <constraint firstItem="IV0-1x-1EG" firstAttribute="top" secondItem="qoc-KW-sLi" secondAttribute="bottom" constant="10" id="TQV-vy-UrW"/>
                             <constraint firstItem="bhA-Wa-leI" firstAttribute="trailing" secondItem="qoc-KW-sLi" secondAttribute="trailing" constant="20" id="U0k-hQ-6x6"/>
-                            <constraint firstItem="bhA-Wa-leI" firstAttribute="trailing" secondItem="IV0-1x-1EG" secondAttribute="trailing" constant="20" id="eFU-Ac-esC"/>
+                            <constraint firstItem="IV0-1x-1EG" firstAttribute="leading" secondItem="7Ng-nu-s5V" secondAttribute="leading" constant="24" id="eYx-YE-oaN"/>
                             <constraint firstItem="9gl-Dp-rAA" firstAttribute="top" secondItem="xgH-LR-Xqs" secondAttribute="bottom" constant="12" id="iGk-tc-TOk"/>
                             <constraint firstItem="xgH-LR-Xqs" firstAttribute="top" secondItem="V0X-eu-wk2" secondAttribute="bottom" constant="16" id="jSk-xB-LE4"/>
                             <constraint firstItem="sWP-O7-B7N" firstAttribute="leading" secondItem="bhA-Wa-leI" secondAttribute="leading" constant="20" id="ju4-dW-YMu"/>
                             <constraint firstItem="j9v-jI-KYW" firstAttribute="top" secondItem="sWP-O7-B7N" secondAttribute="bottom" constant="20" id="k2s-Ne-hun"/>
                             <constraint firstItem="V0X-eu-wk2" firstAttribute="leading" secondItem="bhA-Wa-leI" secondAttribute="leading" constant="20" id="lFV-di-tL3"/>
+                            <constraint firstAttribute="trailing" secondItem="IV0-1x-1EG" secondAttribute="trailing" constant="24" id="p7E-dl-PMt"/>
                             <constraint firstItem="xgH-LR-Xqs" firstAttribute="leading" secondItem="bhA-Wa-leI" secondAttribute="leading" constant="20" id="rSC-HM-zH5"/>
                             <constraint firstItem="bhA-Wa-leI" firstAttribute="trailing" secondItem="xgH-LR-Xqs" secondAttribute="trailing" constant="20" id="rYG-0N-FL8"/>
                             <constraint firstItem="sWP-O7-B7N" firstAttribute="top" secondItem="sWZ-NV-9Sh" secondAttribute="bottom" constant="10" id="s3B-ch-qXO"/>
@@ -1262,7 +1264,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome da rotina" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ao4-7N-JA1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotina caseira" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ao4-7N-JA1">
                                 <rect key="frame" x="20" y="128" width="374" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="textColor"/>
@@ -1326,6 +1328,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="1XS-gW-oRt">
                             <color key="tintColor" name="Rosa"/>
+                            <connections>
+                                <action selector="saveButton:" destination="5FF-tN-0kE" id="vFL-UE-toK"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
