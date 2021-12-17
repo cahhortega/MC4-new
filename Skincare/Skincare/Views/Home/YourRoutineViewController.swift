@@ -14,14 +14,14 @@ class YourRoutineViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var dataFilter = 0
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    
+    weak var NewRoutineViewControllerDelegate: NewRoutineViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
         navigationController?.setNavigationBarHidden(false, animated: false)
-        
+        let coreData = CoreDataStack.shared.getAllRoutines()
+        routineName.text = coreData[0].routineName
         //multi seleção
         self.tableView.allowsMultipleSelection = true
         self.tableView.allowsMultipleSelectionDuringEditing = true
@@ -139,5 +139,11 @@ extension YourRoutineViewController: UITableViewDataSource{
     }
     
     
+}
+extension YourRoutineViewController: YourRoutineViewControllerDelegate{
+    func didRegister() {
+        let coreData = CoreDataStack.shared.getAllRoutines()
+        routineName.text = coreData[0].routineName
+    }
 }
 

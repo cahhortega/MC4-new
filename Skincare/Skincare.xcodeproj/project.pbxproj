@@ -10,8 +10,9 @@
 		212B04B5275FD82500D9DBED /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B04B4275FD82500D9DBED /* Model.swift */; };
 		212B04B7275FD84900D9DBED /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B04B6275FD84900D9DBED /* Request.swift */; };
 		218E4F3327652529001D3A94 /* DataSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218E4F3227652529001D3A94 /* DataSingleton.swift */; };
-		990DC764276A480000E35AE1 /* NewRoutineViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990DC763276A480000E35AE1 /* NewRoutineViewControllerDelegate.swift */; };
-		990DC766276A481500E35AE1 /* TodayViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990DC765276A481500E35AE1 /* TodayViewControllerDelegate.swift */; };
+		99054022276C097500E8DAE3 /* TodayViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99054021276C097500E8DAE3 /* TodayViewControllerDelegate.swift */; };
+		990DC764276A480000E35AE1 /* YourRoutineViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990DC763276A480000E35AE1 /* YourRoutineViewControllerDelegate.swift */; };
+		990DC766276A481500E35AE1 /* NewRoutineViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990DC765276A481500E35AE1 /* NewRoutineViewControllerDelegate.swift */; };
 		99B1646727516C6100DE8120 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B1646627516C6100DE8120 /* AppDelegate.swift */; };
 		99B1646927516C6100DE8120 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B1646827516C6100DE8120 /* SceneDelegate.swift */; };
 		99B1646B27516C6100DE8120 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B1646A27516C6100DE8120 /* OnboardingViewController.swift */; };
@@ -93,8 +94,9 @@
 		212B04B4275FD82500D9DBED /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		212B04B6275FD84900D9DBED /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		218E4F3227652529001D3A94 /* DataSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSingleton.swift; sourceTree = "<group>"; };
-		990DC763276A480000E35AE1 /* NewRoutineViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoutineViewControllerDelegate.swift; sourceTree = "<group>"; };
-		990DC765276A481500E35AE1 /* TodayViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewControllerDelegate.swift; sourceTree = "<group>"; };
+		99054021276C097500E8DAE3 /* TodayViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewControllerDelegate.swift; sourceTree = "<group>"; };
+		990DC763276A480000E35AE1 /* YourRoutineViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourRoutineViewControllerDelegate.swift; sourceTree = "<group>"; };
+		990DC765276A481500E35AE1 /* NewRoutineViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoutineViewControllerDelegate.swift; sourceTree = "<group>"; };
 		99B1646327516C6100DE8120 /* Skincare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skincare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B1646627516C6100DE8120 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99B1646827516C6100DE8120 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -358,12 +360,13 @@
 			isa = PBXGroup;
 			children = (
 				A02F0F682758246400AFD1C1 /* TodayViewController.swift */,
+				99054021276C097500E8DAE3 /* TodayViewControllerDelegate.swift */,
 				A02F0F6B275935EF00AFD1C1 /* NewRoutineViewController.swift */,
 				A0FF1307275EBC6E00A86323 /* NewProductRoutineViewController.swift */,
 				A0FDB2B82762480E00F3B35D /* YourRoutineViewController.swift */,
 				A02F0F5B275813D800AFD1C1 /* SettingsViewController.swift */,
-				990DC763276A480000E35AE1 /* NewRoutineViewControllerDelegate.swift */,
-				990DC765276A481500E35AE1 /* TodayViewControllerDelegate.swift */,
+				990DC763276A480000E35AE1 /* YourRoutineViewControllerDelegate.swift */,
+				990DC765276A481500E35AE1 /* NewRoutineViewControllerDelegate.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -500,14 +503,15 @@
 				A02F0F7127595EED00AFD1C1 /* TaskTableViewCell.swift in Sources */,
 				A0FDB2B92762480E00F3B35D /* YourRoutineViewController.swift in Sources */,
 				DF46B8372757EB920076F349 /* ShelfFormViewController.swift in Sources */,
-				990DC764276A480000E35AE1 /* NewRoutineViewControllerDelegate.swift in Sources */,
+				990DC764276A480000E35AE1 /* YourRoutineViewControllerDelegate.swift in Sources */,
 				A0FF1306275EB54900A86323 /* ShelfCell.swift in Sources */,
+				99054022276C097500E8DAE3 /* TodayViewControllerDelegate.swift in Sources */,
 				A02F0F5C275813D800AFD1C1 /* SettingsViewController.swift in Sources */,
 				A02F0F672758242C00AFD1C1 /* RoutineCollectionViewCell.swift in Sources */,
 				212B04B7275FD84900D9DBED /* Request.swift in Sources */,
 				A08316CE27626F50006F21B4 /* Identifiers.swift in Sources */,
 				A02F0F622758142400AFD1C1 /* DayTableViewCell.swift in Sources */,
-				990DC766276A481500E35AE1 /* TodayViewControllerDelegate.swift in Sources */,
+				990DC766276A481500E35AE1 /* NewRoutineViewControllerDelegate.swift in Sources */,
 				A0F388CD2756DE0600153D13 /* SkinTypeViewController.swift in Sources */,
 				A09A402D275E6AD500E6122F /* ShelfFormTableViewCell.swift in Sources */,
 				A0F388C92756DDC700153D13 /* NameViewController.swift in Sources */,

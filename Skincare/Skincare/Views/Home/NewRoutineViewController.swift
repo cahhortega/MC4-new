@@ -269,8 +269,3 @@ extension NewRoutineViewController: UITableViewDataSource{
     
 }
 
-extension NewRoutineViewController: NewRoutineViewControllerDelegate{
-    func didRegister() {
-        
-    }
-}
